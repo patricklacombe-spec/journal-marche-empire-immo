@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Journal du Marché — Guide du lecteur</title>
+<style>
+  :root{
+    --bg:#15130f; --paper:#1c1916; --paper-raised:#221e19;
+    --ink:#e8e0d0; --ink-dim:#a89a82; --ink-faint:#756a58;
+    --rule:#3a342a; --gold:#c9a35a; --green:#7a9b6e; --red:#b8614f;
+    --serif:Georgia,'Times New Roman',serif; --sans:'Segoe UI',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);line-height:1.55;padding:32px 16px;}
+  .sheet{max-width:760px;margin:0 auto;background:var(--paper);border:1px solid var(--rule);}
+  .masthead{padding:28px 32px 18px;border-bottom:3px double var(--gold);text-align:center;}
+  .kicker{font-family:var(--sans);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin:0 0 10px;}
+  .masthead h1{font-size:30px;margin:0;letter-spacing:1px;font-weight:700;}
+  .masthead .sub{font-family:var(--sans);font-size:12px;color:var(--ink-dim);margin-top:10px;display:flex;justify-content:center;gap:18px;flex-wrap:wrap;}
+  .edito{padding:26px 32px 8px;border-bottom:1px solid var(--rule);}
+  .edito p{font-size:16px;margin:0 0 16px;color:var(--ink);}
+  .edito p:first-of-type::first-letter{font-size:46px;float:left;line-height:0.8;padding:6px 8px 0 0;color:var(--gold);font-weight:700;}
+  .section{padding:26px 32px;border-bottom:1px solid var(--rule);}
+  .section-head{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;}
+  .section-head .icon{font-size:20px;}
+  .section-head h2{font-size:21px;margin:0;}
+  .analysis{font-size:15px;margin:0 0 16px;}
+  .analysis strong{color:var(--gold);}
+  .formula{
+    background:var(--paper-raised);
+    border-left:3px solid var(--gold);
+    padding:14px 20px;
+    margin:16px 0;
+    font-family:var(--sans);
+    font-size:14px;
+    color:var(--ink-dim);
+    border-radius:0 4px 4px 0;
+  }
+  .formula strong{color:var(--gold); display:block; margin-bottom:6px;}
+  .example{
+    background:var(--paper-raised);
+    border:1px solid var(--rule);
+    padding:14px 20px;
+    margin:16px 0;
+    font-family:var(--sans);
+    font-size:13.5px;
+    color:var(--ink-dim);
+    border-radius:4px;
+  }
+  .example .label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:8px;}
+  .example ul{margin:0;padding-left:18px;}
+  .example li{margin-bottom:4px;}
+  .example .result{color:var(--gold);font-weight:700;margin-top:8px;}
+  .callout{background:var(--paper-raised);border-left:3px solid var(--gold);padding:14px 18px;margin:18px 0;font-size:14.5px;color:var(--ink-dim);}
+  .callout.good{border-left-color:var(--green);}
+  .callout.warn{border-left-color:var(--red);}
+  .callout strong{color:var(--ink);}
+  table{width:100%;border-collapse:collapse;margin:14px 0 18px;font-family:var(--sans);font-size:13px;}
+  th{text-align:left;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-faint);font-weight:600;padding:6px 10px;border-bottom:1px solid var(--rule);}
+  td{padding:8px 10px;border-bottom:1px solid var(--rule);color:var(--ink-dim);}
+  tr:last-child td{border-bottom:none;}
+  .hl{color:var(--gold);font-weight:700;}
+  .subblock{margin:18px 0;}
+  .subblock-title{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:0.5px;margin-bottom:9px;color:var(--ink-dim);}
+  .subblock ul{list-style:none;margin:0;padding:0;font-size:14.5px;}
+  .subblock li{padding:7px 0 7px 16px;border-left:2px solid var(--gold);margin-bottom:6px;color:var(--ink-dim);}
+  .subblock li strong{color:var(--ink);}
+  .numbered-list{margin:16px 0;padding-left:0;list-style:none;font-size:15px;}
+  .numbered-list li{margin-bottom:14px;padding-left:36px;position:relative;}
+  .numbered-list li .n{position:absolute;left:0;top:0;font-family:var(--sans);font-weight:700;color:var(--gold);font-size:18px;}
+  .nav{padding:20px 32px;border-bottom:1px solid var(--rule);}
+  .nav p{font-family:var(--sans);font-size:12px;color:var(--ink-faint);margin:0 0 10px;}
+  .nav a{color:var(--gold);font-family:var(--sans);font-size:13px;display:block;margin-bottom:6px;text-decoration:none;}
+  .nav a:hover{text-decoration:underline;}
+  .methodology{padding:26px 32px;background:var(--paper-raised);}
+  .methodology h2{font-family:var(--sans);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--ink-faint);margin:0 0 14px;}
+  .methodology p{font-size:13.5px;color:var(--ink-dim);margin:0 0 12px;}
+  .colophon{padding:22px 32px 30px;text-align:center;font-family:var(--sans);font-size:11px;color:var(--ink-faint);}
+  .colophon .rule{width:60px;height:1px;background:var(--gold);margin:0 auto 16px;}
+  @media(max-width:600px){
+    .masthead h1{font-size:22px;}
+    .section,.edito,.nav,.methodology{padding:20px 18px;}
+    table{font-size:11.5px;} th,td{padding:6px 6px;}
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <div class="masthead">
+    <p class="kicker">Hors-série — Guide permanent</p>
+    <h1>Guide du lecteur — Comprendre le ROI</h1>
+    <div class="sub">
+      <span>Empire Immo · Monde 8</span>
+      <span>Journal du Marché</span>
+    </div>
+  </div>
+
+  <!-- INTRO -->
+  <div class="edito">
+    <p>Empire Immo est un jeu économique. Chaque décision d'achat, de construction ou d'investissement a un impact direct sur votre patrimoine. Pourtant, la majorité des joueurs achètent des biens sans jamais calculer leur rendement réel — souvent parce que l'information est dispersée dans les exports CSV du jeu et difficile à interpréter rapidement.</p>
+    <p>Ce guide explique comment lire le Journal du Marché, comprendre les calculs de ROI, et utiliser ces données pour prendre de meilleures décisions sur Monde 8. Aucune stratégie n'est imposée ici — les chiffres sont présentés pour que vous décidiez par vous-même.</p>
+  </div>
+
+  <!-- LIENS ÉDITIONS -->
+  <div class="nav">
+    <p>📚 Accéder aux éditions hebdomadaires :</p>
+    <a href="https://patricklacombe-spec.github.io/journal-marche-empire-immo/" target="_blank">📌 Édition #1 — 19 juin 2026</a>
+    <a href="https://patricklacombe-spec.github.io/journal-marche-empire-immo/edition-2.html" target="_blank">📌 Édition #2 — 21 juin 2026</a>
+    <a href="https://patricklacombe-spec.github.io/journal-marche-empire-immo/journal_marche_edition_03.html" target="_blank">📌 Édition #3 — 22 juin 2026</a>
+    <a href="https://patricklacombe-spec.github.io/journal-marche-empire-immo/journal_marche_edition_04.html" target="_blank">📌 Édition #4 — 23 juin 2026</a>
+    <a href="https://patricklacombe-spec.github.io/journal-marche-empire-immo/journal_marche_edition_05.html" target="_blank">📌 Édition #5 — 24 juin 2026 (dernière)</a>
+  </div>
+
+  <!-- ROI DE BASE -->
+  <div class="section">
+    <div class="section-head"><span class="icon">📊</span><h2>C'est quoi le ROI?</h2></div>
+    <p class="analysis">ROI signifie <strong>Return On Investment</strong> — retour sur investissement. Dans le contexte d'Empire Immo, c'est le ratio entre ce qu'un bien vous rapporte chaque jour et ce qu'il vous a coûté.</p>
+
+    <div class="formula">
+      <strong>Formule de base</strong>
+      ROI = loyer net quotidien ÷ valeur du bien × 100
+    </div>
+
+    <p class="analysis">Le <strong>loyer net</strong>, c'est le loyer brut moins les charges et l'impôt. Ce n'est pas le loyer affiché en gros — c'est ce qui reste vraiment dans votre poche après les frais.</p>
+
+    <div class="example">
+      <div class="label">Exemple concret</div>
+      <ul>
+        <li>Un bien vaut 1 000 Ø</li>
+        <li>Son loyer brut est de 50 Ø/jour</li>
+        <li>Ses charges sont 10 Ø et son impôt 5 Ø</li>
+        <li>Loyer net = 50 − 10 − 5 = <strong>35 Ø/jour</strong></li>
+      </ul>
+      <div class="result">ROI = 35 ÷ 1 000 × 100 = 3,5 %</div>
+      <p style="margin:8px 0 0;font-size:12.5px;color:var(--ink-faint);">Un ROI de 3,5 % signifie que ce bien récupère sa valeur totale en environ 28 jours de revenus nets.</p>
+    </div>
+  </div>
+
+  <!-- DEUX ROI -->
+  <div class="section">
+    <div class="section-head"><span class="icon">💰</span><h2>ROI sur valeur vs ROI sur capital construit</h2></div>
+    <p class="analysis">C'est là que beaucoup de joueurs se trompent de calcul. Il existe deux façons de mesurer le ROI d'un bien — et elles ne donnent pas le même résultat.</p>
+
+    <table>
+      <tr><th>Type de ROI</th><th>Formule</th><th>Quand l'utiliser</th></tr>
+      <tr><td class="hl">Sur valeur totale</td><td>loyer net ÷ valeur affichée</td><td>Vous achetez un bien existant</td></tr>
+      <tr><td class="hl">Sur capital construit</td><td>loyer net ÷ (construction + embellissement + réparation)</td><td>Vous construisez de zéro</td></tr>
+    </table>
+
+    <div class="example">
+      <div class="label">Exemple — T2 simple habitable</div>
+      <ul>
+        <li>Valeur affichée : 53 458 Ø</li>
+        <li>Coût réel de construction : 16 300 Ø</li>
+        <li>Loyer net : 885 Ø/jour</li>
+      </ul>
+      <div class="result">ROI sur valeur = 885 ÷ 53 458 × 100 = 1,66 %</div>
+      <div class="result">ROI sur capital = 885 ÷ 16 300 × 100 = 5,43 %</div>
+      <p style="margin:8px 0 0;font-size:12.5px;color:var(--ink-faint);">Le même bien, deux chiffres très différents selon votre situation.</p>
+    </div>
+
+    <div class="callout">
+      <strong>À retenir.</strong> Si vous partez de zéro, le ROI sur capital construit est souvent plus pertinent. Si vous comparez des biens déjà existants à acheter, utilisez le ROI sur valeur totale.
+    </div>
+  </div>
+
+  <!-- LIRE LES CLASSEMENTS -->
+  <div class="section">
+    <div class="section-head"><span class="icon">📈</span><h2>Comment lire les classements du journal</h2></div>
+    <p class="analysis">Chaque édition présente plusieurs classements. Voici comment les interpréter :</p>
+
+    <div class="subblock">
+      <ul>
+        <li><strong>Top ROI nets/jour (valeur du bien)</strong> — Les biens qui rapportent le plus proportionnellement à leur prix d'achat. Idéal pour comparer des biens que vous envisagez d'acquérir.</li>
+        <li><strong>Meilleur rendement sur capital construit</strong> — Les biens qui rapportent le plus proportionnellement à ce qu'ils coûtent à bâtir. Idéal si vous partez de zéro.</li>
+        <li><strong>Portes d'entrée accessibles</strong> — Les biens rentables avec le capital de construction le plus bas. Idéal pour les joueurs en début de progression.</li>
+        <li><strong>À surveiller</strong> — Les biens dont le ROI est faible ou dont la valeur a fortement bougé cette semaine. Pas une liste noire — juste des signaux à vérifier avant d'investir.</li>
+        <li><strong>Mouvements notables</strong> — Les biens dont la valeur a changé significativement depuis la semaine précédente. Les loyers restent généralement stables, donc une baisse de valeur améliore mécaniquement le ROI.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- POURQUOI SUIVRE -->
+  <div class="section">
+    <div class="section-head"><span class="icon">🔄</span><h2>Pourquoi suivre le marché chaque semaine?</h2></div>
+    <p class="analysis">Les valeurs des biens ne sont pas fixes. Elles fluctuent au reset de 3h00 — parfois de 0,1 %, parfois de 15 % ou plus en une seule nuit. Ces mouvements ne changent pas les loyers, mais ils changent le ROI instantanément.</p>
+
+    <div class="callout good">
+      <strong>Exemple observé en édition #5.</strong> Le Centre de recherche national a vu sa valeur baisser de −14 % en une nuit. Son loyer est resté identique. Résultat : son ROI est passé de 4,26 % à 4,95 % — devenant le bien le plus rentable de tout le secteur entreprise cette semaine-là, sans que le bien lui-même ait changé.
+    </div>
+
+    <p class="analysis">Un suivi hebdomadaire permet de repérer ces fenêtres d'opportunité. <strong>Un bien qui baisse de valeur sans perdre de loyer devient mécaniquement plus intéressant à acquérir.</strong></p>
+  </div>
+
+  <!-- USINES -->
+  <div class="section">
+    <div class="section-head"><span class="icon">🏭</span><h2>Cas particulier — les usines</h2></div>
+    <p class="analysis">Les usines fonctionnent différemment des biens immobiliers. Elles ne génèrent pas de loyer — elles produisent des matières premières (Bois, Brique, Béton, Acier, Verre) que vous pouvez vendre au prix de marché.</p>
+
+    <div class="formula">
+      <strong>Formule rentabilité usine</strong>
+      Rendement = (production/jour × prix de marché) − charge − impôt
+    </div>
+
+    <p class="analysis">Ce rendement change chaque semaine selon le prix de marché des matériaux. Une usine peut être rentable une semaine et déficitaire la suivante si le prix de sa matière baisse.</p>
+
+    <div class="callout warn">
+      <strong>⚠️ Important.</strong> Une usine déficitaire à la vente n'est pas forcément inutile — si vous utilisez sa production pour vos propres constructions plutôt que de la vendre, le calcul est entièrement différent. Les chiffres du journal supposent une vente au prix de marché.
+    </div>
+  </div>
+
+  <!-- RÉSUMÉ -->
+  <div class="section">
+    <div class="section-head"><span class="icon">📌</span><h2>En résumé</h2></div>
+    <ol class="numbered-list">
+      <li><span class="n">1.</span>Le ROI mesure le rendement d'un bien par rapport à son coût — toujours calculé sur le loyer <strong>net</strong> (après charges et impôt).</li>
+      <li><span class="n">2.</span>Il existe deux ROI : sur valeur totale (pour l'achat) et sur capital construit (pour la construction from scratch).</li>
+      <li><span class="n">3.</span>Les valeurs des biens fluctuent à chaque reset de 3h00 — les loyers restent généralement stables.</li>
+      <li><span class="n">4.</span>Une baisse de valeur peut créer une opportunité d'achat si le loyer reste inchangé.</li>
+      <li><span class="n">5.</span>Les usines dépendent du prix de marché des matériaux — à vérifier chaque semaine avant d'investir.</li>
+      <li><span class="n">6.</span>Tous les calculs du journal sont reproductibles à partir des exports CSV officiels accessibles à tous les joueurs.</li>
+    </ol>
+  </div>
+
+  <div class="methodology">
+    <h2>À propos du journal</h2>
+    <p>Le Journal du Marché publie une nouvelle édition chaque semaine après le reset quotidien de 3h00 du matin. Les données proviennent exclusivement des exports CSV officiels du jeu (bâtiments personnels, bâtiments entreprise, terrains, matériaux, usines). Aucune stratégie personnelle n'est présentée — uniquement des données brutes analysées et mises en contexte.</p>
+    <p><strong style="color:var(--gold)">Dédié à la rigueur et à l'analyse factuelle.</strong></p>
+  </div>
+
+  <div class="colophon">
+    <div class="rule"></div>
+    Journal du Marché — Monde 8<br>
+    Guide du lecteur — édition permanente
+  </div>
+
+</div>
+</body>
+</html>
