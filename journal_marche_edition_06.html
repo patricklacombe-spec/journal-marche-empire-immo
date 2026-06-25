@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Journal du Marché — Empire Immo M8 — Édition 6</title>
+<style>
+  :root{
+    --bg:#15130f; --paper:#1c1916; --paper-raised:#221e19;
+    --ink:#e8e0d0; --ink-dim:#a89a82; --ink-faint:#756a58;
+    --rule:#3a342a; --gold:#c9a35a; --green:#7a9b6e; --red:#b8614f;
+    --serif:Georgia,'Times New Roman',serif; --sans:'Segoe UI',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);line-height:1.55;padding:32px 16px;}
+  .sheet{max-width:760px;margin:0 auto;background:var(--paper);border:1px solid var(--rule);}
+  .masthead{padding:28px 32px 18px;border-bottom:3px double var(--gold);text-align:center;}
+  .kicker{font-family:var(--sans);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin:0 0 10px;}
+  .masthead h1{font-size:36px;margin:0;letter-spacing:1px;font-weight:700;}
+  .masthead .sub{font-family:var(--sans);font-size:12px;color:var(--ink-dim);margin-top:10px;display:flex;justify-content:center;gap:18px;flex-wrap:wrap;}
+  .masthead .sub span{white-space:nowrap;}
+  .edito{padding:26px 32px 8px;border-bottom:1px solid var(--rule);}
+  .edito h2{font-family:var(--sans);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin:0 0 14px;}
+  .edito p{font-size:16px;margin:0 0 16px;color:var(--ink);}
+  .edito p:first-of-type::first-letter{font-size:46px;float:left;line-height:0.8;padding:6px 8px 0 0;color:var(--gold);font-weight:700;}
+  .section{padding:26px 32px;border-bottom:1px solid var(--rule);}
+  .section-head{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;}
+  .section-head .icon{font-size:20px;}
+  .section-head h2{font-size:21px;margin:0;}
+  table{width:100%;border-collapse:collapse;margin:14px 0 18px;font-family:var(--sans);font-size:13px;}
+  th{text-align:left;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-faint);font-weight:600;padding:6px 10px;border-bottom:1px solid var(--rule);}
+  td{padding:8px 10px;border-bottom:1px solid var(--rule);color:var(--ink-dim);}
+  tr:last-child td{border-bottom:none;}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;}
+  .hl{color:var(--gold);font-weight:700;}
+  .up{color:var(--green);}
+  .dn{color:var(--red);}
+  .analysis{font-size:15px;margin:0 0 16px;}
+  .analysis strong{color:var(--gold);}
+  .subblock{margin:18px 0;}
+  .subblock-title{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:0.5px;margin-bottom:9px;}
+  .subblock ul{list-style:none;margin:0;padding:0;font-size:14.5px;}
+  .subblock li{padding:7px 0 7px 16px;border-left:2px solid var(--rule);margin-bottom:6px;color:var(--ink-dim);}
+  .subblock li .val{color:var(--gold);font-weight:700;}
+  .subblock li .chg-up{color:var(--green);font-size:12px;}
+  .subblock li .chg-dn{color:var(--red);font-size:12px;}
+  .subblock.top li{border-left-color:var(--green);}
+  .subblock.entry li{border-left-color:var(--ink-faint);}
+  .callout{background:var(--paper-raised);border-left:3px solid var(--red);padding:14px 18px;margin:18px 0;font-size:14.5px;color:var(--ink-dim);}
+  .callout.good{border-left-color:var(--green);}
+  .callout.neutral{border-left-color:var(--gold);}
+  .callout strong{color:var(--ink);}
+  .record{background:var(--paper-raised);border:2px solid var(--gold);padding:18px 22px;margin:18px 0;font-size:15px;color:var(--ink-dim);text-align:center;}
+  .record .big{font-size:42px;color:var(--gold);font-weight:700;font-family:var(--serif);display:block;margin:6px 0;}
+  .record .label{font-family:var(--sans);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-faint);}
+  .note{font-family:var(--sans);font-size:12.5px;color:var(--ink-faint);font-style:italic;margin-top:10px;}
+  .methodology{padding:26px 32px;background:var(--paper-raised);}
+  .methodology h2{font-family:var(--sans);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--ink-faint);margin:0 0 14px;}
+  .methodology p{font-size:13.5px;color:var(--ink-dim);margin:0 0 12px;}
+  .colophon{padding:22px 32px 30px;text-align:center;font-family:var(--sans);font-size:11px;color:var(--ink-faint);}
+  .colophon .rule{width:60px;height:1px;background:var(--gold);margin:0 auto 16px;}
+  @media(max-width:600px){
+    .masthead h1{font-size:26px;}
+    .section,.edito,.methodology{padding:20px 18px;}
+    table{font-size:11.5px;} th,td{padding:6px 6px;}
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <div class="masthead">
+    <p class="kicker">Édition Hebdomadaire — Données de marché</p>
+    <h1>Journal du Marché</h1>
+    <div class="sub">
+      <span>Empire Immo · Monde 8</span>
+      <span>Édition N°6</span>
+      <span>25 juin 2026</span>
+    </div>
+  </div>
+
+  <div class="edito">
+    <h2>L'édito — Un record historique</h2>
+    <p>Six semaines de suivi, et le marché de M8 vient d'inscrire un nouveau record dans ce journal. Le <strong>Centre de recherche régional</strong> affiche cette semaine un ROI de <strong>5,88 %</strong> — le chiffre le plus élevé jamais enregistré depuis le lancement de l'édition #1. En cause : une baisse de valeur de −20 % en un seul reset, pendant que son loyer reste inchangé. Ce n'est pas la première fois qu'on observe ce phénomène — c'est exactement le même mécanisme qui avait propulsé le Centre de recherche national à 4,95 % la semaine dernière. Mais 5,88 %, c'est une tout autre dimension.</p>
+    <p>Par ailleurs, semaine modérément active — 17 biens sur 204 en mouvement. Les matières premières se stabilisent après 5 semaines de hausse continue. Le secteur Industriels gagne en rendement (+0,08 pts). Le Top 5 perso reste figé pour la 4e semaine consécutive.</p>
+  </div>
+
+  <!-- RECORD -->
+  <div class="section">
+    <div class="record">
+      <span class="label">Record absolu du journal — Centre de recherche régional</span>
+      <span class="big">5,88 %</span>
+      <span style="font-family:var(--sans);font-size:13px;">Valeur : 14,56 G Ø (−20 % vs semaine dernière) · Loyer net inchangé · ROI précédent : 4,70 %</span>
+    </div>
+    <p class="analysis">Pour la 2e semaine consécutive, c'est un Centre de recherche qui s'empare de la première place du classement entreprise. La semaine dernière le Centre national (4,95 %), cette semaine le Centre régional (5,88 %). Ces deux biens alternent entre des baisses et des hausses de valeur significatives d'une semaine à l'autre — pendant que leurs loyers restent parfaitement stables. Un pattern à surveiller de près dans les prochaines éditions.</p>
+  </div>
+
+  <!-- ENTREPRISE -->
+  <div class="section">
+    <div class="section-head"><span class="icon">🏢</span><h2>Secteur Entreprise — Vue d'ensemble</h2></div>
+
+    <table>
+      <tr><th>Secteur</th><th class="num">ROI moyen</th><th class="num">vs éd. 5</th></tr>
+      <tr><td>Commerciaux</td><td class="num hl">3,15 %</td><td class="num">≈</td></tr>
+      <tr><td>Industriels</td><td class="num">3,03 %</td><td class="num up">+0,08</td></tr>
+      <tr><td>Transport</td><td class="num">3,00 %</td><td class="num">≈</td></tr>
+      <tr><td>Zones</td><td class="num">2,57 %</td><td class="num up">+0,01</td></tr>
+      <tr><td>Bureaux</td><td class="num">2,72 %</td><td class="num dn">−0,02</td></tr>
+    </table>
+
+    <p class="analysis">Le secteur <strong>Industriels</strong> progresse de +0,08 pts cette semaine, notamment grâce à la baisse de valeur de l'Entrepôt utilisable (−20 %). <strong>Commerciaux</strong> reste stable en tête à 3,15 % pour la 3e semaine consécutive.</p>
+
+    <div class="subblock top">
+      <div class="subblock-title">🏆 Top 5 ROI nets/jour — entreprise</div>
+      <ul>
+        <li>Centre de recherche régional — 14,56 G Ø, ROI <span class="val">5,88 %</span> <span class="chg-up">▲ RECORD ABSOLU (+1,18 pts)</span></li>
+        <li>Plate-forme pétrolière améliorée — 30,59 G Ø, ROI <span class="val">4,59 %</span></li>
+        <li>Plate-forme pétrolière aménagée — 15,06 G Ø, ROI <span class="val">4,44 %</span></li>
+        <li>Plate-forme pétrolière high-tech — 52,95 G Ø, ROI <span class="val">4,26 %</span></li>
+        <li>Centre de recherche national — 40,79 G Ø, ROI <span class="val">4,26 %</span> <span class="chg-dn">▼ (−0,69 pts, valeur remontée)</span></li>
+      </ul>
+    </div>
+
+    <div class="subblock">
+      <div class="subblock-title">💰 Meilleur rendement sur capital réellement construit</div>
+      <ul>
+        <li>Plate-forme pétrolière high-tech — capital 74,67 G Ø, rendement <span class="val">3,02 %</span></li>
+        <li>Centre de recherche international — capital 107,72 G Ø, rendement <span class="val">2,66 %</span></li>
+        <li>Usine high-tech — capital 15,06 M Ø, rendement <span class="val">2,26 %</span></li>
+        <li>Entrepôt intégralement optimisé — capital 918,0 k Ø, rendement <span class="val">2,25 %</span></li>
+      </ul>
+    </div>
+
+    <div class="subblock entry">
+      <div class="subblock-title">🚪 Portes d'entrée accessibles</div>
+      <ul>
+        <li>Atelier utilisable (industriels, niv.1) — capital 222,7 k Ø, ROI 2,19 %</li>
+        <li>Atelier équipé (industriels, niv.2) — capital 331,8 k Ø, ROI 1,98 %</li>
+        <li>Atelier high-tech (industriels, niv.3) — capital 363,7 k Ø, ROI 3,33 %</li>
+      </ul>
+    </div>
+
+    <div class="callout neutral">
+      <strong>📊 Mouvements notables cette semaine.</strong>
+      Centre de recherche régional : <span class="dn">−20,0 %</span> (18,21 G → 14,56 G) •
+      Centre de recherche national : <span class="up">+16,3 %</span> (35,08 G → 40,79 G) •
+      Entrepôt utilisable : <span class="dn">−20,0 %</span> •
+      500m² de bureaux tout équipés : <span class="up">+16,3 %</span> •
+      Technopôle national : <span class="dn">−20,0 %</span> •
+      Technopôle international : <span class="up">+16,3 %</span> •
+      Technopôle palacium désaffecté : <span class="dn">−20,0 %</span> •
+      Technopôle palacium régional : <span class="up">+16,3 %</span>.
+    </div>
+
+    <div class="callout">
+      <strong>⚠️ Technopôle — bas du classement inchangé.</strong> Technopôle millenium régional (0,76 %), titanium national (0,77 %), palacium national (0,80 %). Aucun changement depuis 6 semaines.
+    </div>
+  </div>
+
+  <!-- PERSONNEL -->
+  <div class="section">
+    <div class="section-head"><span class="icon">🏠</span><h2>Secteur Personnel — Vue d'ensemble</h2></div>
+
+    <table>
+      <tr><th>Secteur</th><th class="num">ROI moyen</th><th class="num">vs éd. 5</th></tr>
+      <tr><td>Complexe résidentiel</td><td class="num hl">2,71 %</td><td class="num up">+0,01</td></tr>
+      <tr><td>Appartement</td><td class="num">1,98 %</td><td class="num">≈</td></tr>
+      <tr><td>Chambre</td><td class="num">1,80 %</td><td class="num">≈</td></tr>
+      <tr><td>Maison</td><td class="num">1,86 %</td><td class="num dn">−0,02</td></tr>
+    </table>
+
+    <p class="analysis">Top 5 perso <strong>inchangé pour la 4e semaine consécutive</strong> — les complexes palacium et titanium dominent sans partage depuis l'édition #2. La stabilité de ce classement confirme leur statut de valeur fondamentale du marché M8.</p>
+
+    <div class="subblock top">
+      <div class="subblock-title">🏆 Top 5 ROI nets/jour — 4e semaine consécutive sans changement</div>
+      <ul>
+        <li>Complexe résidentiel palacium tout confort — ROI <span class="val">6,62 %</span></li>
+        <li>Complexe résidentiel palacium habitable — ROI <span class="val">5,64 %</span></li>
+        <li>Complexe résidentiel palacium luxueux — ROI <span class="val">5,18 %</span></li>
+        <li>Complexe résidentiel titanium habitable — ROI <span class="val">3,53 %</span></li>
+        <li>Complexe résidentiel titanium tout confort — ROI <span class="val">3,35 %</span></li>
+      </ul>
+    </div>
+
+    <div class="subblock">
+      <div class="subblock-title">💰 Meilleur rendement sur capital réellement construit</div>
+      <ul>
+        <li>T2 simple luxueux — capital 24,5 k Ø, rendement <span class="val">5,68 %</span></li>
+        <li>T2 simple habitable — capital 16,3 k Ø, rendement <span class="val">5,60 %</span></li>
+        <li>Complexe résidentiel palacium luxueux — capital 3 512,31 T Ø, rendement <span class="val">4,24 %</span></li>
+        <li>Complexe résidentiel palacium habitable — capital 2 300,12 T Ø, rendement <span class="val">3,97 %</span></li>
+      </ul>
+    </div>
+
+    <div class="subblock entry">
+      <div class="subblock-title">🚪 Portes d'entrée accessibles</div>
+      <ul>
+        <li>Chambre seule tout confort — capital 10,6 k Ø, ROI 1,51 %</li>
+        <li>Chambre seule habitable — capital 13,6 k Ø, ROI 1,45 %</li>
+        <li>T2 simple habitable — capital 16,3 k Ø, ROI 1,71 %</li>
+      </ul>
+    </div>
+
+    <div class="callout neutral">
+      <strong>📊 Mouvements notables — Complexes et maisons.</strong>
+      Triple complexe géant non-aménagé : <span class="dn">−19,0 %</span> •
+      Quadruple complexe géant non-aménagé : <span class="dn">−19,0 %</span> •
+      Complexe millenium luxueux : <span class="dn">−19,0 %</span> •
+      Grande maison équipée : <span class="dn">−19,0 %</span> •
+      Triple complexe géant tout confort : <span class="up">+12,3 %</span> •
+      Complexe titanium non-aménagé : <span class="up">+12,3 %</span> •
+      Grande maison habitable : <span class="up">+12,3 %</span> •
+      Maison moyenne luxueuse : <span class="up">+12,3 %</span>.
+    </div>
+  </div>
+
+  <!-- TERRAINS -->
+  <div class="section">
+    <div class="section-head"><span class="icon">🌍</span><h2>Terrains</h2></div>
+    <p class="analysis">Stable pour la 4e semaine consécutive — variations inférieures à 0,1 % sur tous les terrains.</p>
+    <table>
+      <tr><th>Terrain</th><th class="num">Valeur</th><th class="num">vs éd. 5</th><th class="num">Coût fixe/j</th></tr>
+      <tr><td>Petit terrain</td><td class="num">54,9 k Ø</td><td class="num">≈</td><td class="num">110 Ø</td></tr>
+      <tr><td>Terrain moyen</td><td class="num">50,1 k Ø</td><td class="num">≈</td><td class="num">160 Ø</td></tr>
+      <tr><td>Grand terrain</td><td class="num">56,1 k Ø</td><td class="num">≈</td><td class="num">318 Ø</td></tr>
+      <tr><td>Parc</td><td class="num">74,3 k Ø</td><td class="num dn">−0,1 %</td><td class="num">558 Ø</td></tr>
+      <tr><td>Grand parc</td><td class="num">97,8 k Ø</td><td class="num dn">−0,5 %</td><td class="num">730 Ø</td></tr>
+    </table>
+    <div class="callout neutral">
+      <strong>6e semaine consécutive.</strong> Le <strong>Terrain moyen</strong> reste moins cher que le <strong>Petit terrain</strong> (50,1 k Ø contre 54,9 k Ø). Cette anomalie de prix s'installe comme une constante durable du marché M8.
+    </div>
+  </div>
+
+  <!-- USINES -->
+  <div class="section">
+    <div class="section-head"><span class="icon">🏭</span><h2>Matières premières et usines</h2></div>
+    <p class="analysis">Les prix des matériaux se stabilisent cette semaine — variations quasi nulles (entre −0,07 % et +0,09 %) après 5 semaines de hausse continue. La tendance haussière marque une pause, sans inversion notable.</p>
+
+    <table>
+      <tr><th>Matière</th><th>Usine</th><th class="num">Net/j</th><th class="num">Rendement</th><th class="num">vs éd. 5</th></tr>
+      <tr><td>Bois</td><td>Petite scierie</td><td class="num" style="color:var(--green)">+3,8 k Ø</td><td class="num" style="color:var(--green)">+3,13 %</td><td class="num up">▲</td></tr>
+      <tr><td>Brique</td><td>Fabrique de briques</td><td class="num" style="color:var(--green)">+8,5 k Ø</td><td class="num" style="color:var(--green)">+2,22 %</td><td class="num up">▲</td></tr>
+      <tr><td>Bois</td><td>Scierie avancée</td><td class="num" style="color:var(--green)">+23,6 k Ø</td><td class="num" style="color:var(--green)">+1,44 %</td><td class="num up">▲</td></tr>
+      <tr><td>Béton</td><td>Centrale à béton avancée</td><td class="num" style="color:var(--green)">+86,9 k Ø</td><td class="num" style="color:var(--green)">+1,36 %</td><td class="num up">▲</td></tr>
+      <tr><td>Brique</td><td>Presse à briques</td><td class="num" style="color:var(--green)">+12,8 k Ø</td><td class="num" style="color:var(--green)">+0,25 %</td><td class="num up">▲</td></tr>
+      <tr><td>Béton</td><td>Centrale à béton</td><td class="num" style="color:var(--red)">−8,9 k Ø</td><td class="num" style="color:var(--red)">−1,40 %</td><td class="num up">▲ (perte réduite)</td></tr>
+      <tr><td>Verre</td><td>Petite usine de verre</td><td class="num" style="color:var(--red)">−12,1 k Ø</td><td class="num" style="color:var(--red)">−3,73 %</td><td class="num up">▲ (perte réduite)</td></tr>
+      <tr><td>Verre</td><td>Usine de verre moyenne</td><td class="num" style="color:var(--red)">−74,0 k Ø</td><td class="num" style="color:var(--red)">−2,14 %</td><td class="num up">▲ (perte réduite)</td></tr>
+      <tr><td>Acier</td><td>Acierie</td><td class="num" style="color:var(--red)">−112,9 k Ø</td><td class="num" style="color:var(--red)">−4,62 %</td><td class="num up">▲ (perte réduite)</td></tr>
+      <tr><td>Acier</td><td>Acierie avancée</td><td class="num" style="color:var(--red)">−832,0 k Ø</td><td class="num" style="color:var(--red)">−2,93 %</td><td class="num up">▲ (perte réduite)</td></tr>
+    </table>
+
+    <div class="callout">
+      <strong>⚠️ Acier et Verre — 6e semaine négative.</strong> La pause dans la hausse des prix de marché cette semaine ne change rien au fond : les filières Acier et Verre restent en perte nette à la vente directe. Aucun signal de retournement à court terme.
+    </div>
+    <p class="analysis">La <strong>Fabrique de briques</strong> atteint 2,22 % cette semaine — progression constante depuis l'édition #1 (1,72 %). La <strong>Presse à briques</strong> confirme sa rentabilité à 0,25 %.</p>
+    <p class="note">Ce calcul suppose une vente de la production au prix de marché affiché ; il ne s'applique pas si la matière est consommée en interne pour vos propres constructions.</p>
+  </div>
+
+  <!-- NOUVEAUX JOUEURS -->
+  <div class="section">
+    <div class="section-head"><span class="icon">📌</span><h2>Pour les nouveaux joueurs</h2></div>
+    <p class="analysis">Cette semaine illustre un phénomène récurrent depuis 6 éditions : les <strong>Centres de recherche alternent entre de fortes baisses et de fortes hausses</strong> de valeur d'une semaine à l'autre, pendant que leurs loyers restent stables. Ce type de bien offre donc des fenêtres d'opportunité régulières — acheter quand la valeur est basse, profiter d'un ROI élevé jusqu'à la prochaine réévaluation.</p>
+    <p class="analysis">Pour approfondir les concepts de ROI utilisés dans ce journal, consultez le <strong>Guide du lecteur</strong> disponible sur notre page GitHub.</p>
+  </div>
+
+  <div class="methodology">
+    <h2>Note de méthodologie</h2>
+    <p>Export unique pris après le reset quotidien de 3h00 (03h10:17 cette semaine). Comparaison semaine sur semaine basée sur les données de l'édition #5 (24 juin 2026). Le record de 5,88 % surpasse le précédent record de 4,95 % établi la semaine dernière par le Centre de recherche national.</p>
+  </div>
+
+  <div class="colophon">
+    <div class="rule"></div>
+    Données du 25 juin 2026 (export post-reset 03h10), basées sur les exports CSV officiels du jeu<br>
+    (bâtiments personnels, bâtiments entreprise, terrains, matériaux, usines)<br>
+    Tous les calculs sont reproductibles à partir de ces exports.
+  </div>
+
+</div>
+</body>
+</html>
