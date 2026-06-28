@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Journal du Marché — Empire Immo M8 — Édition 9</title>
+<style>
+  :root{
+    --bg:#15130f; --paper:#1c1916; --paper-raised:#221e19;
+    --ink:#e8e0d0; --ink-dim:#a89a82; --ink-faint:#756a58;
+    --rule:#3a342a; --gold:#c9a35a; --green:#7a9b6e; --red:#b8614f;
+    --orange:#c97a2a;
+    --serif:Georgia,'Times New Roman',serif; --sans:'Segoe UI',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);line-height:1.55;padding:32px 16px;}
+  .sheet{max-width:760px;margin:0 auto;background:var(--paper);border:1px solid var(--rule);}
+  .masthead{padding:28px 32px 18px;border-bottom:3px double var(--gold);text-align:center;}
+  .kicker{font-family:var(--sans);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin:0 0 10px;}
+  .masthead h1{font-size:36px;margin:0;letter-spacing:1px;font-weight:700;}
+  .masthead .sub{font-family:var(--sans);font-size:12px;color:var(--ink-dim);margin-top:10px;display:flex;justify-content:center;gap:18px;flex-wrap:wrap;}
+  .masthead .sub span{white-space:nowrap;}
+  .edito{padding:26px 32px 8px;border-bottom:1px solid var(--rule);}
+  .edito h2{font-family:var(--sans);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin:0 0 14px;}
+  .edito p{font-size:16px;margin:0 0 16px;color:var(--ink);}
+  .edito p:first-of-type::first-letter{font-size:46px;float:left;line-height:0.8;padding:6px 8px 0 0;color:var(--gold);font-weight:700;}
+  .section{padding:26px 32px;border-bottom:1px solid var(--rule);}
+  .section-head{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;}
+  .section-head .icon{font-size:20px;}
+  .section-head h2{font-size:21px;margin:0;}
+  table{width:100%;border-collapse:collapse;margin:14px 0 18px;font-family:var(--sans);font-size:13px;}
+  th{text-align:left;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-faint);font-weight:600;padding:6px 10px;border-bottom:1px solid var(--rule);}
+  td{padding:8px 10px;border-bottom:1px solid var(--rule);color:var(--ink-dim);}
+  tr:last-child td{border-bottom:none;}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;}
+  .hl{color:var(--gold);font-weight:700;}
+  .up{color:var(--green);}
+  .dn{color:var(--red);}
+  .analysis{font-size:15px;margin:0 0 16px;}
+  .analysis strong{color:var(--gold);}
+  .subblock{margin:18px 0;}
+  .subblock-title{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:0.5px;margin-bottom:9px;}
+  .subblock ul{list-style:none;margin:0;padding:0;font-size:14.5px;}
+  .subblock li{padding:7px 0 7px 16px;border-left:2px solid var(--rule);margin-bottom:6px;color:var(--ink-dim);}
+  .subblock li .val{color:var(--gold);font-weight:700;}
+  .subblock li .chg-up{color:var(--green);font-size:12px;}
+  .subblock li .chg-dn{color:var(--red);font-size:12px;}
+  .subblock.top li{border-left-color:var(--green);}
+  .subblock.entry li{border-left-color:var(--ink-faint);}
+  .callout{background:var(--paper-raised);border-left:3px solid var(--red);padding:14px 18px;margin:18px 0;font-size:14.5px;color:var(--ink-dim);}
+  .callout.good{border-left-color:var(--green);}
+  .callout.neutral{border-left-color:var(--gold);}
+  .callout.seisme{border-left-color:var(--orange);background:#1e1508;}
+  .callout strong{color:var(--ink);}
+  .seisme-banner{background:#1e1508;border:2px solid var(--orange);padding:18px 24px;margin:0 0 0;text-align:center;}
+  .seisme-banner .titre{font-size:22px;font-weight:700;color:var(--orange);margin-bottom:8px;}
+  .seisme-banner .sub{font-family:var(--sans);font-size:13px;color:var(--ink-dim);}
+  .note{font-family:var(--sans);font-size:12.5px;color:var(--ink-faint);font-style:italic;margin-top:10px;}
+  .methodology{padding:26px 32px;background:var(--paper-raised);}
+  .methodology h2{font-family:var(--sans);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--ink-faint);margin:0 0 14px;}
+  .methodology p{font-size:13.5px;color:var(--ink-dim);margin:0 0 12px;}
+  .colophon{padding:22px 32px 30px;text-align:center;font-family:var(--sans);font-size:11px;color:var(--ink-faint);}
+  .colophon .rule{width:60px;height:1px;background:var(--gold);margin:0 auto 16px;}
+  @media(max-width:600px){
+    .masthead h1{font-size:26px;} .section,.edito,.methodology{padding:20px 18px;}
+    table{font-size:11.5px;} th,td{padding:6px 6px;}
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <div class="masthead">
+    <p class="kicker">Édition Hebdomadaire — Données de marché</p>
+    <h1>Journal du Marché</h1>
+    <div class="sub">
+      <span>Empire Immo · Monde 8</span>
+      <span>Édition N°9</span>
+      <span>28 juin 2026</span>
+    </div>
+  </div>
+
+  <!-- BANNIÈRE SÉISME -->
+  <div class="seisme-banner">
+    <div class="titre">🌍 ALERTE — Tremblement de terre sur Monde 8</div>
+    <div class="sub">Un séisme a frappé toutes les villes de M8 dans la nuit du 27 au 28 juin. Les coûts de réparation sont inclus dans cette édition.</div>
+  </div>
+
+  <div class="edito">
+    <h2>L'édito — La nuit où M8 a tremblé</h2>
+    <p>Ce reset est différent des autres. Dans la nuit du 27 au 28 juin, un tremblement de terre a frappé l'ensemble des villes de Monde 8 — après les inondations qui avaient déjà secoué la région. Le marché immobilier absorbe le choc cette semaine avec une relative stabilité des ROI, mais les <strong>coûts de réparation</strong> révèlent l'ampleur réelle des dégâts : les Technopôle palacium international affichent une facture de réparation de <strong>15 664 T Ø</strong> — un chiffre qui donne le vertige même à l'échelle de M8.</p>
+    <p>Bonne nouvelle pour le reste du marché : les classements de ROI restent quasi identiques à l'édition précédente. Ni le séisme ni les mouvements de valeur habituels n'ont perturbé l'ordre établi cette semaine — 16 biens sur 204 en mouvement, dans la norme. Les matières premières poursuivent leur hausse pour la 8e semaine consécutive.</p>
+  </div>
+
+  <!-- SÉISME -->
+  <div class="section">
+    <div class="section-head"><span class="icon">🌍</span><h2>Impact du séisme — Coûts de réparation</h2></div>
+    <p class="analysis">Les données CSV révèlent les coûts de réparation par bien suite au séisme. Les biens les plus touchés sont sans surprise les plus grands et les plus valorisés — les <strong>Technopôle palacium</strong> et <strong>titanium</strong> arrivent en tête avec des factures astronomiques.</p>
+
+    <table>
+      <tr><th>Bien</th><th class="num">Coût de réparation</th></tr>
+      <tr><td>Technopôle palacium international</td><td class="num" style="color:var(--orange)">15 664,79 T Ø</td></tr>
+      <tr><td>Technopôle palacium national</td><td class="num" style="color:var(--orange)">5 852,55 T Ø</td></tr>
+      <tr><td>Technopôle palacium régional</td><td class="num" style="color:var(--orange)">1 852,44 T Ø</td></tr>
+      <tr><td>Technopôle palacium désaffecté</td><td class="num">570,47 T Ø</td></tr>
+      <tr><td>Technopôle titanium international</td><td class="num">543,07 T Ø</td></tr>
+      <tr><td>Technopôle titanium national</td><td class="num">204,26 T Ø</td></tr>
+      <tr><td>Technopôle titanium régional</td><td class="num">65,05 T Ø</td></tr>
+      <tr><td>Technopôle titanium désaffecté</td><td class="num">18,73 T Ø</td></tr>
+    </table>
+
+    <p class="analysis" style="margin-top:-8px;">Côté personnel, les complexes palacium sont aussi touchés :</p>
+    <table>
+      <tr><th>Bien personnel</th><th class="num">Coût de réparation</th></tr>
+      <tr><td>Complexe résidentiel palacium luxueux</td><td class="num" style="color:var(--orange)">1 156,84 T Ø</td></tr>
+      <tr><td>Complexe résidentiel palacium tout confort</td><td class="num">786,96 T Ø</td></tr>
+      <tr><td>Complexe résidentiel palacium habitable</td><td class="num">513,52 T Ø</td></tr>
+      <tr><td>Complexe résidentiel titanium luxueux</td><td class="num">1,95 T Ø</td></tr>
+    </table>
+
+    <div class="callout seisme">
+      <strong>⚠️ À noter.</strong> Ces coûts de réparation s'ajoutent aux charges habituelles — ils ne sont pas récurrents, mais doivent être absorbés immédiatement. Les propriétaires de Technopôle palacium international font face à la facture de réparation la plus élevée jamais observée dans ce journal. Les biens de niveau inférieur (millenium, bureaux, commerciaux, résidentiel standard) ne semblent pas avoir été touchés significativement par le séisme selon les données disponibles.
+    </div>
+  </div>
+
+  <!-- ENTREPRISE -->
+  <div class="section">
+    <div class="section-head"><span class="icon">🏢</span><h2>Secteur Entreprise — Vue d'ensemble</h2></div>
+    <table>
+      <tr><th>Secteur</th><th class="num">ROI moyen</th><th class="num">vs éd. 8</th></tr>
+      <tr><td>Commerciaux</td><td class="num hl">3,15 %</td><td class="num">≈ (6e semaine stable)</td></tr>
+      <tr><td>Transport</td><td class="num">3,01 %</td><td class="num up">+0,01</td></tr>
+      <tr><td>Industriels</td><td class="num">2,95 %</td><td class="num dn">−0,03</td></tr>
+      <tr><td>Bureaux</td><td class="num">2,72 %</td><td class="num">≈</td></tr>
+      <tr><td>Zones</td><td class="num">2,52 %</td><td class="num dn">−0,03</td></tr>
+    </table>
+
+    <p class="analysis"><strong>Commerciaux</strong> à 3,15 % pour la 6e semaine consécutive — un record de stabilité dans ce journal. Le Top 5 entreprise est identique à l'édition précédente, aucun changement de ROI sur les biens leaders.</p>
+
+    <div class="subblock top">
+      <div class="subblock-title">🏆 Top 5 ROI nets/jour — entreprise (identique à éd. 8)</div>
+      <ul>
+        <li>Centre de recherche régional — 18,03 G Ø, ROI <span class="val">4,75 %</span></li>
+        <li>Plate-forme pétrolière améliorée — 30,59 G Ø, ROI <span class="val">4,59 %</span></li>
+        <li>Plate-forme pétrolière aménagée — 15,06 G Ø, ROI <span class="val">4,44 %</span></li>
+        <li>Plate-forme pétrolière high-tech — 52,96 G Ø, ROI <span class="val">4,26 %</span></li>
+        <li>Centre de recherche national — 40,80 G Ø, ROI <span class="val">4,26 %</span></li>
+      </ul>
+    </div>
+
+    <div class="subblock">
+      <div class="subblock-title">💰 Meilleur rendement sur capital réellement construit</div>
+      <ul>
+        <li>Plate-forme pétrolière high-tech — capital 74,52 G Ø, rendement <span class="val">3,03 %</span></li>
+        <li>Centre de recherche international — capital 107,48 G Ø, rendement <span class="val">2,67 %</span></li>
+        <li>Usine high-tech — capital 15,03 M Ø, rendement <span class="val">2,27 %</span></li>
+        <li>Entrepôt intégralement optimisé — capital 916,3 k Ø, rendement <span class="val">2,25 %</span></li>
+      </ul>
+    </div>
+
+    <div class="subblock entry">
+      <div class="subblock-title">🚪 Portes d'entrée accessibles</div>
+      <ul>
+        <li>Atelier utilisable (industriels, niv.1) — capital 222,3 k Ø, ROI 2,19 %</li>
+        <li>Atelier équipé (industriels, niv.2) — capital 331,3 k Ø, ROI 1,98 %</li>
+        <li>Atelier high-tech (industriels, niv.3) — capital 363,1 k Ø, ROI 3,33 %</li>
+      </ul>
+    </div>
+
+    <div class="callout neutral">
+      <strong>📊 Mouvements notables.</strong>
+      Centre de recherche international : <span class="up">+16,2 %</span> (63,38 G → 73,68 G) •
+      Technopôle international : <span class="up">+16,2 %</span> •
+      Technopôle millenium régional : <span class="up">+16,2 %</span> •
+      Atelier équipé : <span class="up">+16,2 %</span> •
+      Grand local vide : <span class="dn">−5,0 %</span> •
+      Aéroport avec 3 pistes : <span class="dn">−5,0 %</span> •
+      Zone aérospatiale internationale : <span class="dn">−5,0 %</span> •
+      Technopôle palacium désaffecté : <span class="dn">−5,0 %</span>.
+    </div>
+
+    <div class="callout">
+      <strong>⚠️ Technopôle — bas du classement.</strong> Technopôle millenium régional (0,76 %), titanium national (0,76 %), palacium national (0,80 %) — 9e semaine consécutive sans changement.
+    </div>
+  </div>
+
+  <!-- PERSONNEL -->
+  <div class="section">
+    <div class="section-head"><span class="icon">🏠</span><h2>Secteur Personnel — Vue d'ensemble</h2></div>
+    <table>
+      <tr><th>Secteur</th><th class="num">ROI moyen</th><th class="num">vs éd. 8</th></tr>
+      <tr><td>Complexe résidentiel</td><td class="num hl">2,72 %</td><td class="num">≈</td></tr>
+      <tr><td>Appartement</td><td class="num">1,98 %</td><td class="num">≈</td></tr>
+      <tr><td>Maison</td><td class="num">1,86 %</td><td class="num up">+0,05</td></tr>
+      <tr><td>Chambre</td><td class="num">1,80 %</td><td class="num">≈</td></tr>
+    </table>
+
+    <p class="analysis">Le Top 5 perso retrouve sa composition d'avant l'édition #8 — le <strong>Complexe résidentiel millenium habitable</strong> recule (+17,6 % de valeur cette semaine) et le <strong>titanium habitable</strong> reprend sa place au #4.</p>
+
+    <div class="subblock top">
+      <div class="subblock-title">🏆 Top 5 ROI nets/jour — personnel</div>
+      <ul>
+        <li>Complexe résidentiel palacium tout confort — ROI <span class="val">6,62 %</span></li>
+        <li>Complexe résidentiel palacium habitable — ROI <span class="val">5,64 %</span></li>
+        <li>Complexe résidentiel palacium luxueux — ROI <span class="val">5,18 %</span></li>
+        <li>Complexe résidentiel titanium habitable — ROI <span class="val">3,53 %</span> <span class="chg-up">(▲ reprend le #4)</span></li>
+        <li>Complexe résidentiel titanium tout confort — ROI <span class="val">3,35 %</span></li>
+      </ul>
+    </div>
+
+    <div class="subblock">
+      <div class="subblock-title">💰 Meilleur rendement sur capital réellement construit</div>
+      <ul>
+        <li>T2 simple luxueux — capital 24,5 k Ø, rendement <span class="val">5,69 %</span></li>
+        <li>T2 simple habitable — capital 16,3 k Ø, rendement <span class="val">5,62 %</span></li>
+        <li>Complexe résidentiel palacium luxueux — capital 3 507,13 T Ø, rendement <span class="val">4,25 %</span></li>
+        <li>Complexe résidentiel palacium habitable — capital 2 295,87 T Ø, rendement <span class="val">3,98 %</span></li>
+      </ul>
+    </div>
+
+    <div class="subblock entry">
+      <div class="subblock-title">🚪 Portes d'entrée accessibles</div>
+      <ul>
+        <li>Chambre seule tout confort — capital 10,6 k Ø, ROI 1,51 %</li>
+        <li>Chambre seule habitable — capital 13,6 k Ø, ROI 1,45 %</li>
+        <li>T2 simple habitable — capital 16,3 k Ø, ROI 1,71 %</li>
+      </ul>
+    </div>
+
+    <div class="callout neutral">
+      <strong>📊 Mouvements notables.</strong>
+      Complexe millenium habitable : <span class="up">+17,6 %</span> (28,73 G → 33,78 G) •
+      Triple complexe géant luxueux : <span class="up">+17,6 %</span> •
+      Res. 12 chambres vides : <span class="up">+17,6 %</span> •
+      Quadruple complexe géant luxueux : <span class="dn">−18,0 %</span> •
+      Complexe millenium tout confort : <span class="dn">−18,0 %</span> •
+      Petite maison équipée : <span class="dn">−18,0 %</span>.
+    </div>
+  </div>
+
+  <!-- TERRAINS -->
+  <div class="section">
+    <div class="section-head"><span class="icon">🌍</span><h2>Terrains</h2></div>
+    <p class="analysis">Stable — aucun impact notable du séisme sur les valeurs des terrains.</p>
+    <table>
+      <tr><th>Terrain</th><th class="num">Valeur</th><th class="num">vs éd. 8</th><th class="num">Coût fixe/j</th></tr>
+      <tr><td>Petit terrain</td><td class="num">54,9 k Ø</td><td class="num">≈</td><td class="num">110 Ø</td></tr>
+      <tr><td>Terrain moyen</td><td class="num">50,1 k Ø</td><td class="num">≈</td><td class="num">160 Ø</td></tr>
+      <tr><td>Grand terrain</td><td class="num">56,1 k Ø</td><td class="num">≈</td><td class="num">318 Ø</td></tr>
+      <tr><td>Parc</td><td class="num">74,4 k Ø</td><td class="num">≈</td><td class="num">558 Ø</td></tr>
+      <tr><td>Grand parc</td><td class="num">96,9 k Ø</td><td class="num">≈</td><td class="num">730 Ø</td></tr>
+    </table>
+    <div class="callout neutral">
+      <strong>9e semaine consécutive.</strong> Le <strong>Terrain moyen</strong> reste moins cher que le <strong>Petit terrain</strong> (50,1 k Ø contre 54,9 k Ø).
+    </div>
+  </div>
+
+  <!-- USINES -->
+  <div class="section">
+    <div class="section-head"><span class="icon">🏭</span><h2>Matières premières et usines</h2></div>
+    <p class="analysis">Hausse régulière pour la <strong>8e semaine consécutive</strong> (+0,07 à +0,14 %). Cumul depuis l'édition #1 : Béton +1,7 %, Acier +1,0 %, Bois +1,5 %, Brique +1,2 %, Verre +1,3 %. La Fabrique de briques atteint 2,43 % — nouveau sommet.</p>
+
+    <table>
+      <tr><th>Matière</th><th>Usine</th><th class="num">Net/j</th><th class="num">Rendement</th><th class="num">vs éd. 8</th></tr>
+      <tr><td>Bois</td><td>Petite scierie</td><td class="num" style="color:var(--green)">+3,9 k Ø</td><td class="num" style="color:var(--green)">+3,23 %</td><td class="num up">▲</td></tr>
+      <tr><td>Brique</td><td>Fabrique de briques</td><td class="num" style="color:var(--green)">+9,3 k Ø</td><td class="num" style="color:var(--green)">+2,43 %</td><td class="num up">▲ nouveau sommet</td></tr>
+      <tr><td>Bois</td><td>Scierie avancée</td><td class="num" style="color:var(--green)">+24,9 k Ø</td><td class="num" style="color:var(--green)">+1,52 %</td><td class="num up">▲</td></tr>
+      <tr><td>Béton</td><td>Centrale à béton avancée</td><td class="num" style="color:var(--green)">+91,6 k Ø</td><td class="num" style="color:var(--green)">+1,44 %</td><td class="num up">▲</td></tr>
+      <tr><td>Brique</td><td>Presse à briques</td><td class="num" style="color:var(--green)">+18,4 k Ø</td><td class="num" style="color:var(--green)">+0,36 %</td><td class="num up">▲</td></tr>
+      <tr><td>Béton</td><td>Centrale à béton</td><td class="num" style="color:var(--red)">−8,3 k Ø</td><td class="num" style="color:var(--red)">−1,30 %</td><td class="num up">▲ (perte réduite)</td></tr>
+      <tr><td>Verre</td><td>Petite usine de verre</td><td class="num" style="color:var(--red)">−11,8 k Ø</td><td class="num" style="color:var(--red)">−3,63 %</td><td class="num up">▲ (perte réduite)</td></tr>
+      <tr><td>Verre</td><td>Usine de verre moyenne</td><td class="num" style="color:var(--red)">−71,0 k Ø</td><td class="num" style="color:var(--red)">−2,05 %</td><td class="num up">▲ (perte réduite)</td></tr>
+      <tr><td>Acier</td><td>Acierie</td><td class="num" style="color:var(--red)">−111,7 k Ø</td><td class="num" style="color:var(--red)">−4,57 %</td><td class="num up">▲ (perte réduite)</td></tr>
+      <tr><td>Acier</td><td>Acierie avancée</td><td class="num" style="color:var(--red)">−821,0 k Ø</td><td class="num" style="color:var(--red)">−2,90 %</td><td class="num up">▲ (perte réduite)</td></tr>
+    </table>
+
+    <div class="callout">
+      <strong>⚠️ Acier et Verre — 9e semaine négative.</strong> La progression des prix continue mais reste insuffisante. La Centrale à béton (−1,30 %) se rapproche dangereusement de l'équilibre — à surveiller la semaine prochaine.
+    </div>
+    <p class="note">Ce calcul suppose une vente de la production au prix de marché affiché ; il ne s'applique pas si la matière est consommée en interne.</p>
+  </div>
+
+  <!-- NOUVEAUX JOUEURS -->
+  <div class="section">
+    <div class="section-head"><span class="icon">📌</span><h2>Pour les nouveaux joueurs</h2></div>
+    <p class="analysis">Le séisme de cette nuit rappelle un principe fondamental : <strong>réparer ses biens dès que possible</strong>. Un bien endommagé génère des loyers réduits — chaque jour sans réparation, c'est un manque à gagner. Vérifiez l'état de vos biens dans "Mes propriétés" et consultez le coût de réparation avant de décider de l'ordre de priorité (réparez d'abord les biens qui génèrent le plus de loyer net).</p>
+  </div>
+
+  <div class="methodology">
+    <h2>Note de méthodologie</h2>
+    <p>Export pris après le reset de 3h00 (03h11:34 le 28 juin 2026). Premier reset post-séisme capturé dans ce journal. Les coûts de réparation sont tirés directement de la colonne "réparation" des exports CSV officiels — ils reflètent l'état des biens au moment de l'export.</p>
+  </div>
+
+  <div class="colophon">
+    <div class="rule"></div>
+    Données du 28 juin 2026 (export post-reset 03h11), basées sur les exports CSV officiels du jeu<br>
+    (bâtiments personnels, bâtiments entreprise, terrains, matériaux, usines)<br>
+    Tous les calculs sont reproductibles à partir de ces exports.
+  </div>
+
+</div>
+</body>
+</html>
