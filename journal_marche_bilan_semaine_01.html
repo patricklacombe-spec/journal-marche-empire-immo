@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Journal du Marché — Bilan Semaine #1</title>
+<style>
+  :root{
+    --bg:#15130f; --paper:#1c1916; --paper-raised:#221e19;
+    --ink:#e8e0d0; --ink-dim:#a89a82; --ink-faint:#756a58;
+    --rule:#3a342a; --gold:#c9a35a; --green:#7a9b6e; --red:#b8614f;
+    --orange:#c97a2a; --blue:#5a85c9;
+    --serif:Georgia,'Times New Roman',serif; --sans:'Segoe UI',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);line-height:1.55;padding:32px 16px;}
+  .sheet{max-width:760px;margin:0 auto;background:var(--paper);border:1px solid var(--rule);}
+  .masthead{padding:28px 32px 18px;border-bottom:3px double var(--gold);text-align:center;}
+  .kicker{font-family:var(--sans);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin:0 0 10px;}
+  .masthead h1{font-size:32px;margin:0;letter-spacing:1px;font-weight:700;}
+  .masthead .sub{font-family:var(--sans);font-size:12px;color:var(--ink-dim);margin-top:10px;display:flex;justify-content:center;gap:18px;flex-wrap:wrap;}
+  .edito{padding:26px 32px 8px;border-bottom:1px solid var(--rule);}
+  .edito h2{font-family:var(--sans);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin:0 0 14px;}
+  .edito p{font-size:16px;margin:0 0 16px;color:var(--ink);}
+  .edito p:first-of-type::first-letter{font-size:46px;float:left;line-height:0.8;padding:6px 8px 0 0;color:var(--gold);font-weight:700;}
+  .section{padding:26px 32px;border-bottom:1px solid var(--rule);}
+  .section-head{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;}
+  .section-head .icon{font-size:20px;}
+  .section-head h2{font-size:21px;margin:0;}
+  .analysis{font-size:15px;margin:0 0 16px;}
+  .analysis strong{color:var(--gold);}
+  table{width:100%;border-collapse:collapse;margin:14px 0 18px;font-family:var(--sans);font-size:13px;}
+  th{text-align:left;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-faint);font-weight:600;padding:6px 10px;border-bottom:1px solid var(--rule);}
+  td{padding:8px 10px;border-bottom:1px solid var(--rule);color:var(--ink-dim);}
+  tr:last-child td{border-bottom:none;}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;}
+  .hl{color:var(--gold);font-weight:700;}
+  .up{color:var(--green);}
+  .dn{color:var(--red);}
+  .callout{background:var(--paper-raised);border-left:3px solid var(--gold);padding:14px 18px;margin:18px 0;font-size:14.5px;color:var(--ink-dim);}
+  .callout.good{border-left-color:var(--green);}
+  .callout.warn{border-left-color:var(--red);}
+  .callout.event{border-left-color:var(--orange);background:#1e1508;}
+  .callout strong{color:var(--ink);}
+  .timeline{margin:18px 0;}
+  .timeline-item{display:flex;gap:16px;padding:12px 0;border-bottom:1px solid var(--rule);}
+  .timeline-item:last-child{border-bottom:none;}
+  .timeline-ed{font-family:var(--sans);font-size:11px;font-weight:700;color:var(--gold);min-width:50px;padding-top:2px;}
+  .timeline-date{font-family:var(--sans);font-size:11px;color:var(--ink-faint);min-width:80px;padding-top:2px;}
+  .timeline-body{flex:1;font-size:14px;color:var(--ink-dim);}
+  .timeline-body strong{color:var(--ink);}
+  .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0;}
+  .stat-item{background:var(--paper-raised);padding:14px 18px;border:1px solid var(--rule);}
+  .stat-item .sl{font-family:var(--sans);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:6px;}
+  .stat-item .sv{font-size:24px;font-weight:700;font-family:var(--serif);color:var(--gold);}
+  .stat-item .sd{font-family:var(--sans);font-size:12px;color:var(--ink-faint);margin-top:4px;}
+  .constante{display:flex;gap:10px;padding:10px 14px;background:var(--paper-raised);border-radius:3px;margin-bottom:8px;font-size:14px;}
+  .constante-icon{font-size:18px;flex-shrink:0;}
+  .constante-txt{color:var(--ink-dim);}
+  .constante-txt strong{color:var(--ink);}
+  .tendance{display:flex;gap:10px;padding:10px 14px;background:var(--paper-raised);border-radius:3px;margin-bottom:8px;font-size:14px;}
+  .tendance.hausse{border-left:3px solid var(--green);}
+  .tendance.baisse{border-left:3px solid var(--red);}
+  .tendance.stable{border-left:3px solid var(--gold);}
+  .tendance-txt{color:var(--ink-dim);}
+  .tendance-txt strong{color:var(--ink);}
+  .methodology{padding:26px 32px;background:var(--paper-raised);}
+  .methodology h2{font-family:var(--sans);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--ink-faint);margin:0 0 14px;}
+  .methodology p{font-size:13.5px;color:var(--ink-dim);margin:0 0 12px;}
+  .colophon{padding:22px 32px 30px;text-align:center;font-family:var(--sans);font-size:11px;color:var(--ink-faint);}
+  .colophon .rule{width:60px;height:1px;background:var(--gold);margin:0 auto 16px;}
+  @media(max-width:600px){
+    .masthead h1{font-size:24px;} .section,.edito,.methodology{padding:20px 18px;}
+    .stat-grid{grid-template-columns:1fr;} table{font-size:11.5px;} th,td{padding:6px 6px;}
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <div class="masthead">
+    <p class="kicker">Bilan hebdomadaire — Éditions #1 à #9</p>
+    <h1>Bilan Semaine #1 — Ce que le marché nous a appris</h1>
+    <div class="sub">
+      <span>Journal du Marché · Monde 8</span>
+      <span>19 juin → 28 juin 2026</span>
+    </div>
+  </div>
+
+  <div class="edito">
+    <h2>L'édito du bilan</h2>
+    <p>Neuf éditions. Neuf resets analysés. Neuf semaines de données qui, mises bout à bout, commencent à raconter une histoire cohérente sur le marché de Monde 8. Ce bilan n'est pas une édition de plus — c'est un regard en arrière pour dégager ce que les chiffres répétés semaine après semaine finissent par confirmer avec certitude. Les constantes. Les anomalies persistantes. Les surprises. Et l'événement imprévu qui a conclu cette première semaine de suivi de façon spectaculaire.</p>
+    <p>En une semaine, le Journal du Marché est passé de zéro à <strong>9 éditions publiées, plus de 130 lectures et 10 abonnés</strong> — avec une note moyenne de 5/5 sur l'ensemble des articles. Ce bilan est aussi l'occasion de remercier les lecteurs qui ont suivi le journal depuis le premier jour et contribué à lui donner sa crédibilité.</p>
+  </div>
+
+  <!-- CHIFFRES CLÉS -->
+  <div class="section">
+    <div class="section-head"><span class="icon">📊</span><h2>La semaine en chiffres</h2></div>
+    <div class="stat-grid">
+      <div class="stat-item"><div class="sl">Éditions publiées</div><div class="sv">9</div><div class="sd">+ 2 guides hors-série</div></div>
+      <div class="stat-item"><div class="sl">Record absolu de ROI</div><div class="sv">5,88 %</div><div class="sd">Centre de recherche régional — éd. #6</div></div>
+      <div class="stat-item"><div class="sl">Hausse matières premières</div><div class="sv">8 sem.</div><div class="sd">Tendance haussière continue sur tous les matériaux</div></div>
+      <div class="stat-item"><div class="sl">Facture séisme max</div><div class="sv">15 664 T</div><div class="sd">Technopôle palacium international — éd. #9</div></div>
+      <div class="stat-item"><div class="sl">Biens suivis</div><div class="sv">204</div><div class="sd">112 entreprise + 92 personnels</div></div>
+      <div class="stat-item"><div class="sl">Anomalie terrain</div><div class="sv">9 sem.</div><div class="sd">Terrain moyen < Petit terrain depuis l'éd. #1</div></div>
+    </div>
+  </div>
+
+  <!-- CHRONOLOGIE -->
+  <div class="section">
+    <div class="section-head"><span class="icon">📅</span><h2>Chronologie — Les faits marquants</h2></div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <span class="timeline-ed">Éd. #1</span>
+        <span class="timeline-date">19 juin</span>
+        <div class="timeline-body">Lancement du journal. Premier constat : <strong>Acier et Verre en perte nette</strong> à la vente directe. Anomalie terrain moyen < petit terrain documentée pour la première fois.</div>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-ed">Éd. #2</span>
+        <span class="timeline-date">21 juin</span>
+        <div class="timeline-body">Marché quasi stable. La <strong>Presse à briques</strong> repasse en territoire légèrement positif après plusieurs semaines négatives.</div>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-ed">Éd. #3</span>
+        <span class="timeline-date">22 juin</span>
+        <div class="timeline-body"><strong>204/204 biens en mouvement</strong> — le reset le plus actif de la semaine. Technopôle millenium international −16 %, titanium national +22 %. Premier signal fort de volatilité.</div>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-ed">Éd. #4</span>
+        <span class="timeline-date">23 juin</span>
+        <div class="timeline-body">Retour au calme — seulement 16 biens en mouvement. <strong>Technopôle millenium international +19 %</strong> (récupère une partie de la baisse).</div>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-ed">Éd. #5</span>
+        <span class="timeline-date">24 juin</span>
+        <div class="timeline-body"><strong>Centre de recherche national établit un premier record à 4,95 %</strong> suite à une baisse de valeur de −14 %. Première publication in-game du journal — 5/5 unanime en moins de 15 minutes.</div>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-ed">Éd. #6</span>
+        <span class="timeline-date">25 juin</span>
+        <div class="timeline-body"><strong>🏆 Record absolu du journal : Centre de recherche régional à 5,88 %</strong> — baisse de valeur de −20 %, loyer inchangé. Le ROI le plus élevé jamais documenté sur M8 dans ce journal.</div>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-ed">Éd. #7</span>
+        <span class="timeline-date">26 juin</span>
+        <div class="timeline-body">Le pendule revient — Centre de recherche régional remonte à +24 %, ROI redescend à 4,72 %. <strong>Pattern d'oscillation des Centres de recherche confirmé</strong> sur 7 semaines de données.</div>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-ed">Éd. #8</span>
+        <span class="timeline-date">27 juin</span>
+        <div class="timeline-body"><strong>Première modification du Top 5 perso depuis l'édition #2</strong> — le Complexe millenium habitable déplace le titanium habitable au #4 suite à une baisse de −15 %.</div>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-ed">Éd. #9</span>
+        <span class="timeline-date">28 juin</span>
+        <div class="timeline-body"><strong>🌍 Tremblement de terre</strong> sur l'ensemble de M8. Facture de réparation record : 15 664 T Ø pour le Technopôle palacium international. Le marché absorbe le choc sans perturbation des ROI.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONSTANTES CONFIRMÉES -->
+  <div class="section">
+    <div class="section-head"><span class="icon">🔒</span><h2>Les constantes — Ce qui ne bouge pas</h2></div>
+    <p class="analysis">Neuf semaines de données permettent d'identifier ce qui est structurellement stable sur M8 — indépendamment des fluctuations hebdomadaires.</p>
+
+    <div class="constante"><span class="constante-icon">🏆</span><div class="constante-txt"><strong>Top 3 perso inchangé depuis l'édition #2</strong> — Complexes palacium (6,62 %, 5,64 %, 5,18 %). Six semaines consécutives sans modification avant l'édition #8. Ces biens sont les valeurs fondamentales du résidentiel M8.</div></div>
+    <div class="constante"><span class="constante-icon">🏢</span><div class="constante-txt"><strong>Commerciaux en tête des secteurs depuis 6 semaines</strong> — ROI moyen stable à 3,15 %. Pas une seule variation depuis l'édition #4. Le secteur le plus régulier et le plus prévisible du marché.</div></div>
+    <div class="constante"><span class="constante-icon">⛽</span><div class="constante-txt"><strong>Zones pétrolières et Centres de recherche dominent le Top 5 entreprise</strong> — Présents dans le classement à chaque édition depuis le lancement. Les Plates-formes pétrolières sont les biens entreprise les plus stables du journal.</div></div>
+    <div class="constante"><span class="constante-icon">📉</span><div class="constante-txt"><strong>Technopôle toujours sous 1 % de ROI</strong> — Neuf semaines sans exception. Les Technopôle millenium régional, titanium national et palacium national n'ont jamais quitté le bas du classement depuis l'édition #1.</div></div>
+    <div class="constante"><span class="constante-icon">🌍</span><div class="constante-txt"><strong>Terrain moyen moins cher que Petit terrain depuis 9 semaines</strong> — 50,1 k Ø contre 54,9 k Ø. Cette anomalie de prix s'est installée comme une constante durable du marché M8, pas une erreur passagère.</div></div>
+    <div class="constante"><span class="constante-icon">❌</span><div class="constante-txt"><strong>Acier et Verre en perte nette à la vente — 9 semaines consécutives</strong>. L'Acierie avancée a perdu entre 821 k Ø et 869 k Ø par jour chaque semaine. Aucune exception, aucun signal de retournement à court terme.</div></div>
+    <div class="constante"><span class="constante-icon">🪵</span><div class="constante-txt"><strong>Bois : seule filière 100 % rentable à chaque édition</strong> — Petite scierie et Scierie avancée ont été positives toutes les semaines sans exception depuis l'édition #1.</div></div>
+  </div>
+
+  <!-- TENDANCES -->
+  <div class="section">
+    <div class="section-head"><span class="icon">📈</span><h2>Les tendances — Ce qui évolue lentement</h2></div>
+
+    <div class="tendance hausse">
+      <div class="tendance-txt"><strong>Matières premières en hausse continue depuis 8 semaines.</strong> Tous les matériaux ont progressé régulièrement (+0,07 à +0,30 %/semaine selon les éd.). Cumul : Béton +1,7 %, Acier +1,0 %, Bois +1,5 %, Brique +1,2 %, Verre +1,3 %. Tendance lente mais constante.</div>
+    </div>
+    <div class="tendance hausse">
+      <div class="tendance-txt"><strong>Fabrique de briques : 1,72 % → 2,43 % en 9 semaines.</strong> La progression la plus régulière du journal — aucune semaine sans amélioration depuis l'édition #1. La filière Brique est la plus dynamique parmi les usines rentables.</div>
+    </div>
+    <div class="tendance hausse">
+      <div class="tendance-txt"><strong>Presse à briques : de légèrement négative à +0,36 %.</strong> Longtemps à l'équilibre ou légèrement déficitaire, elle s'est progressivement redressée au fil des semaines grâce à la hausse du prix de la brique.</div>
+    </div>
+    <div class="tendance baisse">
+      <div class="tendance-txt"><strong>Pertes Acier/Verre qui se réduisent lentement.</strong> L'Acierie avancée est passée de −869 k Ø/jour (éd. #1) à −821 k Ø/jour (éd. #9) — soit environ −5 k Ø de perte réduite par semaine. Au rythme actuel, le retour à l'équilibre prendrait encore plusieurs mois.</div>
+    </div>
+    <div class="tendance stable">
+      <div class="tendance-txt"><strong>Centrale à béton (petite) qui se rapproche de l'équilibre.</strong> Elle était à −1,83 % à l'édition #1, elle est à −1,30 % à l'édition #9. À surveiller — elle pourrait être la première usine actuellement déficitaire à repasser en positif.</div>
+    </div>
+  </div>
+
+  <!-- PATTERN CENTRES DE RECHERCHE -->
+  <div class="section">
+    <div class="section-head"><span class="icon">🔄</span><h2>Le pattern des Centres de recherche</h2></div>
+    <p class="analysis">La découverte analytique la plus intéressante de la semaine : les deux Centres de recherche (régional et national) semblent osciller en alternance — quand l'un monte fort, l'autre redescend.</p>
+
+    <table>
+      <tr><th>Édition</th><th class="num">CdR régional</th><th class="num">CdR national</th><th>Fait notable</th></tr>
+      <tr><td>Éd. #1–4</td><td class="num">4,65–4,70 %</td><td class="num">4,25–4,26 %</td><td>Stables</td></tr>
+      <tr><td>Éd. #5</td><td class="num">4,70 %</td><td class="num hl">4,95 %</td><td>National : 1er record</td></tr>
+      <tr><td>Éd. #6</td><td class="num hl">5,88 %</td><td class="num">4,26 %</td><td>Régional : record absolu</td></tr>
+      <tr><td>Éd. #7</td><td class="num">4,72 %</td><td class="num">4,26 %</td><td>Régional redescend</td></tr>
+      <tr><td>Éd. #8–9</td><td class="num">4,75 %</td><td class="num">4,26 %</td><td>Stabilisation</td></tr>
+    </table>
+
+    <div class="callout">
+      <strong>Hypothèse à surveiller.</strong> Les fortes baisses de valeur (−14 % à −20 %) sur ces biens ne semblent pas aléatoires — elles alternent entre les deux Centres de recherche. Si ce pattern se confirme dans les prochaines semaines, il pourrait permettre d'anticiper les fenêtres d'opportunité d'achat à ROI élevé.
+    </div>
+  </div>
+
+  <!-- SÉISME -->
+  <div class="section">
+    <div class="section-head"><span class="icon">🌍</span><h2>L'événement de la semaine — Le tremblement de terre</h2></div>
+    <p class="analysis">La semaine s'est conclue avec un événement imprévu : un tremblement de terre a frappé l'ensemble des villes de M8 dans la nuit du 27 au 28 juin — après les inondations qui avaient déjà touché la région. Premier constat à partir des données CSV :</p>
+
+    <div class="callout event">
+      <strong>Impact concentré sur les Technopôle palacium et titanium.</strong> Les biens standard (bureaux, commerciaux, résidentiel, zones pétrolières) ne semblent pas avoir été significativement touchés selon les données disponibles. L'impact est proportionnel à la valeur du bien — plus le bien est précieux, plus la facture de réparation est élevée. Technopôle palacium international : <strong>15 664 T Ø</strong> de réparation. Complexe palacium luxueux (personnel) : <strong>1 157 T Ø</strong>.
+    </div>
+
+    <p class="analysis">L'édition #10 de la semaine prochaine permettra de voir si le séisme a eu un impact sur les valeurs de marché des biens touchés — ou si le marché a absorbé l'événement sans perturbation durable, comme il a absorbé les inondations précédentes.</p>
+  </div>
+
+  <!-- LEÇONS -->
+  <div class="section">
+    <div class="section-head"><span class="icon">💡</span><h2>Les leçons de la semaine</h2></div>
+
+    <div class="callout good">
+      <strong>1. Les loyers ne bougent presque jamais.</strong> Sur 9 semaines et 204 biens suivis, les loyers sont restés stables à chaque reset. Ce sont les valeurs qui fluctuent, pas les revenus. Un bien qui baisse de valeur devient mécaniquement plus rentable — c'est une opportunité, pas un signal d'alarme.
+    </div>
+    <div class="callout good">
+      <strong>2. Le marché a un rythme.</strong> Les oscillations semblent suivre des cycles réguliers sur certains biens (Centres de recherche, Technopôle, complexes millenium). Identifier ces cycles permet d'anticiper les fenêtres d'achat à ROI élevé.
+    </div>
+    <div class="callout good">
+      <strong>3. La stabilité des secteurs est plus fiable que les biens individuels.</strong> Le classement des secteurs (Commerciaux en tête, Zones en bas) n'a pratiquement pas bougé en 9 semaines. Pour une stratégie long terme, se fier aux secteurs plutôt qu'aux biens individuels est plus sûr.
+    </div>
+    <div class="callout warn">
+      <strong>4. Les filières Acier et Verre ne se redressent pas rapidement.</strong> Neuf semaines de hausse continue des prix de marché n'ont pas suffi à les ramener à l'équilibre. Aucun investissement recommandé dans ces filières à court terme si l'objectif est la vente directe de matière première.
+    </div>
+    <div class="callout">
+      <strong>5. Les événements extraordinaires (séisme, inondation) n'ont pas perturbé les ROI.</strong> Le marché de M8 semble avoir une résilience structurelle face aux catastrophes — les valeurs de marché et les loyers ont absorbé ces événements sans déréglage durable sur les données observées jusqu'ici.
+    </div>
+  </div>
+
+  <div class="methodology">
+    <h2>À propos de ce bilan</h2>
+    <p>Ce bilan couvre les éditions #1 à #9 du Journal du Marché, publiées entre le 19 et le 28 juin 2026. Les données sont tirées des 9 exports CSV officiels analysés pendant cette période. Tous les chiffres cités sont vérifiables dans les éditions correspondantes.</p>
+    <p><strong style="color:var(--gold)">Rendez-vous la semaine prochaine pour le bilan semaine #2.</strong></p>
+  </div>
+
+  <div class="colophon">
+    <div class="rule"></div>
+    Journal du Marché — Monde 8 · Bilan Semaine #1<br>
+    19 juin → 28 juin 2026<br>
+    Dédié à la rigueur et à l'analyse factuelle.
+  </div>
+
+</div>
+</body>
+</html>
