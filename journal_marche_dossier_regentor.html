@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Journal du Marché — Dossier Regentor — RuiX & DrakeEos</title>
+<style>
+  :root{
+    --bg:#15130f; --paper:#1c1916; --paper-raised:#221e19;
+    --ink:#e8e0d0; --ink-dim:#a89a82; --ink-faint:#756a58;
+    --rule:#3a342a; --gold:#c9a35a; --green:#7a9b6e; --red:#b8614f;
+    --blue:#5a85c9;
+    --serif:Georgia,'Times New Roman',serif; --sans:'Segoe UI',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);line-height:1.55;padding:32px 16px;}
+  .sheet{max-width:760px;margin:0 auto;background:var(--paper);border:1px solid var(--rule);}
+  .masthead{padding:28px 32px 18px;border-bottom:3px double var(--gold);text-align:center;}
+  .kicker{font-family:var(--sans);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin:0 0 10px;}
+  .masthead h1{font-size:28px;margin:0;letter-spacing:1px;font-weight:700;}
+  .masthead .sub{font-family:var(--sans);font-size:12px;color:var(--ink-dim);margin-top:10px;display:flex;justify-content:center;gap:18px;flex-wrap:wrap;}
+  .intro{padding:26px 32px 8px;border-bottom:1px solid var(--rule);}
+  .intro p{font-size:15px;margin:0 0 14px;color:var(--ink);}
+  .intro p:first-of-type::first-letter{font-size:44px;float:left;line-height:0.8;padding:6px 8px 0 0;color:var(--gold);font-weight:700;}
+  .section{padding:26px 32px;border-bottom:1px solid var(--rule);}
+  .interviewee{display:flex;align-items:center;gap:14px;margin-bottom:20px;padding:14px 18px;background:var(--paper-raised);border-left:3px solid var(--gold);}
+  .interviewee-name{font-size:20px;font-weight:700;font-family:var(--serif);}
+  .interviewee-role{font-family:var(--sans);font-size:12px;color:var(--ink-faint);margin-top:3px;}
+  .interviewee-icon{font-size:32px;}
+  .qa{margin-bottom:24px;}
+  .question{font-family:var(--sans);font-size:13px;font-weight:700;color:var(--gold);margin-bottom:10px;padding-left:14px;border-left:2px solid var(--gold);}
+  .reponse{font-size:15px;color:var(--ink-dim);line-height:1.65;padding-left:14px;}
+  .reponse p{margin:0 0 10px;}
+  .reponse p:last-child{margin:0;}
+  .citation{background:var(--paper-raised);border-left:3px solid var(--gold);padding:16px 20px;margin:20px 0;font-size:15px;color:var(--ink);font-style:italic;}
+  .section-title{font-family:var(--sans);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin:0 0 20px;}
+  .colophon{padding:22px 32px 30px;text-align:center;font-family:var(--sans);font-size:11px;color:var(--ink-faint);}
+  .colophon .rule{width:60px;height:1px;background:var(--gold);margin:0 auto 16px;}
+  @media(max-width:600px){
+    .masthead h1{font-size:22px;}
+    .section,.intro{padding:20px 18px;}
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <div class="masthead">
+    <p class="kicker">Dossier Spécial — Vie Municipale · Monde 8</p>
+    <h1>Dans les coulisses de Regentor — RuiX & DrakeEos</h1>
+    <div class="sub">
+      <span>Journal du Marché · Monde 8</span>
+      <span>28 juin 2026</span>
+    </div>
+  </div>
+
+  <div class="intro">
+    <p>Ce dossier est le premier d'une série consacrée aux équipes municipales de Monde 8. Le Journal du Marché invite toutes les villes à participer — maires, conseillers et directeurs sont les bienvenus. Contactez-nous par messagerie in-game pour prendre part à la prochaine édition.</p>
+    <p style="font-style:italic;font-size:13.5px;color:var(--ink-faint);border-left:2px solid var(--gold);padding-left:14px;">Note éditoriale : ce dossier est strictement axé sur le fonctionnement économique et organisationnel des villes. Aucune question politique, aucun débat municipal, aucune prise de position — uniquement le rôle concret des équipes et leur impact sur les habitants.</p>
+    <p>Beaucoup de joueurs traversent leur ville sans vraiment comprendre qui la fait tourner. Qui décide quoi? Comment le budget est-il géré? Qu'est-ce que ça implique concrètement d'être maire ou conseiller? Comme le souligne DrakeEos lui-même : <em>"À mes débuts, je pensais que c'était juste un poste réservé à l'élite des joueurs pour gagner plus d'argent via des primes de fonctions, et surtout que leur rôle était de réguler et distribuer l'argent de la ville entre les différents bâtiments."</em></p>
+    <p>Pour répondre à ces questions et briser ces idées reçues, le Journal du Marché a rencontré deux membres de l'équipe municipale de Regentor : <strong>RuiX</strong>, maire, et <strong>DrakeEos</strong>, conseiller en Urbanisme. Leurs réponses sont reproduites fidèlement, dans le respect de leurs propos.</p>
+  </div>
+
+  <!-- RUIX -->
+  <div class="section">
+    <div class="section-title">Partie 1 — Le maire</div>
+    <div class="interviewee">
+      <span class="interviewee-icon">🏛️</span>
+      <div>
+        <div class="interviewee-name">RuiX</div>
+        <div class="interviewee-role">Maire de Regentor · Monde 8</div>
+      </div>
+    </div>
+
+    <div class="qa">
+      <div class="question">Peux-tu décrire brièvement ton rôle de maire ? Quelles sont tes responsabilités concrètes au quotidien ?</div>
+      <div class="reponse">
+        <p>Beaucoup pensent que le maire s'assoit sur une chaise et laisse les autres travailler. En réalité, c'est tout l'inverse. Le maire est le chef d'orchestre de la ville.</p>
+        <p>C'est lui qui choisit son équipe municipale, répartit les responsabilités, consulte ses conseillers avant les grandes décisions et veille au bon fonctionnement de tous les services.</p>
+        <p>Il doit tout suivre, tout superviser et surtout être présent, disponible et à l'écoute des habitants.</p>
+      </div>
+    </div>
+
+    <div class="qa">
+      <div class="question">Comment fonctionne le budget municipal ? Quelles sont les principales sources de revenus d'une ville et comment sont-elles utilisées ?</div>
+      <div class="reponse">
+        <p>Aujourd'hui, grâce au développement de Regentor, la ville bénéficie de revenus solides provenant principalement des impôts et des dividendes de la Holding Municipale.</p>
+        <p>Notre priorité a toujours été de sécuriser des revenus stables afin de pouvoir alimenter durablement la banque municipale et continuer à accompagner les habitants dans leurs projets.</p>
+        <p>Nous avons également la chance d'avoir des habitants très investis, qui n'hésitent pas à effectuer des contributions personnelles pour participer au développement de la ville.</p>
+      </div>
+    </div>
+
+    <div class="qa">
+      <div class="question">Quels bâtiments ou infrastructures priorises-tu en premier, et pourquoi ?</div>
+      <div class="reponse">
+        <p>Sans hésiter : la Holding Municipale.</p>
+        <p>Beaucoup sous-estiment son importance, alors qu'elle est essentielle. C'est souvent le premier emploi des nouveaux habitants et un formidable outil pour les accompagner, les former et les aider à atteindre leurs objectifs.</p>
+        <p>C'est aussi une structure qui rassemble énormément de bénévoles. Certains habitants travaillent même gratuitement pour la ville afin de lui rendre ce qu'elle leur a apporté. C'est une vraie force pour Regentor.</p>
+        <p>Et après je dirais le Discord — c'est notre premier moyen de communication de la ville, et on en est fier!</p>
+      </div>
+    </div>
+
+    <div class="qa">
+      <div class="question">Comment est organisée ton équipe ? Qui fait quoi et comment vous coordonnez-vous ?</div>
+      <div class="reponse">
+        <p>Notre équipe est organisée autour des compétences de chacun.</p>
+        <p>DrakeEos est en charge de l'urbanisme, EDimmo de la communication et Anth04 des finances. Ce sont aussi mes principaux conseillers : avant chaque décision importante, je m'appuie sur leur avis et leur expérience. Ensuite, nous travaillons ensemble pour mettre les projets en place. Sans eux, ce serait beaucoup plus compliqué!</p>
+        <p>Naquadah dirige la Holding Municipale. Nous fixons les objectifs ensemble, puis il assure la gestion quotidienne afin que chaque habitant puisse démarrer son aventure dans les meilleures conditions.</p>
+        <p>Enfin, Quentin17 est responsable de la banque municipale. Après avoir fait ses preuves à la tête de la Holding, il gère aujourd'hui la banque avec beaucoup de sérieux, ce qui nous permet de proposer des taux attractifs tout en garantissant une gestion sécurisée.</p>
+        <p>Au final, nous sommes avant tout une bande d'amis passionnés qui aiment profondément Regentor et qui mettent leurs compétences au service de la ville.</p>
+      </div>
+    </div>
+
+    <div class="qa">
+      <div class="question">Quel conseil donnerais-tu à un nouveau joueur qui souhaite contribuer à sa ville ou rejoindre un jour l'équipe municipale ?</div>
+      <div class="reponse">
+        <p>Un seul mot : l'engagement.</p>
+        <p>Tous les membres de l'équipe municipale étaient d'abord de simples habitants. Ce qui les a amenés jusqu'ici, ce sont leur présence, leur investissement et leur envie d'aider la ville.</p>
+        <p>Ils ont posé des questions, participé aux projets, aidé les nouveaux joueurs, donné de leur temps et parfois même contribué financièrement ou reversé leurs salaires de la Holding pour soutenir Regentor.</p>
+        <p>C'est cette implication qui a été récompensée. À Regentor, nous croyons que chacun peut rejoindre l'équipe municipale un jour. Il suffit d'avoir envie de s'investir et de faire grandir la ville avec nous.</p>
+      </div>
+    </div>
+
+    <div class="citation">« Au final, nous sommes avant tout une bande d'amis passionnés qui aiment profondément Regentor et qui mettent leurs compétences au service de la ville. »<br><span style="font-family:var(--sans);font-size:12px;color:var(--ink-faint);font-style:normal;">— RuiX, Maire de Regentor</span></div>
+  </div>
+
+  <!-- DRAKEEOS -->
+  <div class="section">
+    <div class="section-title">Partie 2 — Le conseiller</div>
+    <div class="interviewee">
+      <span class="interviewee-icon">🏗️</span>
+      <div>
+        <div class="interviewee-name">DrakeEos</div>
+        <div class="interviewee-role">Conseiller en Urbanisme de Regentor · Monde 8</div>
+      </div>
+    </div>
+
+    <div class="qa">
+      <div class="question">Quel est ton rôle précis en tant que conseiller — en quoi est-il différent de celui du maire au quotidien ?</div>
+      <div class="reponse">
+        <p>En tant que conseiller en Urbanisme, je suis en charge de la construction des bâtiments de la ville afin d'augmenter les statistiques que nous voyons sous l'onglet Situation de la ville. Le maire est une personne qui a l'expérience d'avoir déjà travaillé dans l'équipe municipale et qui est donc en charge de la formation de ses conseillers. Mon avis personnel est que pour être maire, il faut déjà connaître les différents postes de conseillers, ou avoir dans son équipe des personnes qui les connaissent déjà. Son autre rôle est de pouvoir remplacer ses conseillers en cas d'absence, ou bien tout organiser pour que tout fonctionne correctement le temps de leur absence.</p>
+      </div>
+    </div>
+
+    <div class="qa">
+      <div class="question">Sur quels dossiers ou décisions es-tu principalement impliqué ?</div>
+      <div class="reponse">
+        <p>Actuellement, je suis en charge de la remise à niveau des statistiques de la ville. Nous montons aussi un grand projet pour les habitants de la ville, que nous avons discuté et mis en place tous ensemble dans l'équipe municipale.</p>
+      </div>
+    </div>
+
+    <div class="qa">
+      <div class="question">Comment se prennent les décisions importantes dans l'équipe municipale — est-ce que tout passe par le maire ou y a-t-il une vraie concertation ?</div>
+      <div class="reponse">
+        <p>Les décisions les plus importantes se prennent lors d'une concertation entre les différents membres. Nous écoutons tous les avis, tout ce qui est quantifiable est alors quantifié et en cas d'erreur, nous donnons de notre personne pour la corriger. Nous réfléchissons ensemble, nous décidons ensemble, nous assumons ensemble.</p>
+      </div>
+    </div>
+
+    <div class="qa">
+      <div class="question">Qu'est-ce que ce rôle t'a appris sur le fonctionnement économique d'une ville dans Empire Immo ?</div>
+      <div class="reponse">
+        <p>Ce rôle m'a appris que le jeu est fait de plein de subtilités et que derrière un maire ou un conseiller, il y a toute une équipe qui doit gérer tous les flux d'argent. C'est à ce moment aussi que j'ai réalisé qu'en aidant les joueurs de la ville, je pourrais aider la ville qui aidera à nouveau les joueurs : un cercle bénéfique.</p>
+      </div>
+    </div>
+
+    <div class="qa">
+      <div class="question">Pour un joueur qui voudrait un jour rejoindre une équipe municipale — par où commencer et quelles qualités faut-il avoir ?</div>
+      <div class="reponse">
+        <p>À mon avis, pour rejoindre une équipe municipale, il faut être en contact avec l'ancienne équipe et être formé, avoir un bon relationnel, être à l'écoute, mais aussi pouvoir apporter un regard neuf. Pour tous les postes financiers, tels que la gestion de la banque municipale et de la Holding Municipale, je pense que savoir calculer un retour sur investissement est un plus — on reste sur un jeu de simulation où le but est de faire de l'argent, donc savoir gérer l'argent est essentiel, ou peut s'apprendre. Dans tous les cas, il faut investir du temps et ne pas se dire qu'on peut jouer une fois par semaine.</p>
+      </div>
+    </div>
+
+    <div class="citation">« En aidant les joueurs de la ville, je pourrais aider la ville qui aidera à nouveau les joueurs : un cercle bénéfique. »<br><span style="font-family:var(--sans);font-size:12px;color:var(--ink-faint);font-style:normal;">— DrakeEos, Conseiller en Urbanisme de Regentor</span></div>
+  </div>
+
+  <!-- MOT DE FIN -->
+  <div class="section">
+    <div class="section-title">En conclusion</div>
+    <p style="font-size:15px;color:var(--ink-dim);margin:0 0 16px;">Deux rôles différents, une même philosophie : l'engagement au service de la communauté. Ce que RuiX et DrakeEos décrivent n'est pas un poste de prestige — c'est un investissement en temps, en énergie et parfois en argent personnel, au bénéfice de tous les habitants de Regentor.</p>
+    <p style="font-size:15px;color:var(--ink-dim);margin:0;">Le Journal du Marché remercie chaleureusement RuiX et DrakeEos pour leur disponibilité et leur transparence. Ce type d'échange est précieux pour la communauté de M8 — il rappelle que derrière chaque ville, il y a des joueurs engagés qui consacrent leur temps bénévolement au bien commun.</p>
+  </div>
+
+  <div class="colophon">
+    <div class="rule"></div>
+    Journal du Marché — Monde 8 · Dossier Vie Municipale<br>
+    Regentor · 28 juin 2026<br>
+    Dédié à la rigueur et à l'analyse factuelle.
+  </div>
+
+</div>
+</body>
+</html>
