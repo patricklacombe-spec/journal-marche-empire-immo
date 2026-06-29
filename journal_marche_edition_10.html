@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Journal du Marché — Empire Immo M8 — Édition 10</title>
+<style>
+  :root{
+    --bg:#15130f; --paper:#1c1916; --paper-raised:#221e19;
+    --ink:#e8e0d0; --ink-dim:#a89a82; --ink-faint:#756a58;
+    --rule:#3a342a; --gold:#c9a35a; --green:#7a9b6e; --red:#b8614f;
+    --orange:#c97a2a;
+    --serif:Georgia,'Times New Roman',serif; --sans:'Segoe UI',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);line-height:1.55;padding:32px 16px;}
+  .sheet{max-width:760px;margin:0 auto;background:var(--paper);border:1px solid var(--rule);}
+  .masthead{padding:28px 32px 18px;border-bottom:3px double var(--gold);text-align:center;}
+  .kicker{font-family:var(--sans);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin:0 0 10px;}
+  .masthead h1{font-size:36px;margin:0;letter-spacing:1px;font-weight:700;}
+  .masthead .sub{font-family:var(--sans);font-size:12px;color:var(--ink-dim);margin-top:10px;display:flex;justify-content:center;gap:18px;flex-wrap:wrap;}
+  .masthead .sub span{white-space:nowrap;}
+  .edito{padding:26px 32px 8px;border-bottom:1px solid var(--rule);}
+  .edito h2{font-family:var(--sans);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin:0 0 14px;}
+  .edito p{font-size:16px;margin:0 0 16px;color:var(--ink);}
+  .edito p:first-of-type::first-letter{font-size:46px;float:left;line-height:0.8;padding:6px 8px 0 0;color:var(--gold);font-weight:700;}
+  .section{padding:26px 32px;border-bottom:1px solid var(--rule);}
+  .section-head{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;}
+  .section-head .icon{font-size:20px;}
+  .section-head h2{font-size:21px;margin:0;}
+  table{width:100%;border-collapse:collapse;margin:14px 0 18px;font-family:var(--sans);font-size:13px;}
+  th{text-align:left;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-faint);font-weight:600;padding:6px 10px;border-bottom:1px solid var(--rule);}
+  td{padding:8px 10px;border-bottom:1px solid var(--rule);color:var(--ink-dim);}
+  tr:last-child td{border-bottom:none;}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;}
+  .hl{color:var(--gold);font-weight:700;}
+  .up{color:var(--green);}
+  .dn{color:var(--red);}
+  .analysis{font-size:15px;margin:0 0 16px;}
+  .analysis strong{color:var(--gold);}
+  .subblock{margin:18px 0;}
+  .subblock-title{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:0.5px;margin-bottom:9px;}
+  .subblock ul{list-style:none;margin:0;padding:0;font-size:14.5px;}
+  .subblock li{padding:7px 0 7px 16px;border-left:2px solid var(--rule);margin-bottom:6px;color:var(--ink-dim);}
+  .subblock li .val{color:var(--gold);font-weight:700;}
+  .subblock li .chg-up{color:var(--green);font-size:12px;}
+  .subblock li .chg-dn{color:var(--red);font-size:12px;}
+  .subblock.top li{border-left-color:var(--green);}
+  .subblock.entry li{border-left-color:var(--ink-faint);}
+  .callout{background:var(--paper-raised);border-left:3px solid var(--red);padding:14px 18px;margin:18px 0;font-size:14.5px;color:var(--ink-dim);}
+  .callout.good{border-left-color:var(--green);}
+  .callout.neutral{border-left-color:var(--gold);}
+  .callout.seisme{border-left-color:var(--orange);background:#1e1508;}
+  .callout strong{color:var(--ink);}
+  .note{font-family:var(--sans);font-size:12.5px;color:var(--ink-faint);font-style:italic;margin-top:10px;}
+  .milestone{background:var(--paper-raised);border:2px solid var(--gold);padding:16px 22px;margin:18px 0;text-align:center;}
+  .milestone .big{font-size:36px;color:var(--gold);font-weight:700;display:block;margin:4px 0;}
+  .milestone .label{font-family:var(--sans);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-faint);}
+  .methodology{padding:26px 32px;background:var(--paper-raised);}
+  .methodology h2{font-family:var(--sans);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--ink-faint);margin:0 0 14px;}
+  .methodology p{font-size:13.5px;color:var(--ink-dim);margin:0 0 12px;}
+  .colophon{padding:22px 32px 30px;text-align:center;font-family:var(--sans);font-size:11px;color:var(--ink-faint);}
+  .colophon .rule{width:60px;height:1px;background:var(--gold);margin:0 auto 16px;}
+  @media(max-width:600px){
+    .masthead h1{font-size:26px;} .section,.edito,.methodology{padding:20px 18px;}
+    table{font-size:11.5px;} th,td{padding:6px 6px;}
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <div class="masthead">
+    <p class="kicker">Édition Hebdomadaire — Données de marché</p>
+    <h1>Journal du Marché</h1>
+    <div class="sub">
+      <span>Empire Immo · Monde 8</span>
+      <span>Édition N°10</span>
+      <span>29 juin 2026</span>
+    </div>
+  </div>
+
+  <div class="edito">
+    <h2>L'édito — La 10e édition et le marché qui s'emballe</h2>
+    <p>Dixième édition. Dix jours de suivi quotidien du marché de M8. Pour marquer ce cap, le marché nous offre cette nuit le reset le plus actif depuis l'édition #3 : <strong>136 biens sur 204 ont bougé</strong> — 76 du côté entreprise, 60 du côté personnel. Ce n'est pas un reset ordinaire. Les bureaux sont particulièrement agités, les résidences oscillent dans tous les sens, et les coûts de réparation post-séisme continuent d'augmenter plutôt que de se résorber. Le marché digère encore le tremblement de terre.</p>
+    <p>Bonne nouvelle : malgré cette volatilité, les <strong>classements de ROI restent stables</strong>. Le Top 5 entreprise est identique à l'édition précédente. Les fondamentaux tiennent. Les matières premières poursuivent leur hausse pour la <strong>9e semaine consécutive</strong> — un record de continuité dans ce journal.</p>
+  </div>
+
+  <!-- MILESTONE -->
+  <div class="section">
+    <div class="milestone">
+      <span class="label">Cap franchi — Édition N°10</span>
+      <span class="big">10 éditions · 10 jours · 204 biens suivis</span>
+      <span style="font-family:var(--sans);font-size:13px;color:var(--ink-dim);">Merci aux lecteurs, abonnés et interviewés qui font vivre ce journal depuis le 19 juin 2026.</span>
+    </div>
+  </div>
+
+  <!-- SÉISME SUIVI -->
+  <div class="section">
+    <div class="section-head"><span class="icon">🌍</span><h2>Suivi séisme — Les réparations augmentent</h2></div>
+    <p class="analysis">Fait inattendu : les coûts de réparation post-séisme n'ont pas diminué entre l'édition #9 et l'édition #10 — ils ont <strong>augmenté</strong>. Premier signal que les dommages du tremblement de terre continuent de s'accumuler sur les grands biens.</p>
+
+    <table>
+      <tr><th>Bien</th><th class="num">Réparation éd. #9</th><th class="num">Réparation éd. #10</th><th class="num">Variation</th></tr>
+      <tr><td>Technopôle palacium international</td><td class="num">15 664 T Ø</td><td class="num" style="color:var(--orange)">15 956 T Ø</td><td class="num dn">+291 T Ø</td></tr>
+      <tr><td>Technopôle palacium national</td><td class="num">5 852 T Ø</td><td class="num" style="color:var(--orange)">6 004 T Ø</td><td class="num dn">+152 T Ø</td></tr>
+      <tr><td>Technopôle palacium régional</td><td class="num">1 852 T Ø</td><td class="num">1 936 T Ø</td><td class="num dn">+83 T Ø</td></tr>
+      <tr><td>Technopôle titanium international</td><td class="num">543 T Ø</td><td class="num">551 T Ø</td><td class="num dn">+8 T Ø</td></tr>
+      <tr><td>Technopôle titanium national</td><td class="num">204 T Ø</td><td class="num">207 T Ø</td><td class="num dn">+3 T Ø</td></tr>
+    </table>
+
+    <div class="callout seisme">
+      <strong>⚠️ Les coûts de réparation s'accumulent.</strong> Contrairement à ce qu'on aurait pu espérer, les dommages du séisme du 27 juin ne se résorbent pas d'eux-mêmes au fil des resets — ils augmentent. Les propriétaires de Technopôle palacium international font face à une facture qui a encore grossi de 291 T Ø en 24h. Les éditions suivantes permettront de confirmer si cette tendance se poursuit ou se stabilise.
+    </div>
+  </div>
+
+  <!-- ENTREPRISE -->
+  <div class="section">
+    <div class="section-head"><span class="icon">🏢</span><h2>Secteur Entreprise — Vue d'ensemble</h2></div>
+    <table>
+      <tr><th>Secteur</th><th class="num">ROI moyen</th><th class="num">vs éd. 9</th></tr>
+      <tr><td>Commerciaux</td><td class="num hl">3,19 %</td><td class="num up">+0,04</td></tr>
+      <tr><td>Transport</td><td class="num">3,02 %</td><td class="num up">+0,01</td></tr>
+      <tr><td>Industriels</td><td class="num">3,01 %</td><td class="num up">+0,06</td></tr>
+      <tr><td>Zones</td><td class="num">2,54 %</td><td class="num up">+0,02</td></tr>
+      <tr><td>Bureaux</td><td class="num">2,73 %</td><td class="num up">+0,01</td></tr>
+    </table>
+
+    <p class="analysis">Semaine verte pour tous les secteurs — légère progression générale. <strong>Commerciaux</strong> atteint 3,19 % — son meilleur score depuis le début du journal. <strong>Industriels</strong> progresse de +0,06 pts grâce aux mouvements de valeur favorables sur plusieurs ateliers et entrepôts.</p>
+
+    <div class="subblock top">
+      <div class="subblock-title">🏆 Top 5 ROI nets/jour — entreprise (stable)</div>
+      <ul>
+        <li>Centre de recherche régional — 18,00 G Ø, ROI <span class="val">4,75 %</span></li>
+        <li>Plate-forme pétrolière améliorée — 30,60 G Ø, ROI <span class="val">4,59 %</span></li>
+        <li>Plate-forme pétrolière aménagée — 15,00 G Ø, ROI <span class="val">4,46 %</span> <span class="chg-up">▲</span></li>
+        <li>Plate-forme pétrolière high-tech — 52,88 G Ø, ROI <span class="val">4,27 %</span> <span class="chg-up">▲</span></li>
+        <li>Centre de recherche national — 40,80 G Ø, ROI <span class="val">4,26 %</span></li>
+      </ul>
+    </div>
+
+    <div class="subblock">
+      <div class="subblock-title">💰 Meilleur rendement sur capital réellement construit</div>
+      <ul>
+        <li>Plate-forme pétrolière high-tech — capital 74,54 G Ø, rendement <span class="val">3,03 %</span></li>
+        <li>Centre de recherche international — capital 107,85 G Ø, rendement <span class="val">2,66 %</span></li>
+        <li>Entrepôt intégralement optimisé — capital 897,9 k Ø, rendement <span class="val">2,30 %</span> <span class="chg-up">▲ nouveau dans le top</span></li>
+        <li>Usine high-tech — capital 15,04 M Ø, rendement <span class="val">2,26 %</span></li>
+      </ul>
+    </div>
+
+    <div class="subblock entry">
+      <div class="subblock-title">🚪 Portes d'entrée accessibles</div>
+      <ul>
+        <li>Atelier utilisable (industriels, niv.1) — capital 224,2 k Ø, ROI 2,15 %</li>
+        <li>Atelier équipé (industriels, niv.2) — capital 335,5 k Ø, ROI 1,90 %</li>
+        <li>Atelier high-tech (industriels, niv.3) — capital 361,6 k Ø, ROI 3,40 % <span class="chg-up">▲</span></li>
+      </ul>
+    </div>
+
+    <div class="callout neutral">
+      <strong>📊 Reset très actif — 76 biens entreprise en mouvement.</strong>
+      Bureaux : forte agitation (+4 à +8 % sur plusieurs tailles, −11 à −16 % sur d'autres) •
+      Transport : Aéroport avec 1 piste +10,3 %, Aéroport avec 3 pistes +8,8 % •
+      Zones portuaires : régionale −7,6 %, nationale −5,4 %, internationale −11,1 % •
+      Technopôle palacium régional : +10,3 % • Technopôle palacium national : −8,0 %.
+    </div>
+
+    <div class="callout">
+      <strong>⚠️ Technopôle — bas du classement.</strong> Millenium régional (0,80 %), titanium national (0,81 %), palacium régional (0,83 %) — 10e semaine sans changement structurel.
+    </div>
+  </div>
+
+  <!-- PERSONNEL -->
+  <div class="section">
+    <div class="section-head"><span class="icon">🏠</span><h2>Secteur Personnel — Vue d'ensemble</h2></div>
+    <table>
+      <tr><th>Secteur</th><th class="num">ROI moyen</th><th class="num">vs éd. 9</th></tr>
+      <tr><td>Complexe résidentiel</td><td class="num hl">2,71 %</td><td class="num dn">−0,01</td></tr>
+      <tr><td>Appartement</td><td class="num">2,01 %</td><td class="num up">+0,03</td></tr>
+      <tr><td>Chambre</td><td class="num">1,85 %</td><td class="num up">+0,05</td></tr>
+      <tr><td>Maison</td><td class="num">1,81 %</td><td class="num dn">−0,05</td></tr>
+    </table>
+
+    <p class="analysis">Mouvements importants cette semaine sur les complexes — certains gains importants (+33,8 % pour le millenium tout confort, +26,9 % pour le quadruple géant luxueux), d'autres fortes baisses (−20,2 % pour les 12 chambres tout confort, −16,4 % pour le grand complexe non-aménagé). Le classement de ROI reste toutefois stable.</p>
+
+    <div class="subblock top">
+      <div class="subblock-title">🏆 Top 5 ROI nets/jour — personnel</div>
+      <ul>
+        <li>Complexe résidentiel palacium tout confort — ROI <span class="val">6,49 %</span> <span class="chg-dn">▼ (−0,13 pts)</span></li>
+        <li>Complexe résidentiel palacium habitable — ROI <span class="val">5,85 %</span> <span class="chg-up">▲ (+0,21 pts)</span></li>
+        <li>Complexe résidentiel palacium luxueux — ROI <span class="val">5,02 %</span> <span class="chg-dn">▼ (−0,16 pts)</span></li>
+        <li>Complexe résidentiel titanium habitable — ROI <span class="val">3,53 %</span></li>
+        <li>Complexe résidentiel titanium tout confort — ROI <span class="val">3,48 %</span> <span class="chg-up">▲ (+0,13 pts)</span></li>
+      </ul>
+    </div>
+
+    <div class="subblock">
+      <div class="subblock-title">💰 Meilleur rendement sur capital réellement construit</div>
+      <ul>
+        <li>T2 simple habitable — capital 16,5 k Ø, rendement <span class="val">5,73 %</span> <span class="chg-up">▲ nouveau #1!</span></li>
+        <li>T2 simple luxueux — capital 24,7 k Ø, rendement <span class="val">5,64 %</span></li>
+        <li>Complexe résidentiel palacium habitable — capital 2 272,55 T Ø, rendement <span class="val">4,18 %</span></li>
+        <li>Complexe résidentiel palacium luxueux — capital 3 540,86 T Ø, rendement <span class="val">4,16 %</span></li>
+      </ul>
+    </div>
+
+    <div class="subblock entry">
+      <div class="subblock-title">🚪 Portes d'entrée accessibles</div>
+      <ul>
+        <li>Chambre seule tout confort — capital 10,4 k Ø, ROI 1,55 % <span class="chg-up">▲</span></li>
+        <li>Chambre seule habitable — capital 13,6 k Ø, ROI 1,49 % <span class="chg-up">▲</span></li>
+        <li>T2 simple habitable — capital 16,5 k Ø, ROI 1,77 % <span class="chg-up">▲</span></li>
+      </ul>
+    </div>
+
+    <div class="callout neutral">
+      <strong>📊 Mouvements notables.</strong>
+      Complexe millenium tout confort : <span class="up">+33,8 %</span> •
+      Quadruple complexe géant luxueux : <span class="up">+26,9 %</span> •
+      Res. 6 T2 non-aménagés : <span class="up">+22,0 %</span> •
+      Petite maison équipée : <span class="up">+18,9 %</span> •
+      Res. 12 chambres tout confort : <span class="dn">−20,2 %</span> •
+      Grand complexe résidentiel non-aménagé : <span class="dn">−16,4 %</span> •
+      Double complexe géant luxueux : <span class="dn">−14,3 %</span>.
+    </div>
+  </div>
+
+  <!-- TERRAINS -->
+  <div class="section">
+    <div class="section-head"><span class="icon">🌍</span><h2>Terrains</h2></div>
+    <p class="analysis">Légères variations cette semaine — le Petit terrain et le Grand parc ont tous deux progressé.</p>
+    <table>
+      <tr><th>Terrain</th><th class="num">Valeur</th><th class="num">vs éd. 9</th><th class="num">Coût fixe/j</th></tr>
+      <tr><td>Petit terrain</td><td class="num">58,2 k Ø</td><td class="num up">+6,0 %</td><td class="num">110 Ø</td></tr>
+      <tr><td>Terrain moyen</td><td class="num">48,8 k Ø</td><td class="num dn">−2,7 %</td><td class="num">160 Ø</td></tr>
+      <tr><td>Grand terrain</td><td class="num">53,9 k Ø</td><td class="num dn">−4,0 %</td><td class="num">318 Ø</td></tr>
+      <tr><td>Parc</td><td class="num">74,4 k Ø</td><td class="num">≈</td><td class="num">558 Ø</td></tr>
+      <tr><td>Grand parc</td><td class="num">102,7 k Ø</td><td class="num up">+5,8 %</td><td class="num">730 Ø</td></tr>
+    </table>
+    <div class="callout neutral">
+      <strong>10e semaine consécutive.</strong> Malgré la hausse du Petit terrain (+6 %), le <strong>Terrain moyen</strong> reste moins cher (48,8 k Ø contre 58,2 k Ø) — l'écart s'est même creusé cette semaine. L'anomalie persiste et s'accentue.
+    </div>
+  </div>
+
+  <!-- USINES -->
+  <div class="section">
+    <div class="section-head"><span class="icon">🏭</span><h2>Matières premières et usines</h2></div>
+    <p class="analysis">Hausse pour la <strong>9e semaine consécutive</strong> (+0,09 à +0,20 %). Cumul depuis l'édition #1 : Béton +1,8 %, Acier +1,2 %, Bois +1,6 %, Brique +1,2 %, Verre +1,4 %. La Fabrique de briques atteint 2,49 % — nouveau sommet.</p>
+
+    <table>
+      <tr><th>Matière</th><th>Usine</th><th class="num">Net/j</th><th class="num">Rendement</th><th class="num">vs éd. 9</th></tr>
+      <tr><td>Bois</td><td>Petite scierie</td><td class="num" style="color:var(--green)">+3,9 k Ø</td><td class="num" style="color:var(--green)">+3,28 %</td><td class="num up">▲</td></tr>
+      <tr><td>Brique</td><td>Fabrique de briques</td><td class="num" style="color:var(--green)">+9,6 k Ø</td><td class="num" style="color:var(--green)">+2,49 %</td><td class="num up">▲ nouveau sommet</td></tr>
+      <tr><td>Bois</td><td>Scierie avancée</td><td class="num" style="color:var(--green)">+25,5 k Ø</td><td class="num" style="color:var(--green)">+1,55 %</td><td class="num up">▲</td></tr>
+      <tr><td>Béton</td><td>Centrale à béton avancée</td><td class="num" style="color:var(--green)">+94,1 k Ø</td><td class="num" style="color:var(--green)">+1,48 %</td><td class="num up">▲</td></tr>
+      <tr><td>Brique</td><td>Presse à briques</td><td class="num" style="color:var(--green)">+20,0 k Ø</td><td class="num" style="color:var(--green)">+0,39 %</td><td class="num up">▲</td></tr>
+      <tr><td>Béton</td><td>Centrale à béton</td><td class="num" style="color:var(--red)">−8,0 k Ø</td><td class="num" style="color:var(--red)">−1,25 %</td><td class="num up">▲ (perte réduite)</td></tr>
+      <tr><td>Verre</td><td>Petite usine de verre</td><td class="num" style="color:var(--red)">−11,6 k Ø</td><td class="num" style="color:var(--red)">−3,58 %</td><td class="num up">▲ (perte réduite)</td></tr>
+      <tr><td>Verre</td><td>Usine de verre moyenne</td><td class="num" style="color:var(--red)">−69,5 k Ø</td><td class="num" style="color:var(--red)">−2,00 %</td><td class="num up">▲ (perte réduite)</td></tr>
+      <tr><td>Acier</td><td>Acierie</td><td class="num" style="color:var(--red)">−110,8 k Ø</td><td class="num" style="color:var(--red)">−4,53 %</td><td class="num up">▲ (perte réduite)</td></tr>
+      <tr><td>Acier</td><td>Acierie avancée</td><td class="num" style="color:var(--red)">−813,8 k Ø</td><td class="num" style="color:var(--red)">−2,87 %</td><td class="num up">▲ (perte réduite)</td></tr>
+    </table>
+
+    <div class="callout">
+      <strong>⚠️ Acier et Verre — 10e semaine négative.</strong> La progression des prix continue mais reste insuffisante. La Centrale à béton (−1,25 %) est maintenant à seulement 1,25 % de l'équilibre — elle pourrait être la première à repasser en positif dans les prochaines semaines.
+    </div>
+    <p class="analysis">La <strong>Fabrique de briques</strong> atteint 2,49 % — en progression constante depuis 10 semaines (1,72 % à l'édition #1). La <strong>Presse à briques</strong> confirme sa rentabilité à 0,39 %.</p>
+    <p class="note">Ce calcul suppose une vente de la production au prix de marché affiché.</p>
+  </div>
+
+  <!-- ÉVÉNEMENTS EN COURS -->
+  <div class="section">
+    <div class="section-head"><span class="icon">📢</span><h2>Événements en cours sur M8</h2></div>
+
+    <div class="callout seisme">
+      <strong>🌍 Tremblement de terre — Impact en cours.</strong> Le séisme du 27 juin continue de faire sentir ses effets. Les coûts de réparation augmentent d'un reset à l'autre sur les Technopôle palacium et titanium. Vérifiez l'état de vos biens dans "Mes propriétés" et priorisez les réparations sur vos biens les plus rentables.
+    </div>
+
+    <div class="callout neutral">
+      <strong>💸 Lutte contre la pauvreté — 28 juin au 10 juillet 2026.</strong> L'état ImmoState impose à tous les joueurs une contribution obligatoire à la campagne de lutte contre la pauvreté. Le montant est calculé proportionnellement au patrimoine de chaque joueur — date limite de versement : <strong>10 juillet 2026 à 21h07 (heure de Paris)</strong>. Cet événement touche l'ensemble des joueurs de M8 sans exception.
+    </div>
+  </div>
+
+  <!-- NOUVEAUX JOUEURS -->
+  <div class="section">
+    <div class="section-head"><span class="icon">📌</span><h2>Pour les nouveaux joueurs</h2></div>
+    <p class="analysis">Le reset de cette nuit illustre un point important : même quand <strong>136 biens sur 204 bougent</strong>, les ROI des meilleurs biens restent stables. Ce n'est pas parce que le marché est agité qu'il faut paniquer ou changer de stratégie. Les fondamentaux (palacium en tête du résidentiel, pétrolières et centres de recherche en tête de l'entreprise) tiennent semaine après semaine — c'est l'un des enseignements les plus solides de ces 10 premières éditions.</p>
+  </div>
+
+  <div class="methodology">
+    <h2>Note de méthodologie</h2>
+    <p>Export pris après le reset de 3h00 (03h11:21 le 29 juin 2026). Reset le plus actif depuis l'édition #3 (204/204 biens en mouvement). Le suivi des coûts de réparation post-séisme sera maintenu dans les prochaines éditions pour documenter l'évolution dans le temps.</p>
+  </div>
+
+  <div class="colophon">
+    <div class="rule"></div>
+    Données du 29 juin 2026 (export post-reset 03h11), basées sur les exports CSV officiels du jeu<br>
+    (bâtiments personnels, bâtiments entreprise, terrains, matériaux, usines)<br>
+    Tous les calculs sont reproductibles à partir de ces exports.
+  </div>
+
+</div>
+</body>
+</html>
