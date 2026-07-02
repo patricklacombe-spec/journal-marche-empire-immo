@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Journal du Marché — Empire Immo M8 — Édition #12</title>
+<style>
+  :root{
+    --bg:#15130f; --paper:#1c1916; --paper-raised:#221e19;
+    --ink:#e8e0d0; --ink-dim:#a89a82; --ink-faint:#756a58;
+    --rule:#3a342a; --gold:#c9a35a; --green:#7a9b6e; --red:#b8614f;
+    --orange:#c97a2a; --blue:#5a85c9;
+    --serif:Georgia,'Times New Roman',serif; --sans:'Segoe UI',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);line-height:1.55;padding:32px 16px;}
+  .sheet{max-width:760px;margin:0 auto;background:var(--paper);border:1px solid var(--rule);}
+  .masthead{padding:28px 32px 18px;border-bottom:3px double var(--gold);text-align:center;}
+  .kicker{font-family:var(--sans);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin:0 0 10px;}
+  .masthead h1{font-size:36px;margin:0;letter-spacing:1px;font-weight:700;}
+  .masthead .sub{font-family:var(--sans);font-size:12px;color:var(--ink-dim);margin-top:10px;display:flex;justify-content:center;gap:18px;flex-wrap:wrap;}
+  .masthead .sub span{white-space:nowrap;}
+  .edito{padding:26px 32px 8px;border-bottom:1px solid var(--rule);}
+  .edito h2{font-family:var(--sans);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin:0 0 14px;}
+  .edito p{font-size:16px;margin:0 0 16px;color:var(--ink);}
+  .edito p:first-of-type::first-letter{font-size:46px;float:left;line-height:0.8;padding:6px 8px 0 0;color:var(--gold);font-weight:700;}
+  .section{padding:26px 32px;border-bottom:1px solid var(--rule);}
+  .section-head{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;}
+  .section-head .icon{font-size:20px;}
+  .section-head h2{font-size:21px;margin:0;letter-spacing:0.3px;}
+  table{width:100%;border-collapse:collapse;margin:14px 0 18px;font-family:var(--sans);font-size:13px;}
+  th{text-align:left;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-faint);font-weight:600;padding:6px 10px;border-bottom:1px solid var(--rule);}
+  td{padding:8px 10px;border-bottom:1px solid var(--rule);color:var(--ink-dim);}
+  tr:last-child td{border-bottom:none;}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;}
+  .hl{color:var(--gold);font-weight:700;}
+  .up{color:var(--green);}
+  .dn{color:var(--red);}
+  .analysis{font-size:15px;margin:0 0 16px;}
+  .analysis strong{color:var(--gold);}
+  .note{font-family:var(--sans);font-size:12.5px;color:var(--ink-faint);font-style:italic;margin-top:10px;}
+  .subblock{margin:18px 0;}
+  .subblock-title{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:0.5px;margin-bottom:9px;}
+  .subblock ul{list-style:none;margin:0;padding:0;font-size:14.5px;}
+  .subblock li{padding:7px 0 7px 16px;border-left:2px solid var(--rule);margin-bottom:6px;color:var(--ink-dim);}
+  .subblock li .val{color:var(--gold);font-weight:700;}
+  .subblock li .chg-up{color:var(--green);font-size:12px;}
+  .subblock li .chg-dn{color:var(--red);font-size:12px;}
+  .subblock.top li{border-left-color:var(--green);}
+  .subblock.entry li{border-left-color:var(--ink-faint);}
+  .subblock.watch li{border-left-color:var(--red);}
+  .callout{background:var(--paper-raised);border-left:3px solid var(--red);padding:14px 18px;margin:18px 0;font-size:14.5px;color:var(--ink-dim);}
+  .callout.good{border-left-color:var(--green);}
+  .callout.neutral{border-left-color:var(--gold);}
+  .callout strong{color:var(--ink);}
+  .formula{background:var(--paper-raised);border-left:3px solid var(--blue);padding:14px 20px;margin:16px 0;font-family:var(--sans);font-size:14px;color:var(--ink-dim);}
+  .formula strong{color:var(--gold);display:block;margin-bottom:6px;}
+  .methodology{padding:26px 32px;background:var(--paper-raised);}
+  .methodology h2{font-family:var(--sans);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--ink-faint);margin:0 0 14px;}
+  .methodology p{font-size:13.5px;color:var(--ink-dim);margin:0 0 12px;}
+  .colophon{padding:22px 32px 30px;text-align:center;font-family:var(--sans);font-size:11px;color:var(--ink-faint);letter-spacing:0.3px;}
+  .colophon .rule{width:60px;height:1px;background:var(--gold);margin:0 auto 16px;}
+  @media(max-width:600px){
+    .masthead h1{font-size:26px;}
+    .section,.edito,.methodology{padding:20px 18px;}
+    table{font-size:11.5px;} th,td{padding:6px 6px;}
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <div class="masthead">
+    <p class="kicker">Édition Hebdomadaire — Données de marché</p>
+    <h1>Journal du Marché</h1>
+    <div class="sub">
+      <span>Empire Immo · Monde 8</span>
+      <span>Édition N°12</span>
+      <span>30 juin 2026</span>
+    </div>
+  </div>
+
+  <div class="edito">
+    <h2>L'édito — Stabilité au sommet, mouvements discrets en bas</h2>
+    <p>Édition #12 du Journal du Marché, basée sur l'export post-reset du 30 juin 2026 (taux promoteur 71 pour les bâtiments, 75 pour les matériaux). Cette semaine confirme une tendance de fond : les classements sont stables, les champions restent champions, mais quelques mouvements discrets méritent l'attention.</p>
+    <p>Tous les prix des matières premières progressent légèrement à la hausse. La Brique et le Béton avancé améliorent leur rentabilité. L'Acier et le Verre restent dans le rouge pour la douzième semaine consécutive.</p>
+  </div>
+
+  <!-- ENTREPRISE -->
+  <div class="section">
+    <div class="section-head"><span class="icon">🏢</span><h2>Secteur Entreprise — Vue d'ensemble</h2></div>
+
+    <table>
+      <tr><th>Secteur</th><th class="num">ROI moyen</th></tr>
+      <tr><td>Commerciaux</td><td class="num hl">2,36 %</td></tr>
+      <tr><td>Transport</td><td class="num hl">2,22 %</td></tr>
+      <tr><td>Industriels</td><td class="num hl">2,21 %</td></tr>
+      <tr><td>Bureaux</td><td class="num hl">2,03 %</td></tr>
+      <tr><td>Zones</td><td class="num hl">1,84 %</td></tr>
+    </table>
+
+    <div class="subblock top">
+      <div class="subblock-title">🏆 Top 5 ROI — entreprise</div>
+      <ul>
+        <li>Centre de recherche régional — 18,00 G Ø — ROI <span class="val">4,76 %</span></li>
+        <li>Plate-forme pétrolière améliorée — 30,59 G Ø — ROI <span class="val">4,59 %</span></li>
+        <li>Plate-forme pétrolière aménagée — 15,00 G Ø — ROI <span class="val">4,46 %</span></li>
+        <li>Plate-forme pétrolière high-tech — 52,87 G Ø — ROI <span class="val">4,27 %</span></li>
+        <li>Centre de recherche national — 40,79 G Ø — ROI <span class="val">4,26 %</span></li>
+      </ul>
+    </div>
+
+    <div class="subblock">
+      <div class="subblock-title">💰 Meilleur rendement sur capital construit</div>
+      <ul>
+        <li>Centre de recherche régional — capital 26,89 G Ø — <span class="val">3,18 %</span></li>
+        <li>Plate-forme pétrolière high-tech — capital 74,21 G Ø — <span class="val">3,04 %</span></li>
+        <li>Centre de recherche national — capital 59,79 G Ø — <span class="val">2,90 %</span></li>
+      </ul>
+    </div>
+
+    <div class="subblock entry">
+      <div class="subblock-title">🚪 Portes d'entrée accessibles</div>
+      <ul>
+        <li>Local de haut standing — 439,7 k Ø — ROI <span class="val">3,61 %</span></li>
+        <li>Local tout équipé — 333,9 k Ø — ROI <span class="val">3,49 %</span></li>
+        <li>Atelier high-tech — 219,2 k Ø — ROI <span class="val">3,40 %</span></li>
+      </ul>
+    </div>
+
+    <div class="callout neutral">
+      <strong>📊 Mouvements notables.</strong> Le secteur entreprise reste remarquablement stable — aucun changement de podium depuis plusieurs éditions. Les Technopôle demeurent en bas de classement (0,80 % à 1,00 %), toujours parmi les pires rendements malgré des valeurs d'achat colossales.
+    </div>
+  </div>
+
+  <!-- PERSONNEL -->
+  <div class="section">
+    <div class="section-head"><span class="icon">🏠</span><h2>Secteur Personnel — Vue d'ensemble</h2></div>
+
+    <table>
+      <tr><th>Secteur</th><th class="num">ROI moyen</th></tr>
+      <tr><td>Complexe résidentiel</td><td class="num hl">1,81 %</td></tr>
+      <tr><td>Appartement</td><td class="num hl">1,49 %</td></tr>
+      <tr><td>Maison</td><td class="num hl">1,37 %</td></tr>
+      <tr><td>Chambre</td><td class="num hl">1,35 %</td></tr>
+    </table>
+
+    <div class="subblock top">
+      <div class="subblock-title">🏆 Top 5 ROI — personnel</div>
+      <ul>
+        <li>Complexe résidentiel palacium tout confort — ROI <span class="val">6,49 %</span></li>
+        <li>Complexe résidentiel palacium habitable — ROI <span class="val">5,85 %</span></li>
+        <li>Complexe résidentiel palacium luxueux — ROI <span class="val">5,02 %</span></li>
+        <li>Complexe résidentiel titanium habitable — ROI <span class="val">3,53 %</span></li>
+        <li>Complexe résidentiel titanium tout confort — ROI <span class="val">3,48 %</span></li>
+      </ul>
+    </div>
+
+    <div class="subblock">
+      <div class="subblock-title">💰 Meilleur rendement sur capital construit</div>
+      <ul>
+        <li>T2 simple habitable — capital 9 706 Ø — <span class="val">9,75 %</span></li>
+        <li>T2 simple équipé — capital 16 190 Ø — <span class="val">6,52 %</span></li>
+        <li>T2 simple luxueux — capital 24 601 Ø — <span class="val">5,66 %</span></li>
+      </ul>
+    </div>
+
+    <div class="subblock entry">
+      <div class="subblock-title">🚪 Portes d'entrée accessibles</div>
+      <ul>
+        <li>Chambre seule équipée — 20 618 Ø — ROI <span class="val">1,72 %</span></li>
+        <li>Chambre seule tout confort — 25 436 Ø — ROI <span class="val">1,55 %</span></li>
+        <li>Chambre seule habitable — 18 887 Ø — ROI <span class="val">1,49 %</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- TERRAINS -->
+  <div class="section">
+    <div class="section-head"><span class="icon">🌍</span><h2>Terrains</h2></div>
+
+    <table>
+      <tr><th>Terrain</th><th class="num">Valeur</th><th class="num">Coût fixe /j</th></tr>
+      <tr><td>Petit terrain</td><td class="num">58 169 Ø</td><td class="num">110 Ø</td></tr>
+      <tr><td>Terrain moyen</td><td class="num">48 805 Ø</td><td class="num">160 Ø</td></tr>
+      <tr><td>Grand terrain</td><td class="num">53 846 Ø</td><td class="num">318 Ø</td></tr>
+      <tr><td>Parc</td><td class="num">74 355 Ø</td><td class="num">558 Ø</td></tr>
+      <tr><td>Grand parc</td><td class="num">102 665 Ø</td><td class="num">730 Ø</td></tr>
+    </table>
+
+    <p class="note">📌 Le Terrain moyen reste moins cher que le Petit terrain pour la Xe semaine consécutive — l'anomalie de prix persiste sans correction visible.</p>
+  </div>
+
+  <!-- USINES -->
+  <div class="section">
+    <div class="section-head"><span class="icon">🏭</span><h2>Matières premières et usines</h2></div>
+
+    <table>
+      <tr><th>Matière</th><th class="num">Prix</th><th>Unité</th></tr>
+      <tr><td>Béton</td><td class="num hl">221,12 Ø</td><td>m³ <span class="up">▲</span></td></tr>
+      <tr><td>Acier</td><td class="num hl">854,87 Ø</td><td>tonne <span class="up">▲</span></td></tr>
+      <tr><td>Bois</td><td class="num hl">45,70 Ø</td><td>m² <span class="up">▲</span></td></tr>
+      <tr><td>Brique</td><td class="num hl">647,34 Ø</td><td>m³ <span class="up">▲</span></td></tr>
+      <tr><td>Verre</td><td class="num hl">201,85 Ø</td><td>m² <span class="up">▲</span></td></tr>
+    </table>
+
+    <div class="subblock top">
+      <div class="subblock-title">✅ Usines rentables</div>
+      <ul>
+        <li>Bois — Petite scierie : +4 116 Ø/j — rendement <span class="val">3,43 %</span> <span class="chg-up">▲</span></li>
+        <li>Brique — Fabrique de briques : +10 207 Ø/j — rendement <span class="val">2,65 %</span> <span class="chg-up">▲</span></li>
+        <li>Bois — Scierie avancée : +27 348 Ø/j — rendement <span class="val">1,67 %</span> <span class="chg-up">▲</span></li>
+        <li>Béton — Centrale à béton avancée : +99 564 Ø/j — rendement <span class="val">1,56 %</span> <span class="chg-up">▲</span></li>
+        <li>Brique — Presse à briques : +24 254 Ø/j — rendement <span class="val">0,47 %</span> <span class="chg-up">▲</span></li>
+      </ul>
+    </div>
+
+    <div class="callout">
+      <strong>⚠️ Acier et Verre — toujours déficitaires.</strong> L'Acierie perd <span class="dn">−109 k Ø/j (−4,46 %)</span>, l'Acierie avancée <span class="dn">−799 k Ø/j (−2,82 %)</span>. Petite usine de verre : <span class="dn">−11 k Ø/j (−3,43 %)</span>, Usine de verre moyenne : <span class="dn">−65 k Ø/j (−1,87 %)</span>. Légère amélioration cette semaine, mais les deux filières restent structurellement dans le rouge.
+    </div>
+  </div>
+
+  <!-- POUR LES NOUVEAUX -->
+  <div class="section">
+    <div class="section-head"><span class="icon">📌</span><h2>Pour les nouveaux joueurs</h2></div>
+
+    <p class="analysis">Le <strong>T2 simple habitable</strong> maintient son titre de champion du rendement sur capital construit avec 9,75% — pratiquement identique à la semaine dernière (9,74%). La stabilité de ce chiffre semaine après semaine confirme que ce bien reste le meilleur point d'entrée pour les joueurs en début de progression, quelle que soit l'édition consultée.</p>
+
+    <div class="formula">
+      <strong>Deux calculs à toujours distinguer :</strong>
+      1. ROI sur valeur totale = loyer net ÷ valeur d'achat affichée<br>
+      2. ROI sur capital construit = loyer net ÷ (coût réel de construction + réparation)
+    </div>
+  </div>
+
+  <!-- MÉTHODOLOGIE -->
+  <div class="methodology">
+    <h2>Note de méthodologie</h2>
+    <p>Export pris après le reset quotidien de 3h00 (30 juin 2026). Taux promoteur : 71 pour les bâtiments, 75 pour les matériaux.</p>
+  </div>
+
+  <!-- COLOPHON -->
+  <div class="colophon">
+    <div class="rule"></div>
+    Données du 30 juin 2026 (export post-reset), basées sur les exports CSV officiels du jeu<br>
+    (bâtiments personnels, bâtiments entreprise, terrains, matériaux, usines)<br>
+    Tous les calculs sont reproductibles à partir de ces exports.
+  </div>
+
+</div>
+</body>
+</html>
