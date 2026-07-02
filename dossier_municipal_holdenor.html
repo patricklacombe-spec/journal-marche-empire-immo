@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Journal du Marché — Dossier Municipal — Holdenor</title>
+<style>
+  :root{
+    --bg:#15130f; --paper:#1c1916; --paper-raised:#221e19;
+    --ink:#e8e0d0; --ink-dim:#a89a82; --ink-faint:#756a58;
+    --rule:#3a342a; --gold:#c9a35a; --green:#7a9b6e; --red:#b8614f;
+    --orange:#c97a2a; --blue:#5a85c9;
+    --serif:Georgia,'Times New Roman',serif; --sans:'Segoe UI',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);line-height:1.55;padding:32px 16px;}
+  .sheet{max-width:760px;margin:0 auto;background:var(--paper);border:1px solid var(--rule);}
+  .masthead{padding:28px 32px 18px;border-bottom:3px double var(--gold);text-align:center;}
+  .kicker{font-family:var(--sans);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin:0 0 10px;}
+  .masthead h1{font-size:36px;margin:0;letter-spacing:1px;font-weight:700;}
+  .masthead .sub{font-family:var(--sans);font-size:12px;color:var(--ink-dim);margin-top:10px;display:flex;justify-content:center;gap:18px;flex-wrap:wrap;}
+  .masthead .sub span{white-space:nowrap;}
+  .edito{padding:26px 32px 8px;border-bottom:1px solid var(--rule);}
+  .edito h2{font-family:var(--sans);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin:0 0 14px;}
+  .edito p{font-size:16px;margin:0 0 16px;color:var(--ink);}
+  .edito p:first-of-type::first-letter{font-size:46px;float:left;line-height:0.8;padding:6px 8px 0 0;color:var(--gold);font-weight:700;}
+  .section{padding:26px 32px;border-bottom:1px solid var(--rule);}
+  .interviewee{display:flex;align-items:center;gap:14px;margin-bottom:20px;padding:14px 18px;background:var(--paper-raised);border-left:3px solid var(--gold);}
+  .interviewee-name{font-size:20px;font-weight:700;font-family:var(--serif);}
+  .interviewee-role{font-family:var(--sans);font-size:12px;color:var(--ink-faint);margin-top:3px;}
+  .interviewee-icon{font-size:32px;}
+  .qa{margin-bottom:24px;}
+  .question{font-family:var(--sans);font-size:13px;font-weight:700;color:var(--gold);margin-bottom:10px;padding-left:14px;border-left:2px solid var(--gold);}
+  .reponse{font-size:15px;color:var(--ink-dim);line-height:1.65;padding-left:14px;}
+  .reponse p{margin:0 0 10px;}
+  .reponse p:last-child{margin:0;}
+  .citation{background:var(--paper-raised);border-left:3px solid var(--gold);padding:16px 20px;margin:20px 0;font-size:15px;color:var(--ink);font-style:italic;}
+  .note-edito{font-style:italic;font-size:13.5px;color:var(--ink-faint);border-left:2px solid var(--gold);padding-left:14px;margin-top:14px;}
+  .analysis{font-size:15px;margin:0 0 16px;}
+  .analysis strong{color:var(--gold);}
+  .section-title{font-family:var(--sans);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin:0 0 20px;}
+  .colophon{padding:22px 32px 30px;text-align:center;font-family:var(--sans);font-size:11px;color:var(--ink-faint);letter-spacing:0.3px;}
+  .colophon .rule{width:60px;height:1px;background:var(--gold);margin:0 auto 16px;}
+  @media(max-width:600px){
+    .masthead h1{font-size:26px;}
+    .section,.edito{padding:20px 18px;}
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <div class="masthead">
+    <p class="kicker">Dossier Spécial — Vie Municipale · Monde 8</p>
+    <h1>Journal du Marché</h1>
+    <div class="sub">
+      <span>Empire Immo · Monde 8</span>
+      <span>Dossier Municipal · Holdenor</span>
+      <span>2 juillet 2026</span>
+    </div>
+  </div>
+
+  <div class="edito">
+    <h2>L'édito — Dans les coulisses d'une ville</h2>
+    <p>Comment fonctionne une équipe municipale de Monde 8? Derrière chaque ville bien gérée se cache une organisation précise, des rôles bien définis et une communication constante. Deux membres de l'équipe de Holdenor ont accepté de répondre aux questions du Journal du Marché : Pomme, maire, et Mac_Allister, conseiller en communication.</p>
+    <p class="note-edito">Note éditoriale : ce dossier est strictement axé sur le fonctionnement et l'organisation municipale. Aucune question politique, aucune prise de position. Les réponses sont reproduites fidèlement, dans le respect des propos tenus.</p>
+  </div>
+
+  <!-- POMME -->
+  <div class="section">
+    <div class="section-title">Partie 1 — La maire</div>
+    <div class="interviewee">
+      <span class="interviewee-icon">🏛️</span>
+      <div>
+        <div class="interviewee-name">Pomme</div>
+        <div class="interviewee-role">Maire · Holdenor · Monde 8</div>
+      </div>
+    </div>
+
+    <div class="qa">
+      <div class="question">En quoi consiste ton rôle de maire au quotidien ?</div>
+      <div class="reponse">
+        <p>En tant que maire, mon rôle est de veiller au bon fonctionnement et au développement de la ville. Au quotidien, je coordonne le travail de l'équipe municipale, m'assure que chaque service remplit ses missions et prends les décisions nécessaires au bon développement de la commune.</p>
+        <p>Je supervise l'économie, l'urbanisme, la communication et la gestion des différentes structures de la ville. Je veille également à accompagner les nouveaux habitants, à répondre aux besoins de la population et à maintenir une bonne dynamique au sein de la communauté.</p>
+        <p>Mon rôle consiste aussi à anticiper les besoins de la ville, résoudre les éventuels problèmes, organiser les priorités et garantir une bonne coordination entre tous les membres de l'équipe municipale afin d'assurer une gestion efficace et pérenne.</p>
+      </div>
+    </div>
+
+    <div class="qa">
+      <div class="question">Comment est organisée votre équipe municipale ?</div>
+      <div class="reponse">
+        <p>Notre équipe est organisée de manière à ce que chaque membre ait un rôle bien défini, tout en travaillant en coordination avec les autres.</p>
+        <p>Le Directeur de banque et son conseiller assurent le bon fonctionnement de la banque. Ils gèrent les taux ainsi que l'évolution des finances de la ville afin de garantir une économie stable.</p>
+        <p>Le responsable de l'urbanisme veille au développement de la ville. Il s'assure que les constructions réalisées sont adaptées aux besoins et permettent d'atteindre les objectifs de développement fixés.</p>
+        <p>Le conseiller en communication fait le lien entre l'équipe municipale et les habitants. Il informe régulièrement la population de l'évolution des indicateurs de la ville et des décisions importantes.</p>
+        <p>Le PDG de la Holding Municipale veille au bon fonctionnement de la holding. Il est également chargé de créer les filiales pour les nouveaux habitants afin de faciliter leur intégration et leur développement.</p>
+        <p>Enfin, le barman occupe un rôle essentiel dans l'animation de la ville. Il dynamise le bar en organisant des jeux et des événements, contribuant ainsi à créer une ambiance conviviale et à renforcer les échanges entre les habitants.</p>
+        <p>Grâce à cette répartition des responsabilités et à une communication régulière entre tous les membres de l'équipe, nous assurons une gestion efficace et cohérente de la ville.</p>
+      </div>
+    </div>
+
+    <div class="qa">
+      <div class="question">Quel conseil donnerais-tu à un joueur qui voudrait rejoindre une équipe municipale ?</div>
+      <div class="reponse">
+        <p>Pour contribuer à sa ville, le plus important est d'avoir un véritable esprit d'entraide, de faire preuve de rigueur et d'être impliqué dans la vie de la communauté. Chaque action, même modeste, peut avoir un impact positif sur le développement de la ville.</p>
+        <p>Pour intégrer l'équipe municipale, il est essentiel de faire preuve d'un investissement régulier, d'être disponible lorsque c'est nécessaire et d'avoir un bon esprit d'équipe. Il faut également posséder un bon sens de l'organisation, être rigoureux dans son travail, savoir communiquer avec les habitants et adopter un comportement exemplaire. La motivation, le savoir-vivre et l'envie de faire évoluer la ville sont des qualités indispensables pour exercer ce type de responsabilité.</p>
+      </div>
+    </div>
+
+    <div class="citation">« Chaque action, même modeste, peut avoir un impact positif sur le développement de la ville. »<br><span style="font-family:var(--sans);font-size:12px;color:var(--ink-faint);font-style:normal;">— Pomme, Maire · Holdenor</span></div>
+  </div>
+
+  <!-- MAC_ALLISTER -->
+  <div class="section">
+    <div class="section-title">Partie 2 — Le conseiller en communication</div>
+    <div class="interviewee">
+      <span class="interviewee-icon">🗣️</span>
+      <div>
+        <div class="interviewee-name">Mac_Allister</div>
+        <div class="interviewee-role">Conseiller en communication · Ancien PDG Holding Municipale · Holdenor</div>
+      </div>
+    </div>
+
+    <div class="qa">
+      <div class="question">Quel est ton rôle en tant que conseiller — en quoi est-il différent de celui du maire ?</div>
+      <div class="reponse">
+        <p>En tant que conseiller en communication, je veille à la qualité de la communication de la ville, aussi bien en interne qu'auprès des habitants. Je participe à la préparation des annonces, je facilite la circulation de l'information et je contribue à valoriser les projets municipaux. La maire, de son côté, assure la coordination générale de la municipalité et veille à la bonne exécution des décisions adoptées.</p>
+      </div>
+    </div>
+
+    <div class="qa">
+      <div class="question">Sur quels dossiers es-tu principalement impliqué ?</div>
+      <div class="reponse">
+        <p>Je suis principalement impliqué dans les sujets liés à la communication et à l'image de la ville. Mon expérience en tant qu'ancien PDG de la holding municipale me permet également d'apporter un avis sur les projets ayant un impact économique ou organisationnel lorsque cela est utile. L'objectif est toujours d'aider l'équipe à prendre les décisions les plus pertinentes pour la ville.</p>
+      </div>
+    </div>
+
+    <div class="qa">
+      <div class="question">Comment se prennent les décisions importantes dans l'équipe municipale ?</div>
+      <div class="reponse">
+        <p>Nous fonctionnons sur un principe de concertation. Chaque membre de l'équipe peut proposer des idées ou des projets. Ces propositions sont discutées collectivement puis soumises au vote. Une fois la majorité obtenue, la décision est appliquée. La maire joue un rôle essentiel de coordination, mais les choix importants sont le fruit d'un travail collectif plutôt que de décisions prises par une seule personne.</p>
+      </div>
+    </div>
+
+    <div class="qa">
+      <div class="question">Qu'est-ce que ce rôle t'a appris sur le fonctionnement économique d'une ville ?</div>
+      <div class="reponse">
+        <p>Mon passage à la tête de la holding municipale m'a permis de comprendre en profondeur les enjeux économiques d'une ville : gestion des ressources, investissements, rentabilité et vision à long terme. Aujourd'hui, mon rôle de conseiller en communication m'a appris qu'une bonne stratégie économique doit aussi s'accompagner d'une communication claire et transparente. Les deux sont complémentaires : de bonnes décisions doivent être comprises pour être pleinement efficaces.</p>
+      </div>
+    </div>
+
+    <div class="qa">
+      <div class="question">Quel conseil pour un joueur qui voudrait rejoindre une équipe municipale ?</div>
+      <div class="reponse">
+        <p>Je lui conseillerais de s'investir dans la vie de sa ville et de ne pas hésiter à prendre des responsabilités lorsqu'une opportunité se présente. Mon parcours, de PDG de la holding municipale à conseiller en communication, montre qu'il est possible d'évoluer en acquérant de l'expérience. Les qualités les plus importantes sont la rigueur, le sens du travail en équipe, la capacité d'écoute, la communication et la volonté de toujours agir dans l'intérêt de la ville. Il faut aussi savoir défendre ses idées tout en respectant les décisions prises collectivement à l'issue des votes.</p>
+      </div>
+    </div>
+
+    <div class="citation">« De bonnes décisions doivent être comprises pour être pleinement efficaces. »<br><span style="font-family:var(--sans);font-size:12px;color:var(--ink-faint);font-style:normal;">— Mac_Allister, Conseiller en communication · Holdenor</span></div>
+  </div>
+
+  <!-- CONCLUSION -->
+  <div class="section">
+    <p class="analysis">Pomme et Mac_Allister illustrent deux visions complémentaires d'une même réalité : une ville bien gérée repose sur une équipe où chaque rôle est clair, la communication est constante et les décisions se prennent collectivement. Le Journal du Marché remercie chaleureusement Pomme et Mac_Allister pour leur disponibilité et leurs réponses.</p>
+  </div>
+
+  <div class="colophon">
+    <div class="rule"></div>
+    Journal du Marché — Monde 8 · Dossier Équipe Municipale · Holdenor · 2 juillet 2026<br>
+    Dédié à la rigueur et à l'analyse factuelle.
+  </div>
+
+</div>
+</body>
+</html>

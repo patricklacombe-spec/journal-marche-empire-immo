@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Journal du Marché — Dossier Modération — Flo51</title>
+<style>
+  :root{
+    --bg:#15130f; --paper:#1c1916; --paper-raised:#221e19;
+    --ink:#e8e0d0; --ink-dim:#a89a82; --ink-faint:#756a58;
+    --rule:#3a342a; --gold:#c9a35a; --green:#7a9b6e; --red:#b8614f;
+    --orange:#c97a2a; --blue:#5a85c9;
+    --serif:Georgia,'Times New Roman',serif; --sans:'Segoe UI',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);line-height:1.55;padding:32px 16px;}
+  .sheet{max-width:760px;margin:0 auto;background:var(--paper);border:1px solid var(--rule);}
+  .masthead{padding:28px 32px 18px;border-bottom:3px double var(--gold);text-align:center;}
+  .kicker{font-family:var(--sans);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin:0 0 10px;}
+  .masthead h1{font-size:36px;margin:0;letter-spacing:1px;font-weight:700;}
+  .masthead .sub{font-family:var(--sans);font-size:12px;color:var(--ink-dim);margin-top:10px;display:flex;justify-content:center;gap:18px;flex-wrap:wrap;}
+  .masthead .sub span{white-space:nowrap;}
+  .edito{padding:26px 32px 8px;border-bottom:1px solid var(--rule);}
+  .edito h2{font-family:var(--sans);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin:0 0 14px;}
+  .edito p{font-size:16px;margin:0 0 16px;color:var(--ink);}
+  .edito p:first-of-type::first-letter{font-size:46px;float:left;line-height:0.8;padding:6px 8px 0 0;color:var(--gold);font-weight:700;}
+  .section{padding:26px 32px;border-bottom:1px solid var(--rule);}
+  .section-head{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;}
+  .section-head .icon{font-size:20px;}
+  .section-head h2{font-size:21px;margin:0;letter-spacing:0.3px;}
+  .interviewee{display:flex;align-items:center;gap:14px;margin-bottom:20px;padding:14px 18px;background:var(--paper-raised);border-left:3px solid var(--gold);}
+  .interviewee-name{font-size:20px;font-weight:700;font-family:var(--serif);}
+  .interviewee-role{font-family:var(--sans);font-size:12px;color:var(--ink-faint);margin-top:3px;}
+  .interviewee-icon{font-size:32px;}
+  .qa{margin-bottom:24px;}
+  .question{font-family:var(--sans);font-size:13px;font-weight:700;color:var(--gold);margin-bottom:10px;padding-left:14px;border-left:2px solid var(--gold);}
+  .reponse{font-size:15px;color:var(--ink-dim);line-height:1.65;padding-left:14px;}
+  .reponse p{margin:0 0 10px;}
+  .reponse p:last-child{margin:0;}
+  .citation{background:var(--paper-raised);border-left:3px solid var(--gold);padding:16px 20px;margin:20px 0;font-size:15px;color:var(--ink);font-style:italic;}
+  .note-edito{font-style:italic;font-size:13.5px;color:var(--ink-faint);border-left:2px solid var(--gold);padding-left:14px;margin-top:14px;}
+  .analysis{font-size:15px;margin:0 0 16px;}
+  .analysis strong{color:var(--gold);}
+  .methodology{padding:26px 32px;background:var(--paper-raised);}
+  .methodology h2{font-family:var(--sans);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--ink-faint);margin:0 0 14px;}
+  .methodology p{font-size:13.5px;color:var(--ink-dim);margin:0 0 12px;}
+  .colophon{padding:22px 32px 30px;text-align:center;font-family:var(--sans);font-size:11px;color:var(--ink-faint);letter-spacing:0.3px;}
+  .colophon .rule{width:60px;height:1px;background:var(--gold);margin:0 auto 16px;}
+  @media(max-width:600px){
+    .masthead h1{font-size:26px;}
+    .section,.edito,.methodology{padding:20px 18px;}
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <div class="masthead">
+    <p class="kicker">Dossier Spécial — Portraits · Modération · Monde 8</p>
+    <h1>Journal du Marché</h1>
+    <div class="sub">
+      <span>Empire Immo · Monde 8</span>
+      <span>Dossier Modération</span>
+      <span>1er juillet 2026</span>
+    </div>
+  </div>
+
+  <div class="edito">
+    <h2>L'édito — Dans l'ombre de la communauté</h2>
+    <p>Derrière chaque conflit apaisé, chaque signalement traité, chaque sanction invisible — il y a Flo51. Le Journal du Marché inaugure une nouvelle série de portraits : ceux qui font tourner M8 dans l'ombre. Premier volet : le modérateur qui veille sur la communauté depuis janvier 2026.</p>
+    <p class="note-edito">Note éditoriale : ce dossier est strictement axé sur le fonctionnement et l'expérience du rôle de modérateur. Aucune question politique, aucune prise de position. Les réponses sont reproduites fidèlement, dans le respect des propos tenus.</p>
+  </div>
+
+  <!-- PORTRAIT FLO51 -->
+  <div class="section">
+    <div class="interviewee">
+      <span class="interviewee-icon">🛡️</span>
+      <div>
+        <div class="interviewee-name">Flo51</div>
+        <div class="interviewee-role">Modérateur · Monde 8 · En poste depuis janvier 2026</div>
+      </div>
+    </div>
+
+    <div class="qa">
+      <div class="question">Depuis combien de temps es-tu modérateur sur Empire Immo, et qu'est-ce qui t'a amené à ce rôle ?</div>
+      <div class="reponse">
+        <p>Je suis modérateur depuis janvier 2026. Lors de la campagne de recrutement lancée par Elmut en fin d'année dernière, je me suis dit que c'était pour moi une opportunité d'apporter quelque chose en plus au jeu. Le Staff a un rôle essentiel dans le jeu, il permet d'aider Elmut dans sa gestion quotidienne et de s'assurer que la communauté garde des échanges sereins.</p>
+      </div>
+    </div>
+
+    <div class="qa">
+      <div class="question">En quoi consiste concrètement ton travail au quotidien — ce que les joueurs ne voient pas ?</div>
+      <div class="reponse">
+        <p>Notre mission principale consiste à répondre aux différents messages que les joueurs envoient sur la messagerie du Staff. On assure le support de 1er niveau en aiguillant les joueurs qui ont des problèmes ou des interrogations. L'autre mission principale c'est bien entendu le traitement des signalements des différents canaux (tchat, forum, presse, Discord, etc.), de vérifier le signalement et de réagir à celui-ci. Et même en dehors des signalements, on continue la surveillance des canaux.</p>
+      </div>
+    </div>
+
+    <div class="qa">
+      <div class="question">Quelle est la situation la plus marquante que tu aies eu à gérer ?</div>
+      <div class="reponse">
+        <p>Sans vouloir raviver la flamme, la dernière situation marquante a été la gestion du détournement du bug du mois de juin et de ses conséquences. Pendant cette période, on a eu beaucoup de demandes des joueurs (notamment après le rollback) et les échanges ont été plutôt tendus à certains moments, ce qui a demandé une vigilance particulière pour éviter les dérives.</p>
+      </div>
+    </div>
+
+    <div class="qa">
+      <div class="question">Quel conseil donnerais-tu à un nouveau joueur pour bien démarrer et éviter les problèmes ?</div>
+      <div class="reponse">
+        <p>Pour bien débuter, je conseille toujours aux nouveaux joueurs plusieurs choses : lire la Constitution (qui est riche en informations), lire la FAQ, éventuellement regarder les tutoriels et surtout suivre les objectifs établis par le jeu. En suivant tout ça, les joueurs sont armés pour bien débuter leur aventure.</p>
+        <p>Pour éviter les problèmes, il y a une chose à retenir : on reste polis, courtois avec les joueurs et en cas de conflit, on ne rentre pas dans des messages à visée personnelle. L'idée c'est de toujours rester sur le fond et d'éviter que la forme ne soit plus adaptée.</p>
+      </div>
+    </div>
+
+    <div class="qa">
+      <div class="question">Y a-t-il quelque chose que tu aimerais que les joueurs comprennent mieux sur le fonctionnement du jeu ou de la modération ?</div>
+      <div class="reponse">
+        <p>Il y a une chose à savoir sur la modération : la majorité de notre travail est invisible aux yeux de tous. Ce n'est pas parce que les joueurs ne voient pas quelque chose que ça n'a pas eu lieu. Par exemple, lors de conflits entre joueurs, nous ne dévoilons jamais les éventuelles sanctions appliquées pour des raisons de confidentialité. Ainsi, le joueur ayant signalé une situation peut avoir l'impression que son signalement n'a pas été traité alors que des sanctions ont bien eu lieu.</p>
+        <p>Dernière chose, nous nous apprêtons à garder une totale neutralité envers l'ensemble des joueurs. Si un joueur enfreint les règles, peu importe qu'il débute, qu'il soit expérimenté, qu'il soit maire, journaliste, conseiller municipal ou n'importe quel rôle éventuel, les sanctions éventuelles seront les mêmes pour tous.</p>
+      </div>
+    </div>
+
+    <div class="citation">« Ce n'est pas parce que les joueurs ne voient pas quelque chose que ça n'a pas eu lieu. »<br><span style="font-family:var(--sans);font-size:12px;color:var(--ink-faint);font-style:normal;">— Flo51, Modérateur · Monde 8</span></div>
+  </div>
+
+  <!-- CONCLUSION -->
+  <div class="section">
+    <div class="section-head"><span class="icon">📌</span><h2>En conclusion</h2></div>
+    <p class="analysis">Flo51 lève un coin du voile sur un travail qui, par nature, reste invisible. Derrière chaque échange serein sur le tchat, chaque conflit apaisé, chaque signalement traité — il y a une équipe qui veille. Sa réponse sur la <strong>neutralité absolue</strong> de la modération est peut-être la plus importante de cette interview : aucun statut, aucun rôle ne protège d'une sanction si les règles sont enfreintes.</p>
+    <p class="analysis">Le Journal du Marché remercie chaleureusement Flo51 pour sa disponibilité et la qualité de ses réponses.</p>
+  </div>
+
+  <!-- COLOPHON -->
+  <div class="colophon">
+    <div class="rule"></div>
+    Journal du Marché — Monde 8 · Dossier Modération · 1er juillet 2026<br>
+    Dédié à la rigueur et à l'analyse factuelle.
+  </div>
+
+</div>
+</body>
+</html>
