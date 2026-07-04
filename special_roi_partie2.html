@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Journal du Marché — Spécial ROI (2/2) — Le marché du 3 juillet</title>
+<style>
+  :root{
+    --bg:#15130f; --paper:#1c1916; --paper-raised:#221e19;
+    --ink:#e8e0d0; --ink-dim:#a89a82; --ink-faint:#756a58;
+    --rule:#3a342a; --gold:#c9a35a; --green:#7a9b6e; --red:#b8614f;
+    --orange:#c97a2a; --blue:#5a85c9;
+    --serif:Georgia,'Times New Roman',serif; --sans:'Segoe UI',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);line-height:1.55;padding:32px 16px;}
+  .sheet{max-width:760px;margin:0 auto;background:var(--paper);border:1px solid var(--rule);}
+  .masthead{padding:28px 32px 18px;border-bottom:3px double var(--gold);text-align:center;}
+  .kicker{font-family:var(--sans);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin:0 0 10px;}
+  .masthead h1{font-size:36px;margin:0;letter-spacing:1px;font-weight:700;}
+  .masthead .sub{font-family:var(--sans);font-size:12px;color:var(--ink-dim);margin-top:10px;display:flex;justify-content:center;gap:18px;flex-wrap:wrap;}
+  .masthead .sub span{white-space:nowrap;}
+  .edito{padding:26px 32px 8px;border-bottom:1px solid var(--rule);}
+  .edito h2{font-family:var(--sans);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin:0 0 14px;}
+  .edito p{font-size:16px;margin:0 0 16px;color:var(--ink);}
+  .edito p:first-of-type::first-letter{font-size:46px;float:left;line-height:0.8;padding:6px 8px 0 0;color:var(--gold);font-weight:700;}
+  .section{padding:26px 32px;border-bottom:1px solid var(--rule);}
+  .section-head{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;}
+  .section-head .icon{font-size:20px;}
+  .section-head h2{font-size:21px;margin:0;letter-spacing:0.3px;}
+  table{width:100%;border-collapse:collapse;margin:14px 0 18px;font-family:var(--sans);font-size:13px;}
+  th{text-align:left;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-faint);font-weight:600;padding:6px 10px;border-bottom:1px solid var(--rule);}
+  td{padding:8px 10px;border-bottom:1px solid var(--rule);color:var(--ink-dim);}
+  tr:last-child td{border-bottom:none;}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;}
+  td.rank{text-align:center;font-weight:700;color:var(--gold);font-family:var(--sans);}
+  .hl{color:var(--gold);font-weight:700;}
+  .up{color:var(--green);}
+  .dn{color:var(--red);}
+  .star{color:var(--orange);}
+  .analysis{font-size:15px;margin:0 0 16px;}
+  .analysis strong{color:var(--gold);}
+  .note{font-family:var(--sans);font-size:12.5px;color:var(--ink-faint);font-style:italic;margin-top:10px;}
+  .subblock{margin:18px 0;}
+  .subblock-title{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:0.5px;margin-bottom:9px;color:var(--gold);}
+  .subblock ul{list-style:none;margin:0;padding:0;font-size:14.5px;}
+  .subblock li{padding:7px 0 7px 16px;border-left:2px solid var(--rule);margin-bottom:6px;color:var(--ink-dim);}
+  .subblock li .val{color:var(--gold);font-weight:700;}
+  .subblock li .chg-up{color:var(--green);font-size:12px;}
+  .subblock li .chg-dn{color:var(--red);font-size:12px;}
+  .subblock.top li{border-left-color:var(--green);}
+  .subblock.entry li{border-left-color:var(--ink-faint);}
+  .callout{background:var(--paper-raised);border-left:3px solid var(--red);padding:14px 18px;margin:18px 0;font-size:14.5px;color:var(--ink-dim);}
+  .callout.good{border-left-color:var(--green);}
+  .callout.neutral{border-left-color:var(--gold);}
+  .callout strong{color:var(--ink);}
+  .formula{background:var(--paper-raised);border-left:3px solid var(--blue);padding:14px 20px;margin:16px 0;font-family:var(--sans);font-size:14px;color:var(--ink-dim);}
+  .formula strong{color:var(--gold);display:block;margin-bottom:6px;}
+  .methodology{padding:26px 32px;background:var(--paper-raised);}
+  .methodology h2{font-family:var(--sans);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--ink-faint);margin:0 0 14px;}
+  .methodology p{font-size:13.5px;color:var(--ink-dim);margin:0 0 12px;}
+  .colophon{padding:22px 32px 30px;text-align:center;font-family:var(--sans);font-size:11px;color:var(--ink-faint);letter-spacing:0.3px;}
+  .colophon .rule{width:60px;height:1px;background:var(--gold);margin:0 auto 16px;}
+  @media(max-width:600px){
+    .masthead h1{font-size:26px;}
+    .section,.edito,.methodology{padding:20px 18px;}
+    table{font-size:11.5px;} th,td{padding:6px 6px;}
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <div class="masthead">
+    <p class="kicker">Édition Spéciale ROI · Partie 2 sur 2 · Monde 8</p>
+    <h1>Journal du Marché</h1>
+    <div class="sub">
+      <span>Empire Immo · Monde 8</span>
+      <span>Spécial ROI (2/2)</span>
+      <span>3 juillet 2026</span>
+    </div>
+  </div>
+
+  <div class="edito">
+    <h2>L'édito — Les formules appliquées au marché réel</h2>
+    <p>Second volet de l'édition spéciale ROI. Les formules ont été expliquées dans la Partie 1 — ici, on les applique aux données réelles du reset du 3 juillet 2026 (taux promoteur 87 pour les bâtiments, 84 pour les matériaux).</p>
+  </div>
+
+  <!-- TOP 10 ENTREPRISE -->
+  <div class="section">
+    <div class="section-head"><span class="icon">🏢</span><h2>Top 10 ROI locatif — Entreprise</h2></div>
+
+    <table>
+      <tr><th>#</th><th>Bien</th><th class="num">Valeur</th><th class="num">ROI</th><th class="num">Retour</th></tr>
+      <tr><td class="rank">1</td><td>Centre de recherche régional</td><td class="num">17,80 G Ø</td><td class="num hl">4,81 %</td><td class="num">21 j</td></tr>
+      <tr><td class="rank">2</td><td>Plate-forme pétrolière améliorée</td><td class="num">30,88 G Ø</td><td class="num hl">4,55 %</td><td class="num">22 j</td></tr>
+      <tr><td class="rank">3</td><td>Plate-forme pétrolière aménagée</td><td class="num">15,14 G Ø</td><td class="num hl">4,42 %</td><td class="num">23 j</td></tr>
+      <tr><td class="rank">4</td><td>Plate-forme pétrolière high-tech</td><td class="num">53,36 G Ø</td><td class="num hl">4,23 %</td><td class="num">24 j</td></tr>
+      <tr><td class="rank">5</td><td>Centre de recherche national</td><td class="num">41,17 G Ø</td><td class="num hl">4,22 %</td><td class="num">24 j</td></tr>
+      <tr style="background:var(--paper-raised)"><td class="rank">6</td><td>Réseau de bus 50 arrêts <span class="star">⭐</span></td><td class="num">13,64 M Ø</td><td class="num hl">4,11 %</td><td class="num">24 j</td></tr>
+      <tr style="background:var(--paper-raised)"><td class="rank">7</td><td>Local tout équipé <span class="star">⭐</span></td><td class="num">310 040 Ø</td><td class="num hl">3,76 %</td><td class="num">27 j</td></tr>
+      <tr><td class="rank">8</td><td>Centre de recherche international</td><td class="num">77,21 G Ø</td><td class="num hl">3,71 %</td><td class="num">27 j</td></tr>
+      <tr><td class="rank">9</td><td>Gare avec 4 terminaux</td><td class="num">905,14 M Ø</td><td class="num hl">3,71 %</td><td class="num">27 j</td></tr>
+      <tr style="background:var(--paper-raised)"><td class="rank">10</td><td>Réseau FreeCycl' 15 arrêts <span class="star">⭐</span></td><td class="num">2,90 M Ø</td><td class="num hl">3,59 %</td><td class="num">28 j</td></tr>
+    </table>
+    <p class="note">⭐ Biens accessibles aux budgets modestes avec excellent rapport performance/prix.</p>
+  </div>
+
+  <!-- TOP 10 PERSONNEL -->
+  <div class="section">
+    <div class="section-head"><span class="icon">🏠</span><h2>Top 10 ROI locatif — Personnel</h2></div>
+
+    <table>
+      <tr><th>#</th><th>Bien</th><th class="num">Valeur</th><th class="num">ROI</th><th class="num">Retour</th></tr>
+      <tr><td class="rank">1</td><td>Complexe résidentiel palacium tout confort</td><td class="num">2 065 T Ø</td><td class="num hl">6,43 %</td><td class="num">16 j</td></tr>
+      <tr><td class="rank">2</td><td>Complexe résidentiel palacium habitable</td><td class="num">1 636 T Ø</td><td class="num hl">5,80 %</td><td class="num">17 j</td></tr>
+      <tr><td class="rank">3</td><td>Complexe résidentiel palacium luxueux</td><td class="num">2 959 T Ø</td><td class="num hl">4,97 %</td><td class="num">20 j</td></tr>
+      <tr><td class="rank">4</td><td>Complexe résidentiel titanium habitable</td><td class="num">3,14 T Ø</td><td class="num hl">3,50 %</td><td class="num">29 j</td></tr>
+      <tr><td class="rank">5</td><td>Complexe résidentiel titanium tout confort</td><td class="num">3,99 T Ø</td><td class="num hl">3,45 %</td><td class="num">29 j</td></tr>
+      <tr style="background:var(--paper-raised)"><td class="rank">6</td><td>Grand complexe résidentiel habitable <span class="star">⭐</span></td><td class="num">15,85 M Ø</td><td class="num hl">2,98 %</td><td class="num">34 j</td></tr>
+      <tr><td class="rank">7</td><td>Complexe résidentiel millenium habitable</td><td class="num">35,40 G Ø</td><td class="num hl">2,88 %</td><td class="num">35 j</td></tr>
+      <tr style="background:var(--paper-raised)"><td class="rank">8</td><td>Complexe résidentiel géant habitable <span class="star">⭐</span></td><td class="num">39,65 M Ø</td><td class="num hl">2,87 %</td><td class="num">35 j</td></tr>
+      <tr style="background:var(--paper-raised)"><td class="rank">9</td><td>Complexe résidentiel géant tout confort <span class="star">⭐</span></td><td class="num">45,88 M Ø</td><td class="num hl">2,83 %</td><td class="num">35 j</td></tr>
+      <tr><td class="rank">10</td><td>Complexe résidentiel titanium luxueux</td><td class="num">5,37 T Ø</td><td class="num hl">2,71 %</td><td class="num">37 j</td></tr>
+    </table>
+  </div>
+
+  <!-- MEILLEUR PAR BUDGET -->
+  <div class="section">
+    <div class="section-head"><span class="icon">💰</span><h2>Meilleur choix par budget</h2></div>
+
+    <div class="subblock-title">🏠 Personnel</div>
+    <table>
+      <tr><th>Budget</th><th>Meilleur bien</th><th class="num">Valeur</th><th class="num">ROI</th></tr>
+      <tr><td>Moins de 50 000 Ø</td><td>Chambre seule équipée</td><td class="num">20 810 Ø</td><td class="num hl">1,71 %</td></tr>
+      <tr><td>50 000 Ø à 1 M Ø</td><td>Résidence 12 T2 habitables</td><td class="num">460 798 Ø</td><td class="num hl">2,46 %</td></tr>
+      <tr><td>1 M Ø à 100 M Ø</td><td>Grand complexe résidentiel habitable</td><td class="num">15,85 M Ø</td><td class="num hl">2,98 %</td></tr>
+      <tr><td>Plus de 100 M Ø</td><td>Complexe résidentiel palacium tout confort</td><td class="num">2 065 T Ø</td><td class="num hl">6,43 %</td></tr>
+    </table>
+
+    <div class="subblock-title" style="margin-top:18px;">🏢 Entreprise</div>
+    <table>
+      <tr><th>Budget</th><th>Meilleur bien</th><th class="num">Valeur</th><th class="num">ROI</th></tr>
+      <tr><td>Moins de 500 000 Ø</td><td>Local tout équipé</td><td class="num">310 040 Ø</td><td class="num hl">3,76 %</td></tr>
+      <tr><td>500 000 Ø à 10 M Ø</td><td>Réseau FreeCycl' 15 arrêts</td><td class="num">2,90 M Ø</td><td class="num hl">3,59 %</td></tr>
+      <tr><td>10 M Ø à 1 G Ø</td><td>Réseau de bus 50 arrêts</td><td class="num">13,64 M Ø</td><td class="num hl">4,11 %</td></tr>
+      <tr><td>Plus de 1 G Ø</td><td>Centre de recherche régional</td><td class="num">17,80 G Ø</td><td class="num hl">4,81 %</td></tr>
+    </table>
+  </div>
+
+  <!-- TERRAINS -->
+  <div class="section">
+    <div class="section-head"><span class="icon">🌍</span><h2>Terrains</h2></div>
+    <table>
+      <tr><th>Terrain</th><th class="num">Valeur</th><th class="num">Coût fixe /j</th></tr>
+      <tr><td>Petit terrain</td><td class="num">58 712 Ø</td><td class="num">110 Ø</td></tr>
+      <tr><td>Terrain moyen</td><td class="num">49 260 Ø</td><td class="num">160 Ø</td></tr>
+      <tr><td>Grand terrain</td><td class="num">54 348 Ø</td><td class="num">318 Ø</td></tr>
+      <tr><td>Parc</td><td class="num">75 048 Ø</td><td class="num">558 Ø</td></tr>
+      <tr><td>Grand parc</td><td class="num">103 623 Ø</td><td class="num">730 Ø</td></tr>
+    </table>
+    <p class="note">📌 Le Terrain moyen reste moins cher que le Petit terrain — anomalie persistante.</p>
+  </div>
+
+  <!-- USINES -->
+  <div class="section">
+    <div class="section-head"><span class="icon">🏭</span><h2>Matières premières et usines</h2></div>
+
+    <table>
+      <tr><th>Matière</th><th class="num">Prix</th><th>Unité</th></tr>
+      <tr><td>Béton</td><td class="num hl">221,38 Ø</td><td>m³</td></tr>
+      <tr><td>Acier</td><td class="num hl">857,86 Ø</td><td>tonne <span class="up">▲</span></td></tr>
+      <tr><td>Bois</td><td class="num hl">45,75 Ø</td><td>m²</td></tr>
+      <tr><td>Brique</td><td class="num hl">649,86 Ø</td><td>m³ <span class="up">▲</span></td></tr>
+      <tr><td>Verre</td><td class="num hl">202,08 Ø</td><td>m²</td></tr>
+    </table>
+
+    <div class="subblock top">
+      <div class="subblock-title">✅ Usines rentables</div>
+      <ul>
+        <li>Bois — Petite scierie : +4 159 Ø/j — <span class="val">3,47 %</span></li>
+        <li>Brique — Fabrique de briques : +11 006 Ø/j — <span class="val">2,86 %</span> <span class="chg-up">▲</span></li>
+        <li>Béton — Centrale à béton avancée : +101 436 Ø/j — <span class="val">1,59 %</span></li>
+        <li>Bois — Scierie avancée : +27 780 Ø/j — <span class="val">1,69 %</span></li>
+        <li>Brique — Presse à briques : +29 698 Ø/j — <span class="val">0,58 %</span> <span class="chg-up">▲</span></li>
+      </ul>
+    </div>
+
+    <div class="callout">
+      <strong>⚠️ Acier et Verre — toujours déficitaires.</strong> Acierie : <span class="dn">−107 639 Ø/j (−4,40 %)</span>, Acierie avancée : <span class="dn">−786 545 Ø/j (−2,77 %)</span>. Petite usine de verre : <span class="dn">−10 983 Ø/j (−3,39 %)</span>, Usine de verre moyenne : <span class="dn">−63 617 Ø/j (−1,84 %)</span>.
+    </div>
+  </div>
+
+  <!-- CONCLUSION -->
+  <div class="section">
+    <div class="section-head"><span class="icon">📌</span><h2>En conclusion</h2></div>
+    <p class="analysis">Cette édition spéciale aura permis de répondre à trois questions distinctes : quel bien rapporte le plus? Combien de temps avant de récupérer sa mise? Et quel est le meilleur choix selon mon budget? Trois angles, trois réponses différentes — mais une même logique : <strong>investir avec les yeux ouverts.</strong></p>
+    <div class="formula">
+      <strong>La formule ROI :</strong>
+      ROI = (Loyer − Charges − Impôts) ÷ Valeur marchande × 100
+    </div>
+  </div>
+
+  <div class="methodology">
+    <h2>Note de méthodologie</h2>
+    <p>Export pris après le reset quotidien de 3h00 (3 juillet 2026). Taux promoteur : 87 pour les bâtiments, 84 pour les matériaux. ROI calculé sur la valeur marchande du bien.</p>
+  </div>
+
+  <div class="colophon">
+    <div class="rule"></div>
+    Données du 3 juillet 2026 (export post-reset), basées sur les exports CSV officiels du jeu<br>
+    Tous les calculs sont reproductibles à partir de ces exports.
+  </div>
+
+</div>
+</body>
+</html>

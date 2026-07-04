@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Journal du Marché — Guide Assurances — Quel contrat choisir?</title>
+<style>
+  :root{
+    --bg:#15130f; --paper:#1c1916; --paper-raised:#221e19;
+    --ink:#e8e0d0; --ink-dim:#a89a82; --ink-faint:#756a58;
+    --rule:#3a342a; --gold:#c9a35a; --green:#7a9b6e; --red:#b8614f;
+    --orange:#c97a2a; --blue:#5a85c9;
+    --serif:Georgia,'Times New Roman',serif; --sans:'Segoe UI',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);line-height:1.55;padding:32px 16px;}
+  .sheet{max-width:760px;margin:0 auto;background:var(--paper);border:1px solid var(--rule);}
+  .masthead{padding:28px 32px 18px;border-bottom:3px double var(--gold);text-align:center;}
+  .kicker{font-family:var(--sans);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin:0 0 10px;}
+  .masthead h1{font-size:36px;margin:0;letter-spacing:1px;font-weight:700;}
+  .masthead .sub{font-family:var(--sans);font-size:12px;color:var(--ink-dim);margin-top:10px;display:flex;justify-content:center;gap:18px;flex-wrap:wrap;}
+  .masthead .sub span{white-space:nowrap;}
+  .edito{padding:26px 32px 8px;border-bottom:1px solid var(--rule);}
+  .edito h2{font-family:var(--sans);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin:0 0 14px;}
+  .edito p{font-size:16px;margin:0 0 16px;color:var(--ink);}
+  .edito p:first-of-type::first-letter{font-size:46px;float:left;line-height:0.8;padding:6px 8px 0 0;color:var(--gold);font-weight:700;}
+  .section{padding:26px 32px;border-bottom:1px solid var(--rule);}
+  .section-head{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;}
+  .section-head .icon{font-size:20px;}
+  .section-head h2{font-size:21px;margin:0;letter-spacing:0.3px;}
+  table{width:100%;border-collapse:collapse;margin:14px 0 18px;font-family:var(--sans);font-size:13px;}
+  th{text-align:left;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-faint);font-weight:600;padding:6px 10px;border-bottom:1px solid var(--rule);}
+  td{padding:8px 10px;border-bottom:1px solid var(--rule);color:var(--ink-dim);}
+  tr:last-child td{border-bottom:none;}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;}
+  .hl{color:var(--gold);font-weight:700;}
+  .up{color:var(--green);}
+  .dn{color:var(--red);}
+  .best{color:var(--green);font-weight:700;}
+  .analysis{font-size:15px;margin:0 0 16px;}
+  .analysis strong{color:var(--gold);}
+  .note{font-family:var(--sans);font-size:12.5px;color:var(--ink-faint);font-style:italic;margin-top:10px;}
+  .subblock{margin:18px 0;}
+  .subblock-title{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:0.5px;margin-bottom:9px;color:var(--gold);}
+  .callout{background:var(--paper-raised);border-left:3px solid var(--red);padding:14px 18px;margin:18px 0;font-size:14.5px;color:var(--ink-dim);}
+  .callout.good{border-left-color:var(--green);}
+  .callout.neutral{border-left-color:var(--gold);}
+  .callout.info{border-left-color:var(--blue);}
+  .callout strong{color:var(--ink);}
+  .contrat-card{background:var(--paper-raised);border-left:3px solid var(--rule);padding:14px 18px;margin:10px 0;}
+  .contrat-card.top{border-left-color:var(--gold);}
+  .contrat-card.saphir{border-left-color:var(--blue);}
+  .contrat-num{font-family:var(--sans);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:4px;}
+  .contrat-nom{font-size:17px;font-weight:700;margin-bottom:8px;}
+  .contrat-stats{display:flex;gap:20px;flex-wrap:wrap;font-family:var(--sans);font-size:12px;color:var(--ink-dim);}
+  .contrat-stats span{display:flex;flex-direction:column;}
+  .contrat-stats .label{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:2px;}
+  .contrat-stats .val{font-size:14px;color:var(--gold);font-weight:700;}
+  .verdict{background:var(--paper-raised);border:2px solid var(--gold);padding:18px 22px;margin:20px 0;text-align:center;}
+  .verdict .big{font-size:28px;color:var(--gold);font-weight:700;font-family:var(--serif);display:block;margin:6px 0;}
+  .verdict .label{font-family:var(--sans);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-faint);}
+  .formula{background:var(--paper-raised);border-left:3px solid var(--blue);padding:14px 20px;margin:16px 0;font-family:var(--sans);font-size:14px;color:var(--ink-dim);}
+  .formula strong{color:var(--gold);display:block;margin-bottom:6px;}
+  .methodology{padding:26px 32px;background:var(--paper-raised);}
+  .methodology h2{font-family:var(--sans);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--ink-faint);margin:0 0 14px;}
+  .methodology p{font-size:13.5px;color:var(--ink-dim);margin:0 0 12px;}
+  .colophon{padding:22px 32px 30px;text-align:center;font-family:var(--sans);font-size:11px;color:var(--ink-faint);letter-spacing:0.3px;}
+  .colophon .rule{width:60px;height:1px;background:var(--gold);margin:0 auto 16px;}
+  @media(max-width:600px){
+    .masthead h1{font-size:26px;}
+    .section,.edito,.methodology{padding:20px 18px;}
+    table{font-size:11.5px;} th,td{padding:6px 6px;}
+    .contrat-stats{gap:12px;}
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <div class="masthead">
+    <p class="kicker">Édition Spéciale — Guide pratique · Monde 8</p>
+    <h1>Journal du Marché</h1>
+    <div class="sub">
+      <span>Empire Immo · Monde 8</span>
+      <span>Guide Assurances</span>
+      <span>3 juillet 2026</span>
+    </div>
+  </div>
+
+  <div class="edito">
+    <h2>L'édito — Ce que votre assurance vous coûte vraiment</h2>
+    <p>L'assurance est obligatoire sur chaque bien immobilier dans Empire Immo — mais le contrat minimum ne vous protège contre rien. Sept formules existent, avec des écarts considérables. Le Journal du Marché a analysé chacune d'elles, calculé les seuils de rentabilité et simulé un mois complet avec un événement garanti. Le résultat est sans appel.</p>
+    <p class="note" style="border-left:2px solid var(--gold);padding-left:14px;">Note : toutes les données proviennent de la Constitution officielle du jeu. Les prix des biens utilisés pour les exemples sont issus de l'export CSV du 2 juillet 2026.</p>
+  </div>
+
+  <!-- LES 7 CONTRATS -->
+  <div class="section">
+    <div class="section-head"><span class="icon">📋</span><h2>Les 7 contrats en détail</h2></div>
+
+    <div class="contrat-card">
+      <div class="contrat-num">Contrat 1</div>
+      <div class="contrat-nom">Protection civile et tiers</div>
+      <div class="contrat-stats">
+        <span><span class="label">Remboursement</span><span class="val dn">0 %</span></span>
+        <span><span class="label">Délai réparation</span><span class="val">inchangé</span></span>
+        <span><span class="label">Coût</span><span class="val">0,05 % / jour</span></span>
+      </div>
+      <p style="margin:10px 0 0;font-size:14px;color:var(--ink-dim);">Contrat obligatoire de base. Couvre uniquement votre responsabilité envers les tiers. <strong style="color:var(--red);">Aucun remboursement</strong> en cas de dommage sur votre bien. C'est le minimum légal, rien de plus.</p>
+    </div>
+
+    <div class="contrat-card">
+      <div class="contrat-num">Contrat 2</div>
+      <div class="contrat-nom">Classique</div>
+      <div class="contrat-stats">
+        <span><span class="label">Remboursement</span><span class="val">45 %</span></span>
+        <span><span class="label">Délai réparation</span><span class="val">inchangé</span></span>
+        <span><span class="label">Coût</span><span class="val">0,12 % / jour</span></span>
+      </div>
+      <p style="margin:10px 0 0;font-size:14px;color:var(--ink-dim);">Premier contrat qui rembourse réellement. Couvre incidents, accidents et infractions à hauteur de 45% du préjudice.</p>
+    </div>
+
+    <div class="contrat-card">
+      <div class="contrat-num">Contrat 3</div>
+      <div class="contrat-nom">Sérénité</div>
+      <div class="contrat-stats">
+        <span><span class="label">Remboursement</span><span class="val">70 %</span></span>
+        <span><span class="label">Délai réparation</span><span class="val">−5 %</span></span>
+        <span><span class="label">Coût</span><span class="val">0,18 % / jour</span></span>
+      </div>
+      <p style="margin:10px 0 0;font-size:14px;color:var(--ink-dim);">Ajoute les catastrophes naturelles (séismes, inondations). Indispensable depuis les événements de juin sur M8.</p>
+    </div>
+
+    <div class="contrat-card">
+      <div class="contrat-num">Contrat 4</div>
+      <div class="contrat-nom">Confort Plus</div>
+      <div class="contrat-stats">
+        <span><span class="label">Remboursement</span><span class="val">110 %</span></span>
+        <span><span class="label">Délai réparation</span><span class="val">−15 %</span></span>
+        <span><span class="label">Coût</span><span class="val">0,26 % / jour</span></span>
+      </div>
+      <p style="margin:10px 0 0;font-size:14px;color:var(--ink-dim);">Premier contrat à rembourser au-delà du préjudice. Les 10% supplémentaires compensent les préjudices financiers et moraux.</p>
+    </div>
+
+    <div class="contrat-card top">
+      <div class="contrat-num">Contrat 5</div>
+      <div class="contrat-nom">Prestige ⭐</div>
+      <div class="contrat-stats">
+        <span><span class="label">Remboursement</span><span class="val up">130 %</span></span>
+        <span><span class="label">Délai réparation</span><span class="val">−25 %</span></span>
+        <span><span class="label">Coût</span><span class="val">0,31 % / jour</span></span>
+      </div>
+      <p style="margin:10px 0 0;font-size:14px;color:var(--ink-dim);">Le meilleur remboursement du jeu — 130% du préjudice. Les 30% supplémentaires font de ce contrat le plus rentable financièrement en cas d'événement.</p>
+    </div>
+
+    <div class="contrat-card">
+      <div class="contrat-num">Contrat 6</div>
+      <div class="contrat-nom">Rapide Plus</div>
+      <div class="contrat-stats">
+        <span><span class="label">Remboursement</span><span class="val">70 %</span></span>
+        <span><span class="label">Délai réparation</span><span class="val up">−50 %</span></span>
+        <span><span class="label">Coût</span><span class="val">0,30 % / jour</span></span>
+      </div>
+      <p style="margin:10px 0 0;font-size:14px;color:var(--ink-dim);">Axé sur la rapidité plutôt que le remboursement. Idéal pour remettre vos biens en service le plus vite possible.</p>
+    </div>
+
+    <div class="contrat-card saphir">
+      <div class="contrat-num">Contrat 7 — 💎 NÉCESSITE UN SAPHIR</div>
+      <div class="contrat-nom">Premium 💎</div>
+      <div class="contrat-stats">
+        <span><span class="label">Remboursement</span><span class="val">100 %</span></span>
+        <span><span class="label">Délai réparation</span><span class="val up">−70 %</span></span>
+        <span><span class="label">Coût</span><span class="val">0,30 % / jour</span></span>
+      </div>
+      <p style="margin:10px 0 0;font-size:14px;color:var(--ink-dim);">Le meilleur contrat en termes de délai. Remboursement complet et réparations 70% plus rapides. <strong style="color:var(--blue);">Accessible uniquement avec un saphir.</strong></p>
+    </div>
+  </div>
+
+  <!-- PIÈGE DU CONTRAT DE BASE -->
+  <div class="section">
+    <div class="section-head"><span class="icon">⚠️</span><h2>Le piège du contrat de base</h2></div>
+
+    <p class="analysis">Beaucoup de joueurs restent au contrat Protection civile pour économiser. C'est une erreur coûteuse. Voici pourquoi — scénario concret : un événement cause un dommage de 30% de la valeur de votre bien.</p>
+
+    <table>
+      <tr><th>Contrat</th><th class="num">Coût annuel</th><th class="num">Remboursement</th><th class="num">Bilan</th></tr>
+      <tr><td colspan="4" style="color:var(--gold);font-family:var(--sans);font-size:11px;letter-spacing:1px;text-transform:uppercase;padding-top:12px;">Chambre seule habitable — 18 947 Ø — Dommage : 5 684 Ø</td></tr>
+      <tr><td>Protection civile</td><td class="num">3 463 Ø</td><td class="num dn">0 Ø</td><td class="num dn">−3 463 Ø</td></tr>
+      <tr><td>Classique</td><td class="num">8 310 Ø</td><td class="num">2 558 Ø</td><td class="num dn">−5 752 Ø</td></tr>
+      <tr><td>Sérénité</td><td class="num">12 454 Ø</td><td class="num">3 979 Ø</td><td class="num dn">−8 475 Ø</td></tr>
+      <tr><td>Confort Plus</td><td class="num">17 985 Ø</td><td class="num">6 252 Ø</td><td class="num dn">−11 733 Ø</td></tr>
+      <tr><td class="hl">Prestige</td><td class="num">21 444 Ø</td><td class="num up">7 389 Ø</td><td class="num dn">−14 055 Ø</td></tr>
+
+      <tr><td colspan="4" style="color:var(--gold);font-family:var(--sans);font-size:11px;letter-spacing:1px;text-transform:uppercase;padding-top:12px;">Centre de recherche régional — 17,93 G Ø — Dommage : 5,38 G Ø</td></tr>
+      <tr><td>Protection civile</td><td class="num">3,27 G Ø</td><td class="num dn">0 Ø</td><td class="num dn">−8,65 G Ø</td></tr>
+      <tr><td>Classique</td><td class="num">7,85 G Ø</td><td class="num">2,42 G Ø</td><td class="num dn">−5,43 G Ø</td></tr>
+      <tr><td>Sérénité</td><td class="num">11,78 G Ø</td><td class="num">3,77 G Ø</td><td class="num dn">−8,01 G Ø</td></tr>
+      <tr><td>Confort Plus</td><td class="num">17,02 G Ø</td><td class="num">5,92 G Ø</td><td class="num dn">−11,10 G Ø</td></tr>
+      <tr><td class="hl">Prestige</td><td class="num">20,29 G Ø</td><td class="num up">6,99 G Ø</td><td class="num dn">−13,30 G Ø</td></tr>
+    </table>
+
+    <div class="callout">
+      <strong>⚠️ Le vrai coût du contrat de base.</strong> En cas d'événement, la Protection civile vous laisse absorber 100% du dommage — plus le coût de l'assurance elle-même. Le Classique limite toujours mieux la perte nette, quel que soit le bien.
+    </div>
+  </div>
+
+  <!-- SEUIL DE RENTABILITÉ -->
+  <div class="section">
+    <div class="section-head"><span class="icon">📊</span><h2>Seuil de rentabilité — À partir de quand monter?</h2></div>
+
+    <p class="analysis">Pour un Grand complexe résidentiel habitable (15,80 M Ø) — à partir de quel montant de dommage le contrat supérieur devient-il rentable?</p>
+
+    <table>
+      <tr><th>Passage</th><th class="num">Surcoût /jour</th><th class="num">Gain remb.</th><th class="num">Seuil dommage</th><th class="num">% valeur bien</th></tr>
+      <tr><td>Protection civile → Classique</td><td class="num">11 060 Ø</td><td class="num">+45 %</td><td class="num hl">24 578 Ø</td><td class="num up">0,2 %</td></tr>
+      <tr><td>Classique → Sérénité</td><td class="num">9 480 Ø</td><td class="num">+25 %</td><td class="num hl">37 920 Ø</td><td class="num up">0,2 %</td></tr>
+      <tr><td>Sérénité → Confort Plus</td><td class="num">12 640 Ø</td><td class="num">+40 %</td><td class="num hl">31 600 Ø</td><td class="num up">0,2 %</td></tr>
+      <tr><td>Confort Plus → Prestige</td><td class="num">7 900 Ø</td><td class="num">+20 %</td><td class="num hl">39 500 Ø</td><td class="num up">0,2 %</td></tr>
+      <tr><td>Rapide Plus → Premium 💎</td><td class="num">0 Ø</td><td class="num">+30 %</td><td class="num hl">0 Ø</td><td class="num up">immédiat</td></tr>
+    </table>
+
+    <div class="callout good">
+      <strong>✅ Le chiffre clé.</strong> Dans tous les cas, le seuil de rentabilité pour passer au contrat supérieur est inférieur à <strong>0,2% de la valeur du bien</strong>. Il suffit d'un seul événement mineur pour que le contrat supérieur ait déjà rentabilisé son surcoût.
+    </div>
+  </div>
+
+  <!-- ANALYSE 30 JOURS -->
+  <div class="section">
+    <div class="section-head"><span class="icon">📅</span><h2>Simulation sur 30 jours — 1 événement garanti</h2></div>
+
+    <p class="analysis">Sur M8, les événements sont réguliers — séisme, inondation, taxe pauvreté. En supposant un événement par mois causant un dommage de 30% de la valeur du bien, voici le <strong>bilan net</strong> de chaque contrat (remboursement reçu − coût assurance sur 30 jours) :</p>
+
+    <table>
+      <tr><th>Contrat</th><th class="num">Coût 30j</th><th class="num">Remboursement</th><th class="num">Bilan net</th></tr>
+
+      <tr><td colspan="4" style="color:var(--gold);font-family:var(--sans);font-size:11px;letter-spacing:1px;text-transform:uppercase;padding-top:12px;">Chambre seule habitable (18 947 Ø) — Dommage : 5 684 Ø</td></tr>
+      <tr><td>Protection civile</td><td class="num">284 Ø</td><td class="num dn">0 Ø</td><td class="num dn">−284 Ø</td></tr>
+      <tr><td>Classique</td><td class="num">682 Ø</td><td class="num">2 558 Ø</td><td class="num up">+1 880 Ø</td></tr>
+      <tr><td>Sérénité</td><td class="num">1 023 Ø</td><td class="num">3 979 Ø</td><td class="num up">+2 956 Ø</td></tr>
+      <tr><td>Confort Plus</td><td class="num">1 478 Ø</td><td class="num">6 252 Ø</td><td class="num up">+4 774 Ø</td></tr>
+      <tr style="background:var(--paper-raised)"><td class="hl">Prestige ⭐</td><td class="num">1 762 Ø</td><td class="num up">7 389 Ø</td><td class="num best">+5 627 Ø</td></tr>
+      <tr><td>Rapide Plus</td><td class="num">1 705 Ø</td><td class="num">3 979 Ø</td><td class="num up">+2 274 Ø</td></tr>
+      <tr><td>Premium 💎</td><td class="num">1 705 Ø</td><td class="num">5 684 Ø</td><td class="num up">+3 979 Ø</td></tr>
+
+      <tr><td colspan="4" style="color:var(--gold);font-family:var(--sans);font-size:11px;letter-spacing:1px;text-transform:uppercase;padding-top:12px;">Grand complexe résidentiel habitable (15,80 M Ø) — Dommage : 4,74 M Ø</td></tr>
+      <tr><td>Protection civile</td><td class="num">237 k Ø</td><td class="num dn">0 Ø</td><td class="num dn">−237 k Ø</td></tr>
+      <tr><td>Classique</td><td class="num">569 k Ø</td><td class="num">2,13 M Ø</td><td class="num up">+1,56 M Ø</td></tr>
+      <tr><td>Sérénité</td><td class="num">853 k Ø</td><td class="num">3,32 M Ø</td><td class="num up">+2,46 M Ø</td></tr>
+      <tr><td>Confort Plus</td><td class="num">1,23 M Ø</td><td class="num">5,21 M Ø</td><td class="num up">+3,98 M Ø</td></tr>
+      <tr style="background:var(--paper-raised)"><td class="hl">Prestige ⭐</td><td class="num">1,47 M Ø</td><td class="num up">6,16 M Ø</td><td class="num best">+4,69 M Ø</td></tr>
+      <tr><td>Rapide Plus</td><td class="num">1,42 M Ø</td><td class="num">3,32 M Ø</td><td class="num up">+1,90 M Ø</td></tr>
+      <tr><td>Premium 💎</td><td class="num">1,42 M Ø</td><td class="num">4,74 M Ø</td><td class="num up">+3,32 M Ø</td></tr>
+
+      <tr><td colspan="4" style="color:var(--gold);font-family:var(--sans);font-size:11px;letter-spacing:1px;text-transform:uppercase;padding-top:12px;">Centre de recherche régional (17,93 G Ø) — Dommage : 5,38 G Ø</td></tr>
+      <tr><td>Protection civile</td><td class="num">268,95 M Ø</td><td class="num dn">0 Ø</td><td class="num dn">−268,95 M Ø</td></tr>
+      <tr><td>Classique</td><td class="num">645,48 M Ø</td><td class="num">2,42 G Ø</td><td class="num up">+1,78 G Ø</td></tr>
+      <tr><td>Sérénité</td><td class="num">968,22 M Ø</td><td class="num">3,77 G Ø</td><td class="num up">+2,80 G Ø</td></tr>
+      <tr><td>Confort Plus</td><td class="num">1,40 G Ø</td><td class="num">5,92 G Ø</td><td class="num up">+4,52 G Ø</td></tr>
+      <tr style="background:var(--paper-raised)"><td class="hl">Prestige ⭐</td><td class="num">1,67 G Ø</td><td class="num up">6,99 G Ø</td><td class="num best">+5,33 G Ø</td></tr>
+      <tr><td>Rapide Plus</td><td class="num">1,61 G Ø</td><td class="num">3,77 G Ø</td><td class="num up">+2,15 G Ø</td></tr>
+      <tr><td>Premium 💎</td><td class="num">1,61 G Ø</td><td class="num">5,38 G Ø</td><td class="num up">+3,77 G Ø</td></tr>
+
+      <tr><td colspan="4" style="color:var(--gold);font-family:var(--sans);font-size:11px;letter-spacing:1px;text-transform:uppercase;padding-top:12px;">Complexe palacium tout confort (2 058 T Ø) — Dommage : 617,40 G Ø</td></tr>
+      <tr><td>Protection civile</td><td class="num">30,87 G Ø</td><td class="num dn">0 Ø</td><td class="num dn">−30,87 G Ø</td></tr>
+      <tr><td>Classique</td><td class="num">74,09 G Ø</td><td class="num">277,83 G Ø</td><td class="num up">+203,74 G Ø</td></tr>
+      <tr><td>Sérénité</td><td class="num">111,13 G Ø</td><td class="num">432,18 G Ø</td><td class="num up">+321,05 G Ø</td></tr>
+      <tr><td>Confort Plus</td><td class="num">160,52 G Ø</td><td class="num">679,14 G Ø</td><td class="num up">+518,62 G Ø</td></tr>
+      <tr style="background:var(--paper-raised)"><td class="hl">Prestige ⭐</td><td class="num">191,39 G Ø</td><td class="num up">802,62 G Ø</td><td class="num best">+611,23 G Ø</td></tr>
+      <tr><td>Rapide Plus</td><td class="num">185,22 G Ø</td><td class="num">432,18 G Ø</td><td class="num up">+246,96 G Ø</td></tr>
+      <tr><td>Premium 💎</td><td class="num">185,22 G Ø</td><td class="num">617,40 G Ø</td><td class="num up">+432,18 G Ø</td></tr>
+    </table>
+
+    <div class="verdict">
+      <span class="label">Meilleur contrat sur 30 jours — tous types de biens</span>
+      <span class="big">Prestige ⭐</span>
+      Gagnant sur chaque type de bien, du plus modeste au plus colossal.
+    </div>
+  </div>
+
+  <!-- PRESTIGE VS PREMIUM -->
+  <div class="section">
+    <div class="section-head"><span class="icon">⚖️</span><h2>Prestige vs Premium 💎 — Le vrai débat</h2></div>
+
+    <table>
+      <tr><th>Critère</th><th class="num">Prestige</th><th class="num">Premium 💎</th></tr>
+      <tr><td>Remboursement</td><td class="num up">130 %</td><td class="num">100 %</td></tr>
+      <tr><td>Délai réparation</td><td class="num">−25 %</td><td class="num up">−70 %</td></tr>
+      <tr><td>Coût / jour</td><td class="num">0,31 %</td><td class="num">0,30 %</td></tr>
+      <tr><td>Saphir requis</td><td class="num">Non</td><td class="num up">Oui 💎</td></tr>
+    </table>
+
+    <p class="analysis">Le Prestige rembourse davantage (130% vs 100%) mais répare moins vite. Le Premium répare beaucoup plus vite (−70%) mais rembourse moins. <strong>Si vous avez un saphir et que la rapidité de remise en service compte</strong>, le Premium est supérieur. Sinon, le Prestige est le meilleur choix accessible à tous.</p>
+  </div>
+
+  <!-- PROFILS -->
+  <div class="section">
+    <div class="section-head"><span class="icon">🎯</span><h2>Quel contrat selon votre profil?</h2></div>
+
+    <table>
+      <tr><th>Profil</th><th>Contrat recommandé</th><th>Raison</th></tr>
+      <tr><td>Débutant</td><td class="hl">Classique</td><td style="color:var(--ink-dim)">Seuil de rentabilité quasi immédiat vs Protection civile</td></tr>
+      <tr><td>Intermédiaire</td><td class="hl">Sérénité</td><td style="color:var(--ink-dim)">Couvre les catastrophes naturelles — indispensable sur M8</td></tr>
+      <tr><td>Avancé</td><td class="hl">Prestige</td><td style="color:var(--ink-dim)">Meilleur bilan net sur 30 jours, tous biens confondus</td></tr>
+      <tr><td>Axé vitesse</td><td class="hl">Rapide Plus</td><td style="color:var(--ink-dim)">Délai −50% pour remettre les biens en service rapidement</td></tr>
+      <tr><td>Avec saphir 💎</td><td class="hl">Premium 💎</td><td style="color:var(--ink-dim)">Même prix que Rapide Plus, +30% de remboursement, délai −70%</td></tr>
+    </table>
+  </div>
+
+  <!-- CONCLUSION -->
+  <div class="section">
+    <div class="section-head"><span class="icon">📌</span><h2>En conclusion</h2></div>
+    <p class="analysis">Le chiffre à retenir : il suffit d'un dommage équivalent à <strong>0,2% de la valeur de votre bien</strong> pour que le contrat supérieur ait déjà rentabilisé son surcoût. Dans un jeu où les événements sont réguliers, rester au contrat de base est rarement la bonne décision.</p>
+    <p class="analysis">Et sur 30 jours avec un événement garanti, le verdict est sans appel : <strong>le Prestige génère le meilleur bilan net sur tous les types de biens</strong>, du plus modeste au plus colossal. Si vous avez un saphir, le Premium est immédiatement supérieur au Rapide Plus à coût identique.</p>
+  </div>
+
+  <div class="methodology">
+    <h2>Note de méthodologie</h2>
+    <p>Les taux et remboursements proviennent de la Constitution officielle du jeu. Les valeurs des biens utilisées pour les exemples sont issues de l'export CSV du 2 juillet 2026. Le scénario de 30 jours suppose un événement causant un dommage de 30% de la valeur du bien — estimation basée sur les événements observés sur M8 depuis juin 2026.</p>
+  </div>
+
+  <div class="colophon">
+    <div class="rule"></div>
+    Journal du Marché — Monde 8 · Guide Assurances · 3 juillet 2026<br>
+    Dédié à la rigueur et à l'analyse factuelle.
+  </div>
+
+</div>
+</body>
+</html>

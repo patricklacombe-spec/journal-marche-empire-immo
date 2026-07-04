@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Journal du Marché — Spécial ROI (1/2) — Les formules expliquées</title>
+<style>
+  :root{
+    --bg:#15130f; --paper:#1c1916; --paper-raised:#221e19;
+    --ink:#e8e0d0; --ink-dim:#a89a82; --ink-faint:#756a58;
+    --rule:#3a342a; --gold:#c9a35a; --green:#7a9b6e; --red:#b8614f;
+    --orange:#c97a2a; --blue:#5a85c9;
+    --serif:Georgia,'Times New Roman',serif; --sans:'Segoe UI',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);line-height:1.55;padding:32px 16px;}
+  .sheet{max-width:760px;margin:0 auto;background:var(--paper);border:1px solid var(--rule);}
+  .masthead{padding:28px 32px 18px;border-bottom:3px double var(--gold);text-align:center;}
+  .kicker{font-family:var(--sans);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin:0 0 10px;}
+  .masthead h1{font-size:36px;margin:0;letter-spacing:1px;font-weight:700;}
+  .masthead .sub{font-family:var(--sans);font-size:12px;color:var(--ink-dim);margin-top:10px;display:flex;justify-content:center;gap:18px;flex-wrap:wrap;}
+  .masthead .sub span{white-space:nowrap;}
+  .edito{padding:26px 32px 8px;border-bottom:1px solid var(--rule);}
+  .edito h2{font-family:var(--sans);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin:0 0 14px;}
+  .edito p{font-size:16px;margin:0 0 16px;color:var(--ink);}
+  .edito p:first-of-type::first-letter{font-size:46px;float:left;line-height:0.8;padding:6px 8px 0 0;color:var(--gold);font-weight:700;}
+  .section{padding:26px 32px;border-bottom:1px solid var(--rule);}
+  .section-head{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;}
+  .section-head .icon{font-size:20px;}
+  .section-head h2{font-size:21px;margin:0;letter-spacing:0.3px;}
+  .analysis{font-size:15px;margin:0 0 16px;}
+  .analysis strong{color:var(--gold);}
+  .formula{background:var(--paper-raised);border-left:3px solid var(--blue);padding:16px 20px;margin:16px 0;font-family:var(--sans);font-size:15px;color:var(--ink);}
+  .formula strong{color:var(--gold);display:block;margin-bottom:8px;font-size:12px;letter-spacing:1px;text-transform:uppercase;}
+  .formula code{display:block;font-family:'Courier New',monospace;font-size:16px;color:var(--gold);padding:4px 0;}
+  .exemple{background:var(--paper-raised);border-left:3px solid var(--gold);padding:14px 18px;margin:14px 0;font-family:var(--sans);font-size:13.5px;color:var(--ink-dim);}
+  .exemple strong{color:var(--ink);display:block;margin-bottom:8px;}
+  .exemple table{width:100%;border-collapse:collapse;margin:8px 0;}
+  .exemple td{padding:4px 8px;color:var(--ink-dim);}
+  .exemple td:last-child{text-align:right;color:var(--gold);}
+  .callout{background:var(--paper-raised);border-left:3px solid var(--red);padding:14px 18px;margin:18px 0;font-size:14.5px;color:var(--ink-dim);}
+  .callout.good{border-left-color:var(--green);}
+  .callout.neutral{border-left-color:var(--gold);}
+  .callout.info{border-left-color:var(--blue);}
+  .callout strong{color:var(--ink);}
+  .compare-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:18px 0;}
+  .compare-card{background:var(--paper-raised);padding:16px;border-top:3px solid var(--gold);}
+  .compare-card h3{font-family:var(--sans);font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin:0 0 10px;}
+  .compare-card p{font-size:13.5px;color:var(--ink-dim);margin:0 0 8px;}
+  .compare-card p:last-child{margin:0;}
+  .note-edito{font-style:italic;font-size:13.5px;color:var(--ink-faint);border-left:2px solid var(--gold);padding-left:14px;margin-top:14px;}
+  .colophon{padding:22px 32px 30px;text-align:center;font-family:var(--sans);font-size:11px;color:var(--ink-faint);letter-spacing:0.3px;}
+  .colophon .rule{width:60px;height:1px;background:var(--gold);margin:0 auto 16px;}
+  @media(max-width:600px){
+    .masthead h1{font-size:26px;}
+    .section,.edito{padding:20px 18px;}
+    .compare-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <div class="masthead">
+    <p class="kicker">Édition Spéciale ROI · Partie 1 sur 2 · Monde 8</p>
+    <h1>Journal du Marché</h1>
+    <div class="sub">
+      <span>Empire Immo · Monde 8</span>
+      <span>Spécial ROI (1/2)</span>
+      <span>3 juillet 2026</span>
+    </div>
+  </div>
+
+  <div class="edito">
+    <h2>L'édito — Trois façons de lire la rentabilité</h2>
+    <p>Le ROI — Retour sur Investissement — est au cœur de chaque décision d'achat sur M8. Mais derrière ce mot simple se cachent plusieurs calculs distincts, qui ne mesurent pas la même chose. Ce premier volet explique les formules officielles et ce qu'elles révèlent vraiment. Le second volet appliquera ces formules aux données réelles du marché du 3 juillet 2026.</p>
+    <p class="note-edito">Note : toutes les formules présentées ici sont issues de la Constitution officielle du jeu.</p>
+  </div>
+
+  <!-- FORMULE 1 -->
+  <div class="section">
+    <div class="section-head"><span class="icon">📐</span><h2>Formule 1 — Le ROI locatif</h2></div>
+
+    <p class="analysis">C'est le calcul de base publié chaque semaine par le Journal du Marché. Il mesure ce qu'un bien rapporte chaque jour par rapport à son prix d'achat.</p>
+
+    <div class="formula">
+      <strong>ROI locatif</strong>
+      <code>= (Loyer − Charges − Impôts) ÷ Valeur marchande × 100</code>
+    </div>
+
+    <div class="exemple">
+      <strong>Exemple — Grand complexe résidentiel habitable (15,85 M Ø)</strong>
+      <table>
+        <tr><td>Loyer brut</td><td>652 000 Ø/j</td></tr>
+        <tr><td>Charges</td><td>125 000 Ø/j</td></tr>
+        <tr><td>Impôts</td><td>54 000 Ø/j</td></tr>
+        <tr><td><strong style="color:var(--ink)">Loyer net</strong></td><td><strong style="color:var(--gold)">473 000 Ø/j</strong></td></tr>
+        <tr><td><strong style="color:var(--ink)">ROI</strong></td><td><strong style="color:var(--gold)">2,98 %</strong></td></tr>
+      </table>
+    </div>
+
+    <p class="analysis">Ce que ça signifie concrètement : chaque jour, ce bien rapporte <strong>2,98 %</strong> de sa valeur en loyer net. Plus le pourcentage est élevé, plus le bien est rentable relativement à son prix.</p>
+  </div>
+
+  <!-- FORMULE 2 -->
+  <div class="section">
+    <div class="section-head"><span class="icon">⏱️</span><h2>Formule 2 — Le temps de retour</h2></div>
+
+    <p class="analysis">Cette formule répond à une question simple : en combien de jours mon bien s'est-il remboursé lui-même?</p>
+
+    <div class="formula">
+      <strong>Temps de retour (jours)</strong>
+      <code>= Valeur marchande ÷ Loyer net quotidien</code>
+    </div>
+
+    <div class="exemple">
+      <strong>Exemple — Grand complexe résidentiel habitable</strong>
+      <table>
+        <tr><td>Valeur</td><td>15,85 M Ø</td></tr>
+        <tr><td>Loyer net</td><td>473 000 Ø/j</td></tr>
+        <tr><td><strong style="color:var(--ink)">Temps de retour</strong></td><td><strong style="color:var(--gold)">33 jours</strong></td></tr>
+      </table>
+    </div>
+
+    <p class="analysis">Autrement dit : après 33 jours de location, le bien a généré l'équivalent de son prix d'achat en loyers cumulés.</p>
+
+    <div class="callout">
+      <strong>⚠️ Attention.</strong> Ce calcul suppose que le bien est loué en continu, sans interruption ni réparation. C'est un indicateur théorique — utile pour comparer les biens entre eux, pas pour prévoir un revenu réel.
+    </div>
+  </div>
+
+  <!-- FORMULE 3 -->
+  <div class="section">
+    <div class="section-head"><span class="icon">💡</span><h2>Formule 3 — Le ROI par budget</h2></div>
+
+    <p class="analysis">La troisième façon d'analyser la rentabilité : non pas "quel bien rapporte le plus en %", mais <strong>"quel est le meilleur bien que je peux me payer avec mon budget?"</strong></p>
+
+    <p class="analysis">Ce calcul combine deux questions :</p>
+    <p class="analysis">1. Quelle est la valeur maximale du bien que mon budget permet?<br>2. Parmi les biens accessibles, lequel affiche le meilleur ROI locatif?</p>
+
+    <div class="exemple">
+      <strong>Exemple — Budget 50 M Ø</strong>
+      <p style="margin:8px 0 0;font-size:13.5px;color:var(--ink-dim);">→ Le Grand complexe résidentiel habitable (15,85 M Ø, ROI 2,98%) est accessible et c'est le meilleur ROI dans cette fourchette de prix.</p>
+    </div>
+  </div>
+
+  <!-- CE QUE MESURENT CES FORMULES -->
+  <div class="section">
+    <div class="section-head"><span class="icon">📌</span><h2>Ce que ces formules mesurent — et ce qu'elles ne mesurent pas</h2></div>
+
+    <p class="analysis">Ces trois calculs sont complémentaires — aucun ne suffit seul :</p>
+
+    <div class="compare-grid">
+      <div class="compare-card">
+        <h3>ROI locatif</h3>
+        <p>Mesure l'efficacité du bien : combien il rapporte par rapport à son prix.</p>
+        <p>Ne tient pas compte de votre budget ni du temps de récupération.</p>
+      </div>
+      <div class="compare-card">
+        <h3>Temps de retour</h3>
+        <p>Mesure la vitesse de récupération du capital : combien de jours avant que les loyers remboursent l'achat.</p>
+        <p>Un ROI élevé donne toujours un retour court — mais pas l'inverse.</p>
+      </div>
+      <div class="compare-card">
+        <h3>ROI par budget</h3>
+        <p>Mesure l'opportunité réelle : le meilleur choix possible selon votre situation.</p>
+        <p>C'est le calcul le plus utile au quotidien pour un investisseur actif.</p>
+      </div>
+    </div>
+
+    <div class="callout neutral">
+      <strong>Dans le second volet</strong>, le Journal du Marché applique ces trois formules aux données réelles du marché du 3 juillet 2026 — Top 10, meilleur choix par budget, et temps de retour comparés.
+    </div>
+  </div>
+
+  <div class="colophon">
+    <div class="rule"></div>
+    Journal du Marché — Monde 8 · Édition Spéciale ROI (1/2) · 3 juillet 2026<br>
+    Dédié à la rigueur et à l'analyse factuelle.
+  </div>
+
+</div>
+</body>
+</html>
