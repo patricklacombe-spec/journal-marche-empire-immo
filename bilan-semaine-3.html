@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dossier — Le marché des cessions d'entreprises | Le Journal du Marché</title>
+<style>
+  :root{
+    --bg:#15130f;
+    --paper:#1c1916;
+    --gold:#c9a35a;
+    --gold-dim:#9a7c42;
+    --ink:#e8e2d6;
+    --ink-dim:#a89f8f;
+    --line:#3a342b;
+    --danger:#c96a5a;
+    --ok:#7ba05b;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:Georgia,'Times New Roman',serif;
+    line-height:1.7;
+    padding:24px 16px;
+  }
+  .paper{
+    max-width:860px;
+    margin:0 auto;
+    background:var(--paper);
+    border:1px solid var(--line);
+    padding:48px 56px;
+  }
+  @media(max-width:640px){.paper{padding:28px 20px;}}
+
+  /* Masthead */
+  .masthead{text-align:center;border-bottom:3px double var(--gold);padding-bottom:20px;margin-bottom:8px;}
+  .masthead .kicker{font-size:.72rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold-dim);}
+  .masthead h1{font-size:2rem;letter-spacing:.08em;color:var(--gold);font-weight:normal;margin:6px 0 2px;}
+  .masthead .tagline{font-size:.8rem;font-style:italic;color:var(--ink-dim);}
+  .dateline{text-align:center;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-dim);padding:10px 0;border-bottom:1px solid var(--line);margin-bottom:36px;}
+
+  /* Titles */
+  .dossier-label{display:inline-block;background:var(--gold);color:var(--bg);font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;padding:4px 12px;margin-bottom:14px;font-family:Arial,sans-serif;font-weight:bold;}
+  h2.title{font-size:2.1rem;line-height:1.2;color:var(--ink);font-weight:normal;margin-bottom:8px;}
+  .subtitle{font-size:1.05rem;font-style:italic;color:var(--gold);margin-bottom:26px;}
+  .lede{font-size:1.02rem;color:var(--ink);border-left:3px solid var(--gold);padding-left:18px;margin-bottom:40px;font-style:italic;}
+
+  h3.section{
+    font-size:.85rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);
+    border-top:1px solid var(--line);padding-top:26px;margin:40px 0 16px;
+    font-family:Arial,sans-serif;
+  }
+  h3.section .num{color:var(--gold-dim);margin-right:10px;}
+  p{margin-bottom:14px;font-size:.98rem;}
+  strong{color:var(--gold);font-weight:bold;}
+  em{color:var(--ink);}
+
+  /* Tables */
+  table{width:100%;border-collapse:collapse;margin:18px 0 24px;font-size:.9rem;}
+  th{font-family:Arial,sans-serif;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-dim);text-align:left;padding:8px 10px;border-bottom:2px solid var(--gold-dim);}
+  td{padding:8px 10px;border-bottom:1px solid var(--line);color:var(--ink);}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;}
+  tr.hl td{color:var(--gold);font-weight:bold;}
+
+  /* Case study cards */
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:22px 0;}
+  @media(max-width:640px){.cards{grid-template-columns:1fr;}}
+  .card{border:1px solid var(--line);padding:20px 22px;background:rgba(0,0,0,.18);}
+  .card h4{font-family:Arial,sans-serif;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+  .card .type{font-size:.8rem;font-style:italic;color:var(--ink-dim);margin-bottom:14px;}
+  .card ul{list-style:none;}
+  .card li{padding:5px 0;border-bottom:1px dotted var(--line);font-size:.88rem;display:flex;justify-content:space-between;gap:10px;}
+  .card li span:last-child{font-variant-numeric:tabular-nums;white-space:nowrap;}
+  .card li.ratio{border-bottom:none;margin-top:10px;padding-top:12px;border-top:2px solid var(--gold);}
+  .card li.ratio span{color:var(--gold);font-weight:bold;font-size:1rem;}
+  .flag-a{color:var(--danger);} .flag-b{color:var(--ok);}
+
+  /* Key takeaway box */
+  .keybox{border:2px solid var(--gold);padding:24px 28px;margin:30px 0;text-align:center;background:rgba(201,163,90,.05);}
+  .keybox .big{font-size:2.4rem;color:var(--gold);line-height:1.1;}
+  .keybox .cap{font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-dim);margin-top:6px;font-family:Arial,sans-serif;}
+
+  /* Pitfalls */
+  .pitfall{margin:20px 0;padding-left:18px;border-left:3px solid var(--gold-dim);}
+  .pitfall h5{font-family:Arial,sans-serif;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+
+  /* Summary */
+  .resume{border-top:3px double var(--gold);margin-top:44px;padding-top:24px;}
+  .resume ul{list-style:none;}
+  .resume li{padding:7px 0 7px 26px;position:relative;font-size:.95rem;border-bottom:1px dotted var(--line);}
+  .resume li::before{content:"◆";color:var(--gold);position:absolute;left:0;font-size:.7rem;top:12px;}
+
+  .sources{font-size:.78rem;color:var(--ink-dim);font-style:italic;margin-top:30px;padding-top:14px;border-top:1px solid var(--line);}
+  .footer{text-align:center;margin-top:36px;padding-top:20px;border-top:3px double var(--gold);font-size:.75rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold-dim);}
+</style>
+</head>
+<body>
+<div class="paper">
+
+  <div class="masthead">
+    <div class="kicker">Monde 8 · Édition spéciale</div>
+    <h1>LE JOURNAL DU MARCHÉ</h1>
+    <div class="tagline">L'information économique indépendante de Monde 8</div>
+  </div>
+  <div class="dateline">Bilan hebdomadaire &middot; 5-13 juillet 2026</div>
+
+  <span class="dossier-label">Bilan</span>
+  <h2 class="title">Bilan de la Semaine #3</h2>
+  <div class="subtitle">Taxe expir&eacute;e, 4.44 d&eacute;ploy&eacute;e, cinq fen&ecirc;tres livr&eacute;es. R&eacute;trospective compl&egrave;te.</div>
+
+  <p class="lede">Une semaine dense &mdash; la premi&egrave;re &agrave; traverser une expiration de taxe majeure, un d&eacute;ploiement de mise &agrave; jour, et la publication du dossier le plus travaill&eacute; de l'histoire du Journal. Retour complet.</p>
+
+  <h3 class="section">🔔 Alerte marché — des majorations, pas des promotions</h3>
+  <p>Contrairement au motif habituel, le march&eacute; de ce soir affiche des hausses de prix ponctuelles plut&ocirc;t que des rabais.</p>
+  <table>
+    <thead><tr><th>Bien</th><th class="num">Variation</th></tr></thead>
+    <tbody>
+      <tr><td>Double complexe résidentiel géant tout confort</td><td class="num neg">+16,0 %</td></tr>
+      <tr><td>Complexe millenium luxueux</td><td class="num neg">+16,0 %</td></tr>
+      <tr><td>Complexe palacium habitable</td><td class="num neg">+16,0 %</td></tr>
+      <tr><td>Maison moyenne luxueuse</td><td class="num neg">+16,0 %</td></tr>
+      <tr><td>Technopôle titanium national</td><td class="num neg">+5,0 %</td></tr>
+    </tbody>
+  </table>
+  <div class="callout">📌 <strong>À vérifier :</strong> si vous visiez l'un de ces biens, patientez — une majoration ponctuelle a statistiquement tendance à se corriger dans les jours suivants, comme l'a montré notre rubrique Suivi de recommandation toute la semaine.</div>
+
+  <h3 class="section">📊 La semaine en cinq événements</h3>
+  <p><strong>1. L'expiration de la taxe pauvreté</strong> (10 juillet, 21h07 Paris). Les NET d'entreprise ont retrouvé leur vrai visage.</p>
+  <p><strong>2. Le déploiement de la version 4.44.</strong> Plancher d'emprunt à 2 % minimum, nouveau barème progressif sur les emprunts et l'épargne.</p>
+  <p><strong>3. La publication du dossier Six failles à connaître avant d'investir.</strong> Déjà plus de 70 lectures et une note parfaite de 5,0.</p>
+  <p><strong>4. L'arrivée du format Top 20 + Top 3 par niveau.</strong> Une nouvelle façon de lire le marché, votée par vos retours.</p>
+  <p><strong>5. L'expansion de la série de guides.</strong> Six nouveaux guides en une semaine : Bourse, Banque, Postes de direction, Individu vs Entreprise, Marketing/Capital/Dividendes, et Six failles.</p>
+
+  <h3 class="section">🎯 Le bilan de la rubrique fenêtres</h3>
+  <p>Cinq signaux publiés cette semaine, cinq vérifiés :</p>
+  <div class="resume">
+    <ul>
+      <li>Plate-forme pétrolière améliorée : +13,4 %</li>
+      <li>Centre de recherche régional : +14,1 %</li>
+      <li>Complexe palacium habitable : +15 %</li>
+      <li>Centre de recherche régional (2e signal) : +18,5 %</li>
+      <li>Complexe palacium tout confort : +19,5 %</li>
+    </ul>
+  </div>
+  <div class="keybox">
+    <div class="big">5 sur 5</div>
+    <div class="cap">Signaux publiés, signaux vérifiés — chiffres publics à l'appui</div>
+  </div>
+
+  <h3 class="section">💰 L'impact réel de la taxe — avant / après</h3>
+  <p>Sur les bilans personnels que nous suivons, le passage de la taxe a coûté, chaque jour, un imp&ocirc;t sur la fortune et des charges fonci&egrave;res repr&eacute;sentant une fraction notable des loyers per&ccedil;us &mdash; compens&eacute;s en partie par la d&eacute;duction fiscale du Jeu chance (jusqu'&agrave; 250 %). Depuis son expiration, les NET d'entreprise circulant sur le march&eacute; refl&egrave;tent enfin leur rentabilit&eacute; r&eacute;elle.</p>
+
+  <h3 class="section">🏢 Secteur entreprise — Top 20 de la semaine (13 juillet)</h3>
+  <table><thead><tr><th>#</th><th>Bien</th><th class="num">Valeur</th><th class="num">ROI</th></tr></thead><tbody>
+      <tr class="hl"><td>1</td><td>Plate-forme pétrolière améliorée</td><td class="num">30,60 G Ø</td><td class="num">4,59 %</td></tr>
+      <tr><td>2</td><td>Centre de recherche national</td><td class="num">38,78 G Ø</td><td class="num">4,36 %</td></tr>
+      <tr><td>3</td><td>Plate-forme pétrolière aménagée</td><td class="num">15,00 G Ø</td><td class="num">4,34 %</td></tr>
+      <tr><td>4</td><td>Centre de recherche régional</td><td class="num">19,43 G Ø</td><td class="num">4,28 %</td></tr>
+      <tr><td>5</td><td>Réseau de bus 50 arrêts</td><td class="num">13,80 M Ø</td><td class="num">4,06 %</td></tr>
+      <tr><td>6</td><td>Plate-forme pétrolière high-tech</td><td class="num">55,35 G Ø</td><td class="num">3,97 %</td></tr>
+      <tr><td>7</td><td>Réseau FreeCycl' 10 arrêts</td><td class="num">2,09 M Ø</td><td class="num">3,69 %</td></tr>
+      <tr><td>8</td><td>Centre de recherche international</td><td class="num">76,85 G Ø</td><td class="num">3,63 %</td></tr>
+      <tr><td>9</td><td>Zone portuaire internationale</td><td class="num">522,83 G Ø</td><td class="num">3,60 %</td></tr>
+      <tr><td>10</td><td>Zone portuaire régionale</td><td class="num">224,99 G Ø</td><td class="num">3,55 %</td></tr>
+      <tr><td>11</td><td>Zone nucléaire régionale</td><td class="num">1,13 T Ø</td><td class="num">3,55 %</td></tr>
+      <tr><td>12</td><td>Réseau FreeCycl' 15 arrêts</td><td class="num">2,95 M Ø</td><td class="num">3,53 %</td></tr>
+      <tr><td>13</td><td>Zone portuaire nationale</td><td class="num">337,52 G Ø</td><td class="num">3,52 %</td></tr>
+      <tr><td>14</td><td>Local de haut standing</td><td class="num">451,09 k Ø</td><td class="num">3,52 %</td></tr>
+      <tr><td>15</td><td>Grand local tout équipé</td><td class="num">873,02 k Ø</td><td class="num">3,50 %</td></tr>
+      <tr><td>16</td><td>Gare avec 4 terminaux</td><td class="num">969,74 M Ø</td><td class="num">3,46 %</td></tr>
+      <tr><td>17</td><td>Grand local aménagé</td><td class="num">573,76 k Ø</td><td class="num">3,43 %</td></tr>
+      <tr><td>18</td><td>2100 m² de bureaux grand standing</td><td class="num">858,74 k Ø</td><td class="num">3,42 %</td></tr>
+      <tr><td>19</td><td>Entrepôt intégralement optimisé</td><td class="num">604,82 k Ø</td><td class="num">3,41 %</td></tr>
+      <tr><td>20</td><td>Réseau de bus 25 arrêts</td><td class="num">9,47 M Ø</td><td class="num">3,40 %</td></tr>
+  </tbody></table>
+
+  <h3 class="section">🎚️ Top 3 par niveau — Entreprise</h3>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+    <div><h4 style="color:var(--gold);font-size:.85rem;margin-bottom:8px;">Niveau 1</h4><table><tbody>      <tr><td>1</td><td>Plate-forme pétrolière aménagée</td><td class="num">15,00 G Ø</td><td class="num">4,34 %</td></tr>
+      <tr><td>2</td><td>Centre de recherche régional</td><td class="num">19,43 G Ø</td><td class="num">4,28 %</td></tr>
+      <tr><td>3</td><td>Réseau FreeCycl' 10 arrêts</td><td class="num">2,09 M Ø</td><td class="num">3,69 %</td></tr>
+</tbody></table></div>
+    <div><h4 style="color:var(--gold);font-size:.85rem;margin-bottom:8px;">Niveau 2</h4><table><tbody>      <tr><td>1</td><td>Plate-forme pétrolière améliorée</td><td class="num">30,60 G Ø</td><td class="num">4,59 %</td></tr>
+      <tr><td>2</td><td>Centre de recherche national</td><td class="num">38,78 G Ø</td><td class="num">4,36 %</td></tr>
+      <tr><td>3</td><td>Réseau de bus 50 arrêts</td><td class="num">13,80 M Ø</td><td class="num">4,06 %</td></tr>
+</tbody></table></div>
+    <div><h4 style="color:var(--gold);font-size:.85rem;margin-bottom:8px;">Niveau 3</h4><table><tbody>      <tr><td>1</td><td>Plate-forme pétrolière high-tech</td><td class="num">55,35 G Ø</td><td class="num">3,97 %</td></tr>
+      <tr><td>2</td><td>Centre de recherche international</td><td class="num">76,85 G Ø</td><td class="num">3,63 %</td></tr>
+      <tr><td>3</td><td>Zone portuaire internationale</td><td class="num">522,83 G Ø</td><td class="num">3,60 %</td></tr>
+</tbody></table></div>
+  </div>
+
+
+  <h3 class="section">🏠 Secteur personnel — Top 20 de la semaine</h3>
+  <table><thead><tr><th>#</th><th>Bien</th><th class="num">Valeur</th><th class="num">ROI</th></tr></thead><tbody>
+      <tr class="hl"><td>1</td><td>Complexe palacium habitable</td><td class="num">1,46 P Ø</td><td class="num">6,33 %</td></tr>
+      <tr><td>2</td><td>Complexe palacium tout confort</td><td class="num">2,18 P Ø</td><td class="num">6,00 %</td></tr>
+      <tr><td>3</td><td>Complexe palacium luxueux</td><td class="num">3,31 P Ø</td><td class="num">4,55 %</td></tr>
+      <tr><td>4</td><td>Complexe titanium tout confort</td><td class="num">4,04 T Ø</td><td class="num">3,58 %</td></tr>
+      <tr><td>5</td><td>Complexe titanium habitable</td><td class="num">3,20 T Ø</td><td class="num">3,56 %</td></tr>
+      <tr><td>6</td><td>Complexe résidentiel géant habitable</td><td class="num">38,34 M Ø</td><td class="num">3,11 %</td></tr>
+      <tr><td>7</td><td>Grand complexe résidentiel habitable</td><td class="num">16,35 M Ø</td><td class="num">3,10 %</td></tr>
+      <tr><td>8</td><td>Double complexe résidentiel géant tout confort</td><td class="num">91,14 M Ø</td><td class="num">3,05 %</td></tr>
+      <tr><td>9</td><td>Complexe résidentiel géant tout confort</td><td class="num">45,76 M Ø</td><td class="num">2,94 %</td></tr>
+      <tr><td>10</td><td>Complexe millenium habitable</td><td class="num">35,28 G Ø</td><td class="num">2,85 %</td></tr>
+      <tr><td>11</td><td>Complexe titanium luxueux</td><td class="num">5,35 T Ø</td><td class="num">2,82 %</td></tr>
+      <tr><td>12</td><td>Maison moyenne luxueuse</td><td class="num">102,95 k Ø</td><td class="num">2,73 %</td></tr>
+      <tr><td>13</td><td>Grand complexe résidentiel luxueux</td><td class="num">28,18 M Ø</td><td class="num">2,67 %</td></tr>
+      <tr><td>14</td><td>Res. 12 T2 habitables</td><td class="num">441,20 k Ø</td><td class="num">2,65 %</td></tr>
+      <tr><td>15</td><td>Res. 12 T2 grand luxe</td><td class="num">622,59 k Ø</td><td class="num">2,56 %</td></tr>
+      <tr><td>16</td><td>Res. 6 T2 habitables</td><td class="num">242,63 k Ø</td><td class="num">2,56 %</td></tr>
+      <tr><td>17</td><td>Double complexe résidentiel géant habitable</td><td class="num">80,34 M Ø</td><td class="num">2,53 %</td></tr>
+      <tr><td>18</td><td>Res. 6 chambres habitables</td><td class="num">55,12 k Ø</td><td class="num">2,52 %</td></tr>
+      <tr><td>19</td><td>Grand complexe résidentiel tout confort</td><td class="num">21,22 M Ø</td><td class="num">2,50 %</td></tr>
+      <tr><td>20</td><td>Res. 6 chambres équipées</td><td class="num">77,74 k Ø</td><td class="num">2,49 %</td></tr>
+  </tbody></table>
+
+  <h3 class="section">🎚️ Top 3 par niveau — Personnel</h3>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+    <div><h4 style="color:var(--gold);font-size:.85rem;margin-bottom:8px;">Niveau 1</h4><table><tbody>      <tr><td>1</td><td>Complexe palacium habitable</td><td class="num">1,46 P Ø</td><td class="num">6,33 %</td></tr>
+      <tr><td>2</td><td>Complexe titanium habitable</td><td class="num">3,20 T Ø</td><td class="num">3,56 %</td></tr>
+      <tr><td>3</td><td>Complexe résidentiel géant habitable</td><td class="num">38,34 M Ø</td><td class="num">3,11 %</td></tr>
+</tbody></table></div>
+    <div><h4 style="color:var(--gold);font-size:.85rem;margin-bottom:8px;">Niveau 2</h4><table><tbody>      <tr><td>1</td><td>Complexe palacium tout confort</td><td class="num">2,18 P Ø</td><td class="num">6,00 %</td></tr>
+      <tr><td>2</td><td>Complexe titanium tout confort</td><td class="num">4,04 T Ø</td><td class="num">3,58 %</td></tr>
+      <tr><td>3</td><td>Double complexe résidentiel géant tout confort</td><td class="num">91,14 M Ø</td><td class="num">3,05 %</td></tr>
+</tbody></table></div>
+    <div><h4 style="color:var(--gold);font-size:.85rem;margin-bottom:8px;">Niveau 3</h4><table><tbody>      <tr><td>1</td><td>Complexe palacium luxueux</td><td class="num">3,31 P Ø</td><td class="num">4,55 %</td></tr>
+      <tr><td>2</td><td>Complexe titanium luxueux</td><td class="num">5,35 T Ø</td><td class="num">2,82 %</td></tr>
+      <tr><td>3</td><td>Maison moyenne luxueuse</td><td class="num">102,95 k Ø</td><td class="num">2,73 %</td></tr>
+</tbody></table></div>
+  </div>
+
+
+  <h3 class="section">📰 Le Journal en chiffres cette semaine</h3>
+  <p>Le Journal du Marché a publié <strong>15 articles</strong> cette semaine — dossiers, guides, éditions quotidiennes et interviews confondus. La note moyenne reste parfaite à <strong>5,0</strong>. Merci à chacun de vous pour votre lecture fidèle et vos retours, notamment sur le dossier Six failles, qui restera sans doute l'un des textes les plus marquants publiés cette année.</p>
+
+  <h3 class="section">📌 Pour la semaine à venir</h3>
+  <p>Avec l'expiration de la taxe et la 4.44 d&eacute;sormais stabilis&eacute;es, la semaine qui s'ouvre s'annonce plus lisible. Le Journal continuera de suivre la rubrique fen&ecirc;tres au quotidien, et pr&eacute;pare d&eacute;j&agrave; de nouveaux guides pour approfondir la fiscalit&eacute; et les m&eacute;caniques encore m&eacute;connues du jeu.</p>
+
+  <div class="sources">Merci de nous suivre, semaine apr&egrave;s semaine. Donn&eacute;es du 13 juillet 2026 &mdash; export post-reset 03h14. Tous les calculs sont reproductibles &agrave; partir des exports CSV officiels du jeu.</div>
+
+  <div class="footer">Le Journal du March&eacute; &middot; Monde 8 &middot; Bilan hebdomadaire</div>
+
+</div>
+</body>
+</html>
