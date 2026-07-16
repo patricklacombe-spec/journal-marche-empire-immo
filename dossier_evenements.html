@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Journal du Marché — Dossier Événements — Ce que dit la Constitution</title>
+<style>
+  :root{
+    --bg:#15130f; --paper:#1c1916; --paper-raised:#221e19;
+    --ink:#e8e0d0; --ink-dim:#a89a82; --ink-faint:#756a58;
+    --rule:#3a342a; --gold:#c9a35a; --green:#7a9b6e; --red:#b8614f;
+    --orange:#c97a2a; --blue:#5a85c9;
+    --serif:Georgia,'Times New Roman',serif; --sans:'Segoe UI',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);line-height:1.55;padding:32px 16px;}
+  .sheet{max-width:760px;margin:0 auto;background:var(--paper);border:1px solid var(--rule);}
+  .masthead{padding:28px 32px 18px;border-bottom:3px double var(--gold);text-align:center;}
+  .kicker{font-family:var(--sans);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin:0 0 10px;}
+  .masthead h1{font-size:36px;margin:0;letter-spacing:1px;font-weight:700;}
+  .masthead .sub{font-family:var(--sans);font-size:12px;color:var(--ink-dim);margin-top:10px;display:flex;justify-content:center;gap:18px;flex-wrap:wrap;}
+  .masthead .sub span{white-space:nowrap;}
+  .edito{padding:26px 32px 8px;border-bottom:1px solid var(--rule);}
+  .edito h2{font-family:var(--sans);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin:0 0 14px;}
+  .edito p{font-size:16px;margin:0 0 16px;color:var(--ink);}
+  .edito p:first-of-type::first-letter{font-size:46px;float:left;line-height:0.8;padding:6px 8px 0 0;color:var(--gold);font-weight:700;}
+  .section{padding:26px 32px;border-bottom:1px solid var(--rule);}
+  .section-head{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;}
+  .section-head .icon{font-size:20px;}
+  .section-head h2{font-size:21px;margin:0;letter-spacing:0.3px;}
+  .analysis{font-size:15px;margin:0 0 16px;}
+  .analysis strong{color:var(--gold);}
+  .note-edito{font-style:italic;font-size:13.5px;color:var(--ink-faint);border-left:2px solid var(--gold);padding-left:14px;margin-top:14px;}
+  .callout{background:var(--paper-raised);border-left:3px solid var(--red);padding:14px 18px;margin:18px 0;font-size:14.5px;color:var(--ink-dim);}
+  .callout.good{border-left-color:var(--green);}
+  .callout.neutral{border-left-color:var(--gold);}
+  .callout.info{border-left-color:var(--blue);}
+  .callout strong{color:var(--ink);}
+  .evenement{background:var(--paper-raised);border-left:4px solid var(--red);padding:16px 20px;margin:12px 0;}
+  .evenement.ok{border-left-color:var(--ink-faint);}
+  .evenement .num{font-family:var(--sans);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:6px;}
+  .evenement .titre{font-size:17px;font-weight:700;margin-bottom:6px;}
+  .evenement .date{font-family:var(--sans);font-size:13px;color:var(--gold);margin-bottom:8px;}
+  .evenement p{font-size:14.5px;color:var(--ink-dim);margin:0;}
+  .constitution{background:var(--paper-raised);border:2px solid var(--gold);padding:20px 24px;margin:16px 0;}
+  .constitution .titre{font-family:var(--sans);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+  .regle{display:flex;gap:14px;margin-bottom:14px;align-items:flex-start;}
+  .regle:last-child{margin-bottom:0;}
+  .regle .num{font-family:var(--sans);font-size:20px;font-weight:700;color:var(--gold);min-width:28px;}
+  .regle .texte{font-size:15px;color:var(--ink);}
+  .mois{margin:16px 0;}
+  .mois-titre{font-family:var(--sans);font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:8px 14px;margin-bottom:8px;}
+  .mois-titre.rouge{background:rgba(184,97,79,0.15);color:var(--red);border-left:4px solid var(--red);}
+  .mois-titre.vert{background:rgba(122,155,110,0.15);color:var(--green);border-left:4px solid var(--green);}
+  .mois-item{display:flex;gap:12px;padding:10px 14px;font-size:14.5px;color:var(--ink-dim);border-bottom:1px solid var(--rule);}
+  .mois-item:last-child{border-bottom:none;}
+  .mois-item .badge{font-family:var(--sans);font-size:11px;font-weight:700;padding:2px 8px;border-radius:3px;white-space:nowrap;}
+  .badge.neg{background:var(--red);color:white;}
+  .badge.ok{background:var(--green);color:white;}
+  .verdict{background:var(--paper-raised);padding:18px 22px;margin:16px 0;text-align:center;border:2px solid var(--red);}
+  .verdict.ok{border-color:var(--green);}
+  .verdict .label{font-family:var(--sans);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:8px;}
+  .verdict .result{font-size:20px;font-weight:700;}
+  .verdict.ko .result{color:var(--red);}
+  .verdict.ok .result{color:var(--green);}
+  .colophon{padding:22px 32px 30px;text-align:center;font-family:var(--sans);font-size:11px;color:var(--ink-faint);letter-spacing:0.3px;}
+  .colophon .rule{width:60px;height:1px;background:var(--gold);margin:0 auto 16px;}
+  @media(max-width:600px){
+    .masthead h1{font-size:26px;}
+    .section,.edito{padding:20px 18px;}
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <div class="masthead">
+    <p class="kicker">Dossier Spécial — Événements · Monde 8</p>
+    <h1>Journal du Marché</h1>
+    <div class="sub">
+      <span>Empire Immo · Monde 8</span>
+      <span>Dossier Événements</span>
+      <span>5 juillet 2026</span>
+    </div>
+  </div>
+
+  <div class="edito">
+    <h2>L'édito — Ce que dit la Constitution</h2>
+    <p>Inondation, séisme, taxe pauvreté — trois événements négatifs en juin 2026. La Constitution dit qu'il ne peut pas y en avoir deux le même mois. Le Journal du Marché présente la chronologie complète et la confronte aux règles officielles. Les lecteurs tireront leurs propres conclusions.</p>
+    <p class="note-edito">Note : toutes les données proviennent des exports CSV officiels du jeu et de la Constitution officielle d'Empire Immo.</p>
+  </div>
+
+  <!-- CHRONOLOGIE -->
+  <div class="section">
+    <div class="section-head"><span class="icon">📋</span><h2>Chronologie depuis le rollback</h2></div>
+
+    <p class="analysis"><strong>Rollback : 13 juin 2026</strong> — remise à zéro du serveur Monde 8.</p>
+
+    <div class="evenement">
+      <div class="num">Événement 1 · Juin 2026</div>
+      <div class="titre">Inondation</div>
+      <div class="date">~20 juin 2026</div>
+      <p>Impact sur les propriétés de M8. Coûts de réparation engendrés sur l'ensemble des biens immobiliers.</p>
+    </div>
+
+    <div class="evenement">
+      <div class="num">Événement 2 · Juin 2026</div>
+      <div class="titre">Séisme</div>
+      <div class="date">27 juin 2026</div>
+      <p>Documenté en édition #9 du Journal du Marché. Coût de réparation observé : 15 664 T Ø pour un Technopôle palacium international. Le lendemain, 136 biens sur 204 suivis étaient en mouvement — le reset le plus actif depuis le lancement du journal.</p>
+    </div>
+
+    <div class="evenement">
+      <div class="num">Événement 3 · Juin 2026</div>
+      <div class="titre">Taxe Lutte contre la pauvreté</div>
+      <div class="date">28 juin 2026</div>
+      <p>Taxe ImmoState proportionnelle au patrimoine, déclenchée le 28 juin — événement de juin. Impact observé sur tous les empires de M8 pendant 12 jours consécutifs.</p>
+    </div>
+
+    <div class="evenement ok">
+      <div class="num">Événement 4 · Juillet 2026</div>
+      <div class="titre">Opération canicule</div>
+      <div class="date">5 juillet 2026</div>
+      <p>Coût observé : ~2 112 E Ø sur les filiales concernées. Seul événement du mois de juillet.</p>
+    </div>
+  </div>
+
+  <!-- CONSTITUTION -->
+  <div class="section">
+    <div class="section-head"><span class="icon">📌</span><h2>Ce que dit la Constitution</h2></div>
+
+    <div class="constitution">
+      <div class="titre">Règles officielles — Événements négatifs</div>
+      <div class="regle">
+        <div class="num">1</div>
+        <div class="texte">Il ne peut pas y avoir <strong>2 événements négatifs le même mois.</strong></div>
+      </div>
+      <div class="regle">
+        <div class="num">2</div>
+        <div class="texte">Les jeunes ImmoStatiens sont protégés des événements négatifs pendant leurs <strong>30 premiers mois</strong> de jeu.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONFRONTATION -->
+  <div class="section">
+    <div class="section-head"><span class="icon">⚖️</span><h2>Constitution vs réalité</h2></div>
+
+    <div class="mois">
+      <div class="mois-titre rouge">Juin 2026</div>
+      <div class="mois-item">
+        <span class="badge neg">Négatif #1</span>
+        <span>Inondation — ~20 juin</span>
+      </div>
+      <div class="mois-item">
+        <span class="badge neg">Négatif #2</span>
+        <span>Séisme — 27 juin</span>
+      </div>
+      <div class="mois-item">
+        <span class="badge neg">Négatif #3</span>
+        <span>Taxe Lutte contre la pauvreté — 28 juin</span>
+      </div>
+    </div>
+
+    <div class="verdict ko">
+      <div class="label">Verdict — Juin 2026</div>
+      <div class="result">3 événements négatifs — Constitution : maximum 1</div>
+    </div>
+
+    <div class="mois" style="margin-top:20px;">
+      <div class="mois-titre vert">Juillet 2026</div>
+      <div class="mois-item">
+        <span class="badge neg">Négatif #1</span>
+        <span>Opération canicule — 5 juillet</span>
+      </div>
+    </div>
+
+    <div class="verdict ok">
+      <div class="label">Verdict — Juillet 2026</div>
+      <div class="result">1 événement négatif — conforme à la Constitution</div>
+    </div>
+  </div>
+
+  <!-- NOTE ÉDITORIALE -->
+  <div class="section">
+    <div class="section-head"><span class="icon">📰</span><h2>Note éditoriale</h2></div>
+
+    <p class="analysis">Le Journal du Marché se limite à présenter les faits observés et les règles officielles. Il n'appartient pas à ce journal de qualifier les décisions d'ImmoState ni d'en tirer des conclusions politiques. Les lecteurs disposent des données pour former leur propre opinion.</p>
+
+    <div class="callout info">
+      <strong>ℹ️ Canal approprié.</strong> Si ces observations soulèvent des questions, la messagerie du Staff ou les forums officiels du jeu sont les canaux appropriés pour les soumettre à l'administration.
+    </div>
+  </div>
+
+  <div class="colophon">
+    <div class="rule"></div>
+    Journal du Marché — Monde 8 · Dossier Événements · 5 juillet 2026<br>
+    Données issues de la Constitution officielle et des exports CSV du jeu — éditions #9 à #15.<br>
+    Dédié à la rigueur et à l'analyse factuelle.
+  </div>
+
+</div>
+</body>
+</html>

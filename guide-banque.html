@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guide — Jouer en bourse sur Monde 8 | Le Journal du Marché</title>
+<style>
+  :root{--bg:#15130f;--paper:#1c1916;--gold:#c9a35a;--gold-dim:#9a7c42;--ink:#e8e2d6;--ink-dim:#a89f8f;--line:#3a342b;--danger:#c96a5a;--ok:#7ba05b;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.7;padding:24px 16px;}
+  .paper{max-width:860px;margin:0 auto;background:var(--paper);border:1px solid var(--line);padding:48px 56px;}
+  @media(max-width:640px){.paper{padding:28px 20px;}}
+  .masthead{text-align:center;border-bottom:3px double var(--gold);padding-bottom:20px;margin-bottom:8px;}
+  .masthead .kicker{font-size:.72rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold-dim);}
+  .masthead h1{font-size:2rem;letter-spacing:.08em;color:var(--gold);font-weight:normal;margin:6px 0 2px;}
+  .masthead .tagline{font-size:.8rem;font-style:italic;color:var(--ink-dim);}
+  .dateline{text-align:center;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-dim);padding:10px 0;border-bottom:1px solid var(--line);margin-bottom:36px;}
+  .dossier-label{display:inline-block;background:var(--gold);color:var(--bg);font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;padding:4px 12px;margin-bottom:14px;font-family:Arial,sans-serif;font-weight:bold;}
+  h2.title{font-size:2rem;line-height:1.2;font-weight:normal;margin-bottom:8px;}
+  .subtitle{font-size:1.05rem;font-style:italic;color:var(--gold);margin-bottom:26px;}
+  .lede{font-size:1.02rem;border-left:3px solid var(--gold);padding-left:18px;margin-bottom:40px;font-style:italic;}
+  h3.section{font-size:.85rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);border-top:1px solid var(--line);padding-top:26px;margin:40px 0 16px;font-family:Arial,sans-serif;}
+  p{margin-bottom:14px;font-size:.98rem;}
+  strong{color:var(--gold);}
+  table{width:100%;border-collapse:collapse;margin:14px 0 22px;font-size:.88rem;}
+  th{font-family:Arial,sans-serif;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-dim);text-align:left;padding:8px 10px;border-bottom:2px solid var(--gold-dim);}
+  td{padding:7px 10px;border-bottom:1px solid var(--line);}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;}
+  .callout{border-left:3px solid var(--gold);padding:12px 18px;margin:18px 0;background:rgba(201,163,90,.05);font-size:.95rem;}
+  .warn{border-left-color:var(--danger);background:rgba(201,106,90,.06);}
+  .reflexe{margin:20px 0;padding-left:18px;border-left:3px solid var(--gold-dim);}
+  .reflexe h5{font-family:Arial,sans-serif;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+  .exemples{background:rgba(0,0,0,.18);border:1px solid var(--line);padding:16px 20px;margin:16px 0;font-size:.9rem;}
+  .exemples p{margin-bottom:8px;}
+  .sources{font-size:.78rem;color:var(--ink-dim);font-style:italic;margin-top:30px;padding-top:14px;border-top:1px solid var(--line);}
+  .footer{text-align:center;margin-top:36px;padding-top:20px;border-top:3px double var(--gold);font-size:.75rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold-dim);}
+</style>
+</head>
+<body>
+<div class="paper">
+
+  <div class="masthead">
+    <div class="kicker">Monde 8 · Série guides pratiques</div>
+    <h1>LE JOURNAL DU MARCHÉ</h1>
+    <div class="tagline">L'information économique indépendante de Monde 8</div>
+  </div>
+  <div class="dateline">Guide · Juillet 2026</div>
+
+  <span class="dossier-label">Guide</span>
+  <h2 class="title">La banque sur Monde 8</h2>
+  <div class="subtitle">Emprunts, Livret I, compte épargne — ce que ça rapporte vraiment, et les pénalités que personne ne lit avant de signer.</div>
+
+  <p class="lede">Cinquième guide de notre série pratique, après les assurances, le guide du débutant, les holdings et la bourse : la banque. Un système simple en apparence — deux services, emprunter et épargner — mais dont les détails font toute la différence entre un bon levier et un piège coûteux. Tout ce qui suit provient de la Constitution officielle du jeu.</p>
+
+  <h3 class="section">🏦 1. Le paysage bancaire — sept banques, deux modèles</h3>
+  <p>Il existe sept banques sur le serveur : la <strong>Banque Nationale</strong> et six <strong>Banques Municipales</strong>.</p>
+  <p>La Banque Nationale est publique, gérée par le gouvernement, accessible à tous les ImmoStatiens. Ses fonds proviennent des impôts — ceux des entreprises et l'impôt sur la fortune des habitants.</p>
+  <p>Les Banques Municipales appartiennent chacune à leur ville et sont réservées aux habitants de cette ville — concrètement, depuis votre page Banque, vous ne voyez donc que <strong>deux établissements</strong> : la Banque Nationale et la banque de votre propre ville. Le directeur de la Banque Municipale est nommé par le maire (notre récente interview du maire de Baselis décrivait justement ce rôle), et la mairie peut y injecter ou retirer des fonds.</p>
+  <div class="callout"><strong>Toutes offrent les mêmes trois services</strong> — emprunts, Livret I, compte épargne. Ce qui change d'une banque à l'autre : les conditions d'accès et les taux. Comparer avant de choisir n'est pas une option, c'est la base. Et retenez ceci : une banque ne peut pas prêter plus de deux fois ses capitaux propres — une petite banque municipale peut simplement manquer de capacité pour votre gros emprunt.</div>
+
+  <h3 class="section">💳 2. L'emprunt — le levier et ses règles</h3>
+  <p>Pour emprunter, il faut d'abord être <strong>solvable</strong> : un revenu minimum pour un habitant, un certain capital pour une entreprise. Chaque banque peut aussi fixer un montant minimal d'emprunt et un taux d'endettement toléré. <strong>La durée :</strong> de 6 à 48 mois, au choix, avec la mensualité affichée dynamiquement avant de signer. Les taux sont fixes et annuels.</p>
+  <table>
+    <thead><tr><th>Profil</th><th>Capacité d'endettement (mensualité max)</th></tr></thead>
+    <tbody>
+      <tr><td>Habitant</td><td>Ratio des revenus (loyers + 50 % des primes/aides sur 6 mois), fixé par la banque — typiquement ~30 %</td></tr>
+      <tr><td>Entreprise</td><td>1 % de la valeur de l'entreprise (minimum 20 000 Ø)</td></tr>
+      <tr><td>Holding</td><td>~0,83 % de la valeur du holding</td></tr>
+      <tr><td>Presse</td><td>Ratio des revenus, comme les habitants</td></tr>
+      <tr><td>Ville</td><td>Les revenus en impôts de la ville</td></tr>
+    </tbody>
+  </table>
+  <p><strong>Le coût réel :</strong> intérêts = capital × taux × durée en années, calculés sur le capital restant dû. Un emprunt de 100 000 Ø à 5 % coûte environ 5 000 Ø sur 12 mois... mais environ 20 000 Ø sur 48 mois. <strong>La durée multiplie le coût</strong> : empruntez sur la période la plus courte que vos mensualités supportent.</p>
+  <div class="callout warn"><strong>⚠️ Le piège du remboursement anticipé.</strong> Vous pouvez rembourser d'avance (minimum 10 % du capital restant dû), mais chaque remboursement anticipé coûte <strong>6 mois d'intérêts en pénalité</strong> sur le montant remboursé. Rembourser vite pour « économiser des intérêts » peut donc coûter plus cher que de laisser courir. Faites le calcul avant.</div>
+  <div class="callout"><strong>📌 À noter — version 4.44.</strong> La prochaine mise à jour du jeu instaure un <strong>taux d'emprunt minimum de 2 %</strong>. Les crédits à taux quasi nul offerts par certaines banques municipales disparaîtront; comparez les banques en gardant ce nouveau plancher en tête.</div>
+
+  <h3 class="section">📗 3. Le Livret I — l'épargne souple</h3>
+  <p>Le Livret I est le placement simple : vous déposez, et au bout de 12 mois la somme revient automatiquement sur votre compte avec les intérêts. Nombre de livrets illimité (le volume total peut être plafonné par la banque).</p>
+  <p><strong>Sa grande qualité : la souplesse.</strong> Vous pouvez fermer un livret à tout moment et vous touchez les intérêts au prorata de la durée écoulée — aucune pénalité. Un livret à 5 % avec 20 000 Ø rapporte 1 000 Ø sur 12 mois; fermé au bout de 4 mois, il rapporte 333 Ø. Vous ne perdez jamais, vous gagnez juste moins.</p>
+
+  <h3 class="section">💼 4. Le compte épargne — plus engageant, plus exigeant</h3>
+  <p>Le compte épargne est <strong>bloqué 12 mois</strong> et fonctionne différemment : vous définissez un apport initial ET des versements mensuels obligatoires. Au bout de 12 mois, vous récupérez tout, intérêts compris — les intérêts se calculent chaque mois sur le capital accumulé, qui grossit à chaque versement.</p>
+  <div class="callout warn">
+    <p><strong>1. Les versements mensuels sont un engagement.</strong> Un compte épargne mal calibré peut vous endetter — assurez-vous que vos revenus couvrent les versements sur toute l'année.</p>
+    <p><strong>2. La pénalité d'arrêt :</strong> selon la Constitution actuelle, arrêter un compte coûte capital placé × taux du compte — l'équivalent d'une année complète d'intérêts. La version 4.44 annonce une pénalité de <strong>5 %</strong> lors d'une clôture anticipée. Dans un cas comme dans l'autre : là où le Livret I pardonne tout, le compte épargne ne pardonne rien. Ne l'ouvrez que si vous êtes certain d'aller au bout.</p>
+  </div>
+
+  <h3 class="section">⚖️ 5. Livret, compte épargne... ou brique?</h3>
+  <p>La question que tout épargnant doit se poser : que rapporte la banque comparée à l'immobilier?</p>
+  <p>Les taux bancaires sont <strong>annuels</strong> : un Livret I à 5 % verse 5 % sur 12 mois. Un bien immobilier à 3 % de ROI (la moyenne du marché selon nos éditions) encaisse ce rendement à chaque mois de loyer — soit, cumulé sur 12 mois, un ordre de grandeur au-dessus de n'importe quel livret. Les taux exacts varient selon les banques, mais l'écart structurel demeure.</p>
+  <div class="keybox">
+    <div class="big">La banque = stationnement</div>
+    <div class="cap">La brique bâtit le patrimoine; le livret parque les liquidités.</div>
+  </div>
+  <p>La banque sert à faire fructifier modestement un capital en attente d'affectation — entre deux achats, avant une grosse échéance — sans risque et (pour le Livret I) sans engagement. Pour bâtir un patrimoine, la brique gagne. Pour parquer des liquidités, le livret dépanne.</p>
+
+  <h3 class="section">🏛️ 6. Pour la culture — ce qui se passe derrière le comptoir</h3>
+  <p>Quelques mécaniques de coulisses qui éclairent le comportement de votre banquier :</p>
+  <table>
+    <thead><tr><th>Niveau</th><th>Banque</th><th class="num">Capitaux propres min.</th><th class="num">Surcoût structurel</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>Banque locale</td><td class="num">0 Ø</td><td class="num">0 %</td></tr>
+      <tr><td>2</td><td>Banque régionale</td><td class="num">1 G Ø</td><td class="num">+30 %</td></tr>
+      <tr><td>3</td><td>Banque structurante</td><td class="num">10 T Ø</td><td class="num">+80 %</td></tr>
+      <tr><td>4</td><td>Banque dominante</td><td class="num">100 P Ø</td><td class="num">+200 %</td></tr>
+      <tr><td>5</td><td>Banque systémique</td><td class="num">1 Z Ø</td><td class="num">+500 %</td></tr>
+    </tbody>
+  </table>
+  <p>Chaque niveau ajoute un surcoût de fonctionnement — grossir coûte cher, même pour une banque. À noter aussi : une Banque Municipale peut elle-même emprunter à la Banque Nationale. Et vous pouvez faire une <strong>contribution volontaire</strong> à votre Banque Municipale : 80 % va à la banque, 20 % à la Banque Nationale. C'est un don définitif — principalement honorifique, il rapporte des médailles et une place dans la liste des mécènes.</p>
+
+  <h3 class="section">📌 Pour les nouveaux joueurs</h3>
+  <p>Rappel de notre Guide du Débutant : l'objectif 7 demande de faire un premier emprunt. Empruntez le minimum (5 000 Ø), touchez la récompense de 50 000 Ø, remboursez aussitôt — mais souvenez-vous maintenant de la pénalité de remboursement anticipé : 6 mois d'intérêts sur 5 000 Ø, c'est une somme minime qui ne change rien à l'affaire (+45 000 Ø nets environ), mais c'est bien de savoir qu'elle existe.</p>
+  <p><strong>Et la règle d'or pour la suite :</strong> n'empruntez que si le rendement de ce que vous achetez dépasse le taux de ce que vous payez. Sinon, le levier travaille contre vous.</p>
+
+  <div class="sources">Source : Constitution officielle du jeu, section banques. Cinquième guide de la série pratique du Journal du Marché — voir aussi : Assurances, Guide du Débutant, Holdings, Bourse.</div>
+
+  <div class="footer">Le Journal du Marché · Monde 8 · Série guides</div>
+
+</div>
+</body>
+</html>

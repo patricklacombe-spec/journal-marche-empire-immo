@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dossier — Le marché des cessions d'entreprises | Le Journal du Marché</title>
+<style>
+  :root{
+    --bg:#15130f;
+    --paper:#1c1916;
+    --gold:#c9a35a;
+    --gold-dim:#9a7c42;
+    --ink:#e8e2d6;
+    --ink-dim:#a89f8f;
+    --line:#3a342b;
+    --danger:#c96a5a;
+    --ok:#7ba05b;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:Georgia,'Times New Roman',serif;
+    line-height:1.7;
+    padding:24px 16px;
+  }
+  .paper{
+    max-width:860px;
+    margin:0 auto;
+    background:var(--paper);
+    border:1px solid var(--line);
+    padding:48px 56px;
+  }
+  @media(max-width:640px){.paper{padding:28px 20px;}}
+
+  /* Masthead */
+  .masthead{text-align:center;border-bottom:3px double var(--gold);padding-bottom:20px;margin-bottom:8px;}
+  .masthead .kicker{font-size:.72rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold-dim);}
+  .masthead h1{font-size:2rem;letter-spacing:.08em;color:var(--gold);font-weight:normal;margin:6px 0 2px;}
+  .masthead .tagline{font-size:.8rem;font-style:italic;color:var(--ink-dim);}
+  .dateline{text-align:center;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-dim);padding:10px 0;border-bottom:1px solid var(--line);margin-bottom:36px;}
+
+  /* Titles */
+  .dossier-label{display:inline-block;background:var(--gold);color:var(--bg);font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;padding:4px 12px;margin-bottom:14px;font-family:Arial,sans-serif;font-weight:bold;}
+  h2.title{font-size:2.1rem;line-height:1.2;color:var(--ink);font-weight:normal;margin-bottom:8px;}
+  .subtitle{font-size:1.05rem;font-style:italic;color:var(--gold);margin-bottom:26px;}
+  .lede{font-size:1.02rem;color:var(--ink);border-left:3px solid var(--gold);padding-left:18px;margin-bottom:40px;font-style:italic;}
+
+  h3.section{
+    font-size:.85rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);
+    border-top:1px solid var(--line);padding-top:26px;margin:40px 0 16px;
+    font-family:Arial,sans-serif;
+  }
+  h3.section .num{color:var(--gold-dim);margin-right:10px;}
+  p{margin-bottom:14px;font-size:.98rem;}
+  strong{color:var(--gold);font-weight:bold;}
+  em{color:var(--ink);}
+
+  /* Tables */
+  table{width:100%;border-collapse:collapse;margin:18px 0 24px;font-size:.9rem;}
+  th{font-family:Arial,sans-serif;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-dim);text-align:left;padding:8px 10px;border-bottom:2px solid var(--gold-dim);}
+  td{padding:8px 10px;border-bottom:1px solid var(--line);color:var(--ink);}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;}
+  tr.hl td{color:var(--gold);font-weight:bold;}
+
+  /* Case study cards */
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:22px 0;}
+  @media(max-width:640px){.cards{grid-template-columns:1fr;}}
+  .card{border:1px solid var(--line);padding:20px 22px;background:rgba(0,0,0,.18);}
+  .card h4{font-family:Arial,sans-serif;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+  .card .type{font-size:.8rem;font-style:italic;color:var(--ink-dim);margin-bottom:14px;}
+  .card ul{list-style:none;}
+  .card li{padding:5px 0;border-bottom:1px dotted var(--line);font-size:.88rem;display:flex;justify-content:space-between;gap:10px;}
+  .card li span:last-child{font-variant-numeric:tabular-nums;white-space:nowrap;}
+  .card li.ratio{border-bottom:none;margin-top:10px;padding-top:12px;border-top:2px solid var(--gold);}
+  .card li.ratio span{color:var(--gold);font-weight:bold;font-size:1rem;}
+  .flag-a{color:var(--danger);} .flag-b{color:var(--ok);}
+
+  /* Key takeaway box */
+  .keybox{border:2px solid var(--gold);padding:24px 28px;margin:30px 0;text-align:center;background:rgba(201,163,90,.05);}
+  .keybox .big{font-size:2.4rem;color:var(--gold);line-height:1.1;}
+  .keybox .cap{font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-dim);margin-top:6px;font-family:Arial,sans-serif;}
+
+  /* Pitfalls */
+  .pitfall{margin:20px 0;padding-left:18px;border-left:3px solid var(--gold-dim);}
+  .pitfall h5{font-family:Arial,sans-serif;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+
+  /* Summary */
+  .resume{border-top:3px double var(--gold);margin-top:44px;padding-top:24px;}
+  .resume ul{list-style:none;}
+  .resume li{padding:7px 0 7px 26px;position:relative;font-size:.95rem;border-bottom:1px dotted var(--line);}
+  .resume li::before{content:"◆";color:var(--gold);position:absolute;left:0;font-size:.7rem;top:12px;}
+
+  .sources{font-size:.78rem;color:var(--ink-dim);font-style:italic;margin-top:30px;padding-top:14px;border-top:1px solid var(--line);}
+  .footer{text-align:center;margin-top:36px;padding-top:20px;border-top:3px double var(--gold);font-size:.75rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold-dim);}
+</style>
+</head>
+<body>
+<div class="paper">
+
+  <div class="masthead">
+    <div class="kicker">Monde 8 · Édition spéciale</div>
+    <h1>LE JOURNAL DU MARCHÉ</h1>
+    <div class="tagline">L'information économique indépendante de Monde 8</div>
+  </div>
+  <div class="dateline">Dossier · Juillet 2026</div>
+
+  <span class="dossier-label">Dossier</span>
+  <h2 class="title">Ce que le classement ne mesure pas</h2>
+  <div class="subtitle">Le classement mesure le capital — pas la productivité du capital.</div>
+
+  <p class="lede">Le classement mondial fascine. Ses écarts se mesurent en milliards de milliards, ses sommets semblent inaccessibles. Mais que mesure-t-il exactement? La réponse tient en une phrase, et elle est le cœur de ce dossier : le classement mesure le capital, pas la productivité du capital. Ce dossier ne vise personne — il explique une mécanique du jeu, publique et conforme aux règles, que tout investisseur gagne à comprendre. Aucun joueur ni holding réel n'y est décrit.</p>
+
+  <h3 class="section"><span class="num">1</span>La mécanique — comment le capital devient classement</h3>
+  <p>Trois règles du jeu, toutes publiques, s'enchaînent. <strong>Un</strong> : les points de classement découlent du capital (environ 1 point pour 5 000 Ø de capital). <strong>Deux</strong> : le cours d'une action suit le capital de l'entreprise — pas ses profits (voir notre Guide de la bourse). <strong>Trois</strong> : la capitalisation d'un holding coté = cours de l'action × nombre d'actions.</p>
+  <p>Conséquence logique : tout ce qui augmente le capital augmente le classement — que ce capital produise des revenus ou non. Un holding peut donc grimper au classement sans que ses filiales gagnent un seul Ø de plus. C'est la porte d'entrée de ce qu'on appellera ici le <strong>« capital de papier »</strong>.</p>
+
+  <h3 class="section"><span class="num">2</span>Expérience de pensée — le holding imaginaire</h3>
+  <p>Pour comprendre la mécanique, construisons un cas d'école. <em>Tout ce qui suit est hypothétique — mais chaque rouage utilisé existe réellement dans les règles du jeu.</em></p>
+  <p>Imaginons le holding <strong>Papier &amp; Cie</strong>. La mécanique décrite ici vaut pour toute structure cotée en bourse — holding ou filiale — mais prenons un holding pour l'exemple. Son fondateur détient 95 % des parts; seulement 5 % circulent en bourse — c'est ce qu'on appelle le flottant.</p>
+  <div class="pitfall">
+    <h5>Étape 1 — Le cours monte sur le flottant</h5>
+    <p>Quelques transactions sur ce petit 5 % suffisent à faire monter le cours (dans la limite des ±30 % par ordre — voir le Guide). Or la capitalisation, elle, se calcule sur 100 % des actions. Chaque hausse du cours revalorise donc aussi les 95 % que personne n'échange jamais. La capitalisation gonfle — et avec elle le capital, donc le classement — sans qu'un seul Ø nouveau n'entre dans les caisses.</p>
+  </div>
+  <div class="pitfall">
+    <h5>Étape 2 — Le dividende comme vitrine</h5>
+    <p>Pour attirer des investisseurs, Papier &amp; Cie annonce un dividende. Détail arithmétique savoureux : avec 95 % des parts, le fondateur se verse l'essentiel du dividende à lui-même. Le coût réel de la « générosité » envers les actionnaires externes est minime — mais l'annonce, elle, est bien visible sur le fil de l'AMF.</p>
+  </div>
+  <div class="pitfall">
+    <h5>Étape 3 — La levée de fonds</h5>
+    <p>Le capital de papier ne paie ni les charges ni les réparations : à un moment, il faut du vrai cash. Papier &amp; Cie lance donc une levée de fonds publique. C'est ici que le marché vote — et c'est ici que le Réflexe 2 du Guide de la bourse devient précieux : le tableau « Montant récolté » de la fiche dira si le marché a suivi... ou pas. Une levée largement sous-souscrite, suivie rapidement d'une nouvelle levée, dessine le portrait d'une structure qui a besoin de liquidités externes.</p>
+  </div>
+  <div class="pitfall">
+    <h5>Étape 4 — La boucle</h5>
+    <p>Le produit de la levée entre au capital. Le capital fait monter le cours. Le cours gonfle la capitalisation. La capitalisation nourrit le classement. Et le classement... attire les prochains participants à la levée suivante. La boucle est parfaitement légale — et parfaitement circulaire.</p>
+  </div>
+  <div class="pitfall">
+    <h5>Étape 5 — Les poupées russes</h5>
+    <p>La mécanique ne s'arrête pas à un étage. Si Papier &amp; Cie détient des filiales elles-mêmes cotées, chaque hausse du cours d'une filiale — obtenue sur son propre petit flottant — revalorise la participation du holding, donc son capital, donc son cours. Un étage de papier peut en porter un autre : holding et filiales peuvent se gonfler mutuellement, chacun sur son propre flottant. Plus la pyramide a d'étages cotés, plus le capital affiché peut s'éloigner du capital productif.</p>
+  </div>
+
+  <h3 class="section"><span class="num">3</span>Les deux modèles — et pourquoi le classement ne les distingue pas</h3>
+  <div class="cards">
+    <div class="card">
+      <h4>Le modèle locatif</h4>
+      <div class="type">La croissance par l'exploitation</div>
+      <p style="font-size:.9rem;">Des filiales qui encaissent des loyers, réinvestissent, et font croître le capital par les revenus d'exploitation. Lent, mais chaque Ø de capital correspond à un actif qui produit.</p>
+    </div>
+    <div class="card">
+      <h4>Le modèle capitalistique</h4>
+      <div class="type">La croissance par la valorisation</div>
+      <p style="font-size:.9rem;">Un capital porté par la valorisation boursière et le financement externe. Rapide, mais la productivité ne suit pas nécessairement — des filiales peuvent être en résultat négatif pendant que la capitalisation du holding s'envole.</p>
+    </div>
+  </div>
+  <p>Aucun des deux n'est de la triche, et la plupart des grands joueurs combinent les deux à des degrés divers. Mais le classement les additionne sans les distinguer. Notre Dossier Cessions l'a montré avec la règle du 1,3× : le marché, quand il doit payer pour de vrai, paie la valeur nette — pas l'affiche. <strong>Le classement, lui, affiche l'affiche.</strong></p>
+
+  <h3 class="section"><span class="num">4</span>La grille de lecture du petit porteur</h3>
+  <p>Comment savoir, devant un holding bien classé, dans quel modèle vous investissez? Les quatre réflexes du Guide de la bourse, appliqués dans l'ordre :</p>
+  <p><strong>1. L'actionnariat d'abord</strong> (Réflexe 4) : quel est le flottant réel? Plus il est petit, plus le cours est fragile — et plus la capitalisation est du papier. Et vérifiez à chaque étage : un holding au flottant sain peut détenir des filiales cotées au flottant minuscule.</p>
+  <p><strong>2. Les levées ensuite</strong> (Réflexe 2) : montants récoltés vs montants annoncés, et fréquence des levées. Le marché a-t-il suivi les appels précédents?</p>
+  <p><strong>3. Les dividendes</strong> (Réflexe 3) : la courbe, pas le communiqué. Et qui touche réellement le dividende, vu la répartition des parts?</p>
+  <p><strong>4. La capitalisation en dernier</strong> (Réflexe 1) : c'est le chiffre le plus visible et le moins informatif des quatre. Lisez-le après les trois autres — jamais avant.</p>
+
+  <div class="keybox">
+    <div class="big">Le capital ≠ sa productivité</div>
+    <div class="cap">Le classement mesure le premier. À vous de lire le second.</div>
+  </div>
+
+  <h3 class="section">Conclusion</h3>
+  <p>Le classement est exact : il mesure vraiment le capital, et il ne prétend rien mesurer d'autre. La confusion vient de nous, lecteurs, quand nous y voyons un bulletin de santé économique. La productivité du capital, elle, se lit ailleurs — dans les bilans, les courbes de dividendes, les montants récoltés et les résultats d'exploitation. Toutes ces données sont publiques. Le Journal vous a donné les outils; le reste vous appartient. <em>Bonne lecture — au sens propre.</em></p>
+
+  <div class="sources">Voir aussi : Guide de la bourse (les quatre réflexes) et Dossier — Le marché des cessions d'entreprises (la règle du 1,3×). Analyse indépendante du Journal du Marché.</div>
+
+  <div class="footer">Le Journal du Marché · Monde 8</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dossier — Le marché des cessions d'entreprises | Le Journal du Marché</title>
+<style>
+  :root{
+    --bg:#15130f;
+    --paper:#1c1916;
+    --gold:#c9a35a;
+    --gold-dim:#9a7c42;
+    --ink:#e8e2d6;
+    --ink-dim:#a89f8f;
+    --line:#3a342b;
+    --danger:#c96a5a;
+    --ok:#7ba05b;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:Georgia,'Times New Roman',serif;
+    line-height:1.7;
+    padding:24px 16px;
+  }
+  .paper{
+    max-width:860px;
+    margin:0 auto;
+    background:var(--paper);
+    border:1px solid var(--line);
+    padding:48px 56px;
+  }
+  @media(max-width:640px){.paper{padding:28px 20px;}}
+
+  /* Masthead */
+  .masthead{text-align:center;border-bottom:3px double var(--gold);padding-bottom:20px;margin-bottom:8px;}
+  .masthead .kicker{font-size:.72rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold-dim);}
+  .masthead h1{font-size:2rem;letter-spacing:.08em;color:var(--gold);font-weight:normal;margin:6px 0 2px;}
+  .masthead .tagline{font-size:.8rem;font-style:italic;color:var(--ink-dim);}
+  .dateline{text-align:center;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-dim);padding:10px 0;border-bottom:1px solid var(--line);margin-bottom:36px;}
+
+  /* Titles */
+  .dossier-label{display:inline-block;background:var(--gold);color:var(--bg);font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;padding:4px 12px;margin-bottom:14px;font-family:Arial,sans-serif;font-weight:bold;}
+  h2.title{font-size:2.1rem;line-height:1.2;color:var(--ink);font-weight:normal;margin-bottom:8px;}
+  .subtitle{font-size:1.05rem;font-style:italic;color:var(--gold);margin-bottom:26px;}
+  .lede{font-size:1.02rem;color:var(--ink);border-left:3px solid var(--gold);padding-left:18px;margin-bottom:40px;font-style:italic;}
+
+  h3.section{
+    font-size:.85rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);
+    border-top:1px solid var(--line);padding-top:26px;margin:40px 0 16px;
+    font-family:Arial,sans-serif;
+  }
+  h3.section .num{color:var(--gold-dim);margin-right:10px;}
+  p{margin-bottom:14px;font-size:.98rem;}
+  strong{color:var(--gold);font-weight:bold;}
+  em{color:var(--ink);}
+
+  /* Tables */
+  table{width:100%;border-collapse:collapse;margin:18px 0 24px;font-size:.9rem;}
+  th{font-family:Arial,sans-serif;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-dim);text-align:left;padding:8px 10px;border-bottom:2px solid var(--gold-dim);}
+  td{padding:8px 10px;border-bottom:1px solid var(--line);color:var(--ink);}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;}
+  tr.hl td{color:var(--gold);font-weight:bold;}
+
+  /* Case study cards */
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:22px 0;}
+  @media(max-width:640px){.cards{grid-template-columns:1fr;}}
+  .card{border:1px solid var(--line);padding:20px 22px;background:rgba(0,0,0,.18);}
+  .card h4{font-family:Arial,sans-serif;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+  .card .type{font-size:.8rem;font-style:italic;color:var(--ink-dim);margin-bottom:14px;}
+  .card ul{list-style:none;}
+  .card li{padding:5px 0;border-bottom:1px dotted var(--line);font-size:.88rem;display:flex;justify-content:space-between;gap:10px;}
+  .card li span:last-child{font-variant-numeric:tabular-nums;white-space:nowrap;}
+  .card li.ratio{border-bottom:none;margin-top:10px;padding-top:12px;border-top:2px solid var(--gold);}
+  .card li.ratio span{color:var(--gold);font-weight:bold;font-size:1rem;}
+  .flag-a{color:var(--danger);} .flag-b{color:var(--ok);}
+
+  /* Key takeaway box */
+  .keybox{border:2px solid var(--gold);padding:24px 28px;margin:30px 0;text-align:center;background:rgba(201,163,90,.05);}
+  .keybox .big{font-size:2.4rem;color:var(--gold);line-height:1.1;}
+  .keybox .cap{font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-dim);margin-top:6px;font-family:Arial,sans-serif;}
+
+  /* Pitfalls */
+  .pitfall{margin:20px 0;padding-left:18px;border-left:3px solid var(--gold-dim);}
+  .pitfall h5{font-family:Arial,sans-serif;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+
+  /* Summary */
+  .resume{border-top:3px double var(--gold);margin-top:44px;padding-top:24px;}
+  .resume ul{list-style:none;}
+  .resume li{padding:7px 0 7px 26px;position:relative;font-size:.95rem;border-bottom:1px dotted var(--line);}
+  .resume li::before{content:"◆";color:var(--gold);position:absolute;left:0;font-size:.7rem;top:12px;}
+
+  .sources{font-size:.78rem;color:var(--ink-dim);font-style:italic;margin-top:30px;padding-top:14px;border-top:1px solid var(--line);}
+  .footer{text-align:center;margin-top:36px;padding-top:20px;border-top:3px double var(--gold);font-size:.75rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold-dim);}
+</style>
+</head>
+<body>
+<div class="paper">
+
+  <div class="masthead">
+    <div class="kicker">Monde 8 · Édition spéciale</div>
+    <h1>LE JOURNAL DU MARCHÉ</h1>
+    <div class="tagline">L'information économique indépendante de Monde 8</div>
+  </div>
+  <div class="dateline">Guide &middot; Juillet 2026</div>
+
+  <span class="dossier-label">Guide</span>
+  <h2 class="title">Six failles &agrave; conna&icirc;tre avant d'investir</h2>
+  <div class="subtitle">Six m&eacute;canismes du march&eacute;, expliqu&eacute;s &agrave; travers des cas d'&eacute;cole enti&egrave;rement fictifs.</div>
+
+  <div class="callout warn" style="border-left-color:var(--danger);">
+    <strong>&#9888;&#65039; AVERTISSEMENT &mdash; CE DOSSIER EST UN EXERCICE P&Eacute;DAGOGIQUE</strong><br><br>
+    Ce dossier ne d&eacute;crit, ne vise et ne fait r&eacute;f&eacute;rence &agrave; <strong>aucun joueur, aucune entreprise, aucun holding et aucun &eacute;v&eacute;nement r&eacute;el</strong> de ce serveur. Tous les noms, chiffres et situations qui suivent sont enti&egrave;rement invent&eacute;s &agrave; des fins d'illustration. Toute ressemblance avec une situation existante serait purement fortuite. Ce texte explique des m&eacute;caniques g&eacute;n&eacute;rales du jeu, publiques et l&eacute;gales &mdash; rien de plus.
+  </div>
+
+  <p class="lede">Une fiche d'entreprise ou de holding affiche toujours les m&ecirc;mes chiffres : une capitalisation, un dividende, un montant de lev&eacute;e, un taux d'emprunt. Ces chiffres sont exacts. Mais un chiffre exact peut raconter une histoire incompl&egrave;te. Ce dossier explique pourquoi, &agrave; travers six cas d'&eacute;cole ind&eacute;pendants &mdash; six m&eacute;caniques distinctes, jamais r&eacute;unies dans une seule et m&ecirc;me histoire, pour rester ce qu'elles sont : des outils de lecture, pas un portrait. <strong>Le capital affich&eacute; par une structure n'est jamais &eacute;gal &agrave; sa productivit&eacute; r&eacute;elle</strong> &mdash; et c'est vrai pour toute entreprise, petite ou grande.</p>
+
+  <h3 class="section"><span class="num">&#9881;&#65039;</span>La r&egrave;gle de base</h3>
+  <p>Deux r&egrave;gles du jeu, toutes publiques, s'ench&acirc;nent. <strong>Un</strong> : le cours d'une action suit le capital de l'entreprise &mdash; pas ses profits (voir notre Guide de la bourse). <strong>Deux</strong> : la capitalisation d'un holding cot&eacute; = cours de l'action &times; nombre d'actions.</p>
+  <p>Cons&eacute;quence : tout ce qui augmente le capital d'une entreprise augmente sa capitalisation affich&eacute;e &mdash; que ce capital produise des revenus ou non. C'est la porte d'entr&eacute;e du &laquo; capital de papier &raquo;.</p>
+
+  <h3 class="section"><span class="num">1</span>Le flottant &eacute;troit</h3>
+  <p>Imaginons une entreprise fictive, <strong>Structure A</strong>, cot&eacute;e en bourse. 80&nbsp;% de ses parts appartiennent &agrave; son fondateur; seulement 20&nbsp;% circulent sur le march&eacute; &mdash; c'est le flottant.</p>
+  <p>Quelques transactions sur ce 20&nbsp;% suffisent &agrave; faire monter le cours (dans la limite des &plusmn;30&nbsp;% par ordre). Or la capitalisation se calcule sur 100&nbsp;% des actions. Chaque hausse du cours revalorise donc aussi les 80&nbsp;% que personne n'&eacute;change jamais. La capitalisation gonfle &mdash; et avec elle le capital, donc le classement &mdash; sans qu'un seul &Oslash; nouveau n'entre dans les caisses.</p>
+  <p><em>Le&ccedil;on : plus le flottant d'une entreprise est &eacute;troit, plus sa capitalisation ressemble &agrave; un prix affich&eacute; qu'&agrave; une valeur n&eacute;goci&eacute;e.</em></p>
+
+  <h3 class="section"><span class="num">2</span>Le dividende vitrine</h3>
+  <p>Imaginons une autre entreprise fictive, <strong>Structure B</strong>, qui annonce fi&egrave;rement une hausse de son dividende par action. L'annonce est vraie, techniquement.</p>
+  <p>Ce que l'annonce ne dit pas : la veille, ce m&ecirc;me dividende avait chut&eacute; de 95&nbsp;% par rapport &agrave; son sommet historique. La &laquo; hausse &raquo; se mesure donc depuis un creux, pas depuis le sommet. Seule la courbe compl&egrave;te des dividendes r&eacute;v&egrave;le cette histoire &mdash; jamais l'annonce isol&eacute;e.</p>
+  <p><em>Le&ccedil;on : un dividende &laquo; en hausse &raquo; se v&eacute;rifie toujours sur la courbe compl&egrave;te (R&eacute;flexe 3 du Guide de la bourse), jamais sur la seule annonce du jour.</em></p>
+
+  <h3 class="section"><span class="num">3</span>La lev&eacute;e sous-souscrite</h3>
+  <p>Imaginons une troisi&egrave;me entreprise fictive, <strong>Structure C</strong>, qui lance une lev&eacute;e de fonds publique avec un objectif ambitieux. &Agrave; la cl&ocirc;ture, le montant r&eacute;ellement r&eacute;colt&eacute; ne repr&eacute;sente qu'une petite fraction du montant vis&eacute; &mdash; le march&eacute; n'a pas suivi.</p>
+  <p>Quelques jours plus tard, Structure C relance une nouvelle lev&eacute;e. Rien d'ill&eacute;gal &mdash; c'est un droit pr&eacute;vu par les r&egrave;gles du jeu. Mais un investisseur attentif retient l'information : une structure qui revient chercher du financement externe peu apr&egrave;s une lev&eacute;e largement sous-souscrite a, par d&eacute;finition, un besoin de liquidit&eacute;s que ses revenus propres ne comblent pas.</p>
+  <p><em>Le&ccedil;on : le tableau &laquo; Montant r&eacute;colt&eacute; &raquo; d'une fiche (R&eacute;flexe 2) en dit souvent plus que l'annonce de la lev&eacute;e elle-m&ecirc;me.</em></p>
+
+  <h3 class="section"><span class="num">4</span>Le levier &agrave; taux artificiel</h3>
+  <p>Imaginons une quatri&egrave;me structure fictive, <strong>Structure D</strong>, qui a construit une bonne partie de sa croissance r&eacute;cente sur des emprunts obtenus &agrave; des taux extr&ecirc;mement bas. &Agrave; un taux pareil, presque n'importe quel investissement d&eacute;gage un rendement sup&eacute;rieur au co&ucirc;t de l'emprunt : le levier devient quasi gratuit, et la croissance s'acc&eacute;l&egrave;re sans que la rentabilit&eacute; r&eacute;elle des actifs ait besoin d'&ecirc;tre exceptionnelle.</p>
+  <p>Le probl&egrave;me appara&icirc;t le jour o&ugrave; les conditions de march&eacute; changent &mdash; par exemple si les banques relèvent leurs planchers de taux. Structure D devrait alors refinancer sa dette &agrave; un co&ucirc;t nettement plus &eacute;lev&eacute;. La question qui se pose alors : sa croissance &eacute;tait-elle port&eacute;e par la qualit&eacute; de ses actifs, ou par le co&ucirc;t artificiellement bas de son financement?</p>
+  <p><em>Le&ccedil;on : un empire construit en partie sur du levier &agrave; taux plancher doit &ecirc;tre jug&eacute; diff&eacute;remment d'un empire construit sur des revenus locatifs organiques. Avant d'investir dans une structure fortement endett&eacute;e, demandez-vous toujours&nbsp;: &agrave; quel taux, et pour combien de temps encore?</em></p>
+
+  <h3 class="section"><span class="num">5</span>Le capital n'est ni du cash ni de la diversit&eacute;</h3>
+  <p>Le classement affiche un chiffre unique : le capital total d'un joueur. Ce chiffre invite naturellement &agrave; deux malentendus.</p>
+  <p><strong>Le premier</strong> : confondre capital et liquidit&eacute;. Le capital, c'est la valeur totale du patrimoine &mdash; biens, participations, capitalisation boursi&egrave;re. La tr&eacute;sorerie disponible est une tout autre donn&eacute;e, souvent des ordres de grandeur en dessous. Un joueur au capital colossal peut avoir un compte courant modeste; vendre pour obtenir du cash implique g&eacute;n&eacute;ralement une d&eacute;cote (voir notre Dossier Cessions et sa r&egrave;gle du 1,3&times;). &laquo; Riche en capital &raquo; ne veut pas dire &laquo; liquide &raquo;.</p>
+  <p><strong>Le second</strong> : confondre capital et diversit&eacute;. Un immense capital peut provenir d'un empire vari&eacute; &mdash; ou de millions d'exemplaires d'un seul et m&ecirc;me type de bien, accumul&eacute; jusqu'&agrave; la limite maximale autoris&eacute;e. Le chiffre du classement ne distingue pas ces deux strat&eacute;gies.</p>
+  <p><em>Le&ccedil;on : un chiffre de capital, seul, ne renseigne ni sur la liquidit&eacute; r&eacute;elle d'un joueur, ni sur la diversit&eacute; de son empire. C'est un total &mdash; pas une radiographie.</em></p>
+
+  <h3 class="section"><span class="num">6</span>La boucle lev&eacute;e-prime-dividende</h3>
+  <p>Imaginons une cinqui&egrave;me structure fictive, <strong>Structure E</strong>, qui r&eacute;p&egrave;te un cycle simple : elle l&egrave;ve des fonds publiquement, puis reverse rapidement une partie de ce capital frais sous forme de primes &agrave; ses directeurs et de dividendes &agrave; ses actionnaires &mdash; dont elle-m&ecirc;me, si son flottant est &eacute;troit (voir Cas n&ordm;1).</p>
+  <p>Chaque &eacute;tape est individuellement l&eacute;gale et d&eacute;j&agrave; couverte par nos guides : les primes sont plafonn&eacute;es &agrave; 2&nbsp;% du capital par directeur (voir notre Guide des postes de direction), les dividendes suivent leurs propres r&egrave;gles fiscales (voir notre Guide de la bourse). Mais mises bout &agrave; bout, elles forment une boucle : le capital lev&eacute; grossit le capital affich&eacute; de l'entreprise, une partie ressort presque aussit&ocirc;t en primes et dividendes, et la structure doit lever &agrave; nouveau pour maintenir le rythme.</p>
+  <p>Le signal &agrave; rep&eacute;rer : une structure qui l&egrave;ve des fonds fr&eacute;quemment, tout en versant des primes ou des dividendes g&eacute;n&eacute;reux au m&ecirc;me moment, ne finance pas n&eacute;cessairement sa croissance &mdash; elle finance peut-&ecirc;tre surtout ses propres sorties de capital.</p>
+  <p><em>Le&ccedil;on : une lev&eacute;e de fonds suivie de peu par une prime ou un dividende important m&eacute;rite d'&ecirc;tre questionn&eacute;e. Le capital est-il rest&eacute; dans l'entreprise pour produire, ou en est-il ressorti presque aussit&ocirc;t?</em></p>
+
+  <h3 class="section">Ce que ces six cas ont en commun</h3>
+  <p>Aucun des six m&eacute;canismes n'est frauduleux. Chacun est pr&eacute;vu, document&eacute; et accessible &agrave; tout joueur qui lit les r&egrave;gles du jeu. Ce qui les relie, c'est une le&ccedil;on unique : un chiffre affich&eacute; peut &ecirc;tre exact tout en racontant une histoire incompl&egrave;te. La compl&eacute;tude vient toujours de la donn&eacute;e &agrave; c&ocirc;t&eacute; &mdash; le flottant, la courbe, le montant r&eacute;colt&eacute;, le taux d'emprunt, la liquidit&eacute; r&eacute;elle.</p>
+  <p>Il existe deux fa&ccedil;ons de b&acirc;tir du capital sur ce serveur : le mod&egrave;le locatif (des filiales qui encaissent des loyers et r&eacute;investissent) et le mod&egrave;le capitalistique ou &agrave; effet de levier (un capital port&eacute; par la valorisation boursi&egrave;re, le financement externe ou l'emprunt). Aucun des deux n'est sup&eacute;rieur en soi &mdash; la plupart des entreprises combinent plusieurs approches &agrave; des degr&eacute;s divers. Mais un chiffre de capital, seul, ne fait jamais la diff&eacute;rence entre les deux. Notre Dossier Cessions l'a montr&eacute; avec la r&egrave;gle du 1,3&times; : le march&eacute;, quand il doit payer pour de vrai, paie la valeur nette &mdash; pas l'affiche.</p>
+
+  <div class="keybox">
+    <div class="big">Le capital &ne; sa productivit&eacute;</div>
+    <div class="cap">Un chiffre affich&eacute; montre le premier. &Agrave; vous de lire le second.</div>
+  </div>
+
+  <h3 class="section">La grille de lecture</h3>
+  <p>Devant n'importe quelle entreprise ou holding, six v&eacute;rifications, dans l'ordre :</p>
+  <p><strong>1. L'actionnariat d'abord</strong> (R&eacute;flexe 4 du Guide de la bourse) : quel est le flottant r&eacute;el?</p>
+  <p><strong>2. Les lev&eacute;es ensuite</strong> (R&eacute;flexe 2) : montant r&eacute;colt&eacute; vs montant annonc&eacute;.</p>
+  <p><strong>3. Les dividendes</strong> (R&eacute;flexe 3) : la courbe compl&egrave;te, jamais l'annonce isol&eacute;e.</p>
+  <p><strong>4. L'endettement</strong> : quelle part de la croissance vient du levier, et &agrave; quel taux?</p>
+  <p><strong>5. La capitalisation en dernier</strong> (R&eacute;flexe 1) : le chiffre le plus visible, le moins informatif des six &mdash; et jamais un indicateur de liquidit&eacute; ou de diversit&eacute;.</p>
+  <p><strong>6. Le rythme des lev&eacute;es face aux sorties</strong> : une structure qui l&egrave;ve souvent tout en versant des primes ou dividendes g&eacute;n&eacute;reux m&eacute;rite un examen suppl&eacute;mentaire.</p>
+
+  <h3 class="section">Conclusion</h3>
+  <p>Un chiffre de capitalisation, de dividende ou de lev&eacute;e est presque toujours exact. Il ne pr&eacute;tend d'ailleurs rien mesurer d'autre que ce qu'il est. La productivit&eacute; r&eacute;elle d'une entreprise, elle, se lit ailleurs &mdash; dans les bilans, les courbes de dividendes, les montants r&eacute;colt&eacute;s, les conditions d'emprunt, la liquidit&eacute; r&eacute;elle. Ces six cas d'&eacute;cole, purement fictifs, ne visent &agrave; d&eacute;masquer personne&nbsp;: ils donnent simplement les outils pour que chaque lecteur fasse sa propre lecture, sur l'entreprise de son choix &mdash; petite ou grande, r&eacute;cente ou &eacute;tablie.</p>
+  <p><strong>Encore une fois : aucun joueur, aucune entreprise, aucun holding et aucun &eacute;v&eacute;nement r&eacute;el de Monde 8 n'est d&eacute;crit dans ce dossier.</strong></p>
+
+  <div class="sources">Voir aussi : Guide de la bourse (les quatre r&eacute;flexes), Guide de la banque et Dossier &mdash; Le march&eacute; des cessions d'entreprises (la r&egrave;gle du 1,3&times;). Analyse ind&eacute;pendante du Journal du March&eacute;.</div>
+
+  <div class="footer">Le Journal du March&eacute; &middot; Monde 8</div>
+
+</div>
+</body>
+</html>
